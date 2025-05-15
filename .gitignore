@@ -1,4 +1,11 @@
-/build
-/log
-/install
-/.vscode
+# ROS 2 build files
+build/
+install/
+log/
+
+# Python cache
+*.pyc
+__pycache__/
+
+# Editor settings
+.vscode/
