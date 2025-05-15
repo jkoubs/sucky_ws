@@ -1,0 +1,17 @@
+/home/robot/sweepy_dev_ws/install/sweepy_perception/share/sweepy_perception/launch/sick_tim_7xx.launch.py
+/home/robot/sweepy_dev_ws/install/sweepy_perception/share/sweepy_perception/config/scan_filter_params.yaml
+/home/robot/sweepy_dev_ws/install/sweepy_perception/share/ament_index/resource_index/package_run_dependencies/sweepy_perception
+/home/robot/sweepy_dev_ws/install/sweepy_perception/share/ament_index/resource_index/parent_prefix_path/sweepy_perception
+/home/robot/sweepy_dev_ws/install/sweepy_perception/share/sweepy_perception/environment/ament_prefix_path.sh
+/home/robot/sweepy_dev_ws/install/sweepy_perception/share/sweepy_perception/environment/ament_prefix_path.dsv
+/home/robot/sweepy_dev_ws/install/sweepy_perception/share/sweepy_perception/environment/path.sh
+/home/robot/sweepy_dev_ws/install/sweepy_perception/share/sweepy_perception/environment/path.dsv
+/home/robot/sweepy_dev_ws/install/sweepy_perception/share/sweepy_perception/local_setup.bash
+/home/robot/sweepy_dev_ws/install/sweepy_perception/share/sweepy_perception/local_setup.sh
+/home/robot/sweepy_dev_ws/install/sweepy_perception/share/sweepy_perception/local_setup.zsh
+/home/robot/sweepy_dev_ws/install/sweepy_perception/share/sweepy_perception/local_setup.dsv
+/home/robot/sweepy_dev_ws/install/sweepy_perception/share/sweepy_perception/package.dsv
+/home/robot/sweepy_dev_ws/install/sweepy_perception/share/ament_index/resource_index/packages/sweepy_perception
+/home/robot/sweepy_dev_ws/install/sweepy_perception/share/sweepy_perception/cmake/sweepy_perceptionConfig.cmake
+/home/robot/sweepy_dev_ws/install/sweepy_perception/share/sweepy_perception/cmake/sweepy_perceptionConfig-version.cmake
+/home/robot/sweepy_dev_ws/install/sweepy_perception/share/sweepy_perception/package.xml

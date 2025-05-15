@@ -1,0 +1,33 @@
+[0.053s] Invoking command in '/home/robot/sweepy_dev_ws/build/roboclaw_serial': /usr/bin/cmake /home/robot/sweepy_dev_ws/src/roboclaw_serial -DCATKIN_INSTALL_INTO_PREFIX_ROOT=0 -DCMAKE_INSTALL_PREFIX=/home/robot/sweepy_dev_ws/install/roboclaw_serial
+[0.202s] -- The CXX compiler identification is GNU 11.4.0
+[0.217s] -- Detecting CXX compiler ABI info
+[0.416s] -- Detecting CXX compiler ABI info - done
+[0.443s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.443s] -- Detecting CXX compile features
+[0.443s] -- Detecting CXX compile features - done
+[0.842s] -- Found GTest: /usr/lib/x86_64-linux-gnu/cmake/GTest/GTestConfig.cmake (found version "1.11.0")  
+[0.844s] -- Configuring done
+[0.907s] -- Generating done
+[0.918s] [33mCMake Warning:
+[0.918s]   Manually-specified variables were not used by the project:
+[0.918s] 
+[0.918s]     CATKIN_INSTALL_INTO_PREFIX_ROOT
+[0.918s] 
+[0.919s] [0m
+[0.934s] -- Build files have been written to: /home/robot/sweepy_dev_ws/build/roboclaw_serial
+[0.952s] Invoked command in '/home/robot/sweepy_dev_ws/build/roboclaw_serial' returned '0': /usr/bin/cmake /home/robot/sweepy_dev_ws/src/roboclaw_serial -DCATKIN_INSTALL_INTO_PREFIX_ROOT=0 -DCMAKE_INSTALL_PREFIX=/home/robot/sweepy_dev_ws/install/roboclaw_serial
+[0.961s] Invoking command in '/home/robot/sweepy_dev_ws/build/roboclaw_serial': /usr/bin/cmake --build /home/robot/sweepy_dev_ws/build/roboclaw_serial -- -j8 -l8
+[1.395s] [ 50%] [32mBuilding CXX object CMakeFiles/test_roboclaw_serial.dir/test/test_main.cpp.o[0m
+[2.821s] [100%] [32m[1mLinking CXX executable test_roboclaw_serial[0m
+[2.984s] [100%] Built target test_roboclaw_serial
+[2.998s] Invoked command in '/home/robot/sweepy_dev_ws/build/roboclaw_serial' returned '0': /usr/bin/cmake --build /home/robot/sweepy_dev_ws/build/roboclaw_serial -- -j8 -l8
+[3.000s] Invoking command in '/home/robot/sweepy_dev_ws/build/roboclaw_serial': /usr/bin/cmake --install /home/robot/sweepy_dev_ws/build/roboclaw_serial
+[3.009s] -- Install configuration: ""
+[3.009s] -- Installing: /home/robot/sweepy_dev_ws/install/roboclaw_serial/include/roboclaw_serial
+[3.009s] -- Installing: /home/robot/sweepy_dev_ws/install/roboclaw_serial/include/roboclaw_serial/serialized_buffer.hpp
+[3.009s] -- Installing: /home/robot/sweepy_dev_ws/install/roboclaw_serial/include/roboclaw_serial/crc.hpp
+[3.009s] -- Installing: /home/robot/sweepy_dev_ws/install/roboclaw_serial/include/roboclaw_serial/device.hpp
+[3.010s] -- Installing: /home/robot/sweepy_dev_ws/install/roboclaw_serial/include/roboclaw_serial/interface.hpp
+[3.010s] -- Installing: /home/robot/sweepy_dev_ws/install/roboclaw_serial/include/roboclaw_serial/command.hpp
+[3.010s] -- Installing: /home/robot/sweepy_dev_ws/install/roboclaw_serial/lib/cmake/roboclaw_serial/roboclaw_serialConfig.cmake
+[3.012s] Invoked command in '/home/robot/sweepy_dev_ws/build/roboclaw_serial' returned '0': /usr/bin/cmake --install /home/robot/sweepy_dev_ws/build/roboclaw_serial

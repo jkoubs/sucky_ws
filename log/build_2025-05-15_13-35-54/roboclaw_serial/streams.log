@@ -1,0 +1,13 @@
+[0.075s] Invoking command in '/home/robot/sweepy_dev_ws/build/roboclaw_serial': /usr/bin/cmake --build /home/robot/sweepy_dev_ws/build/roboclaw_serial -- -j8 -l8
+[0.197s] [100%] Built target test_roboclaw_serial
+[0.276s] Invoked command in '/home/robot/sweepy_dev_ws/build/roboclaw_serial' returned '0': /usr/bin/cmake --build /home/robot/sweepy_dev_ws/build/roboclaw_serial -- -j8 -l8
+[0.277s] Invoking command in '/home/robot/sweepy_dev_ws/build/roboclaw_serial': /usr/bin/cmake --install /home/robot/sweepy_dev_ws/build/roboclaw_serial
+[0.287s] -- Install configuration: ""
+[0.287s] -- Up-to-date: /home/robot/sweepy_dev_ws/install/roboclaw_serial/include/roboclaw_serial
+[0.287s] -- Up-to-date: /home/robot/sweepy_dev_ws/install/roboclaw_serial/include/roboclaw_serial/serialized_buffer.hpp
+[0.287s] -- Up-to-date: /home/robot/sweepy_dev_ws/install/roboclaw_serial/include/roboclaw_serial/crc.hpp
+[0.287s] -- Up-to-date: /home/robot/sweepy_dev_ws/install/roboclaw_serial/include/roboclaw_serial/device.hpp
+[0.287s] -- Up-to-date: /home/robot/sweepy_dev_ws/install/roboclaw_serial/include/roboclaw_serial/interface.hpp
+[0.287s] -- Up-to-date: /home/robot/sweepy_dev_ws/install/roboclaw_serial/include/roboclaw_serial/command.hpp
+[0.287s] -- Up-to-date: /home/robot/sweepy_dev_ws/install/roboclaw_serial/lib/cmake/roboclaw_serial/roboclaw_serialConfig.cmake
+[0.386s] Invoked command in '/home/robot/sweepy_dev_ws/build/roboclaw_serial' returned '0': /usr/bin/cmake --install /home/robot/sweepy_dev_ws/build/roboclaw_serial

@@ -1,0 +1,9 @@
+/home/robot/sweepy_dev_ws/build/sweepy_perception/CMakeFiles/uninstall.dir
+/home/robot/sweepy_dev_ws/build/sweepy_perception/CMakeFiles/sweepy_perception_uninstall.dir
+/home/robot/sweepy_dev_ws/build/sweepy_perception/CMakeFiles/test.dir
+/home/robot/sweepy_dev_ws/build/sweepy_perception/CMakeFiles/edit_cache.dir
+/home/robot/sweepy_dev_ws/build/sweepy_perception/CMakeFiles/rebuild_cache.dir
+/home/robot/sweepy_dev_ws/build/sweepy_perception/CMakeFiles/list_install_components.dir
+/home/robot/sweepy_dev_ws/build/sweepy_perception/CMakeFiles/install.dir
+/home/robot/sweepy_dev_ws/build/sweepy_perception/CMakeFiles/install/local.dir
+/home/robot/sweepy_dev_ws/build/sweepy_perception/CMakeFiles/install/strip.dir

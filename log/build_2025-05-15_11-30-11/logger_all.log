@@ -1,0 +1,617 @@
+[0.118s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'build']
+[0.118s] DEBUG:colcon:Parsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='build', build_base='build', install_base='install', merge_install=False, symlink_install=False, test_result_base=None, continue_on_error=False, executor='parallel', parallel_workers=8, event_handlers=None, ignore_user_meta=False, metas=['./colcon.meta'], base_paths=['.'], packages_ignore=None, packages_ignore_regex=None, paths=None, packages_up_to=None, packages_up_to_regex=None, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_select_by_dep=None, packages_skip_by_dep=None, packages_skip_up_to=None, packages_select_build_failed=False, packages_skip_build_finished=False, packages_select_test_failures=False, packages_skip_test_passed=False, packages_select=None, packages_skip=None, packages_select_regex=None, packages_skip_regex=None, packages_start=None, packages_end=None, allow_overriding=[], cmake_args=None, cmake_target=None, cmake_target_skip_unavailable=False, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, ament_cmake_args=None, catkin_cmake_args=None, catkin_skip_building_tests=False, mixin_files=None, mixin=None, verb_parser=<colcon_mixin.mixin.mixin_argument.MixinArgumentDecorator object at 0x74916c359870>, verb_extension=<colcon_core.verb.build.BuildVerb object at 0x74916c462c20>, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0x74916c462c20>>, mixin_verb=('build',))
+[0.293s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[0.293s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[0.293s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[0.293s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[0.293s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) discover
+[0.293s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[0.293s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/home/robot/sweepy_dev_ws'
+[0.293s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ignore', 'ignore_ament_install']
+[0.293s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore'
+[0.293s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore_ament_install'
+[0.294s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_pkg']
+[0.294s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_pkg'
+[0.294s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_meta']
+[0.294s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_meta'
+[0.294s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ros']
+[0.294s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ros'
+[0.304s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['cmake', 'python']
+[0.304s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'cmake'
+[0.304s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python'
+[0.305s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['python_setup_py']
+[0.305s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python_setup_py'
+[0.305s] Level 1:colcon.colcon_core.package_identification:_identify(ESP32) by extensions ['ignore', 'ignore_ament_install']
+[0.305s] Level 1:colcon.colcon_core.package_identification:_identify(ESP32) by extension 'ignore'
+[0.305s] Level 1:colcon.colcon_core.package_identification:_identify(ESP32) by extension 'ignore_ament_install'
+[0.305s] Level 1:colcon.colcon_core.package_identification:_identify(ESP32) by extensions ['colcon_pkg']
+[0.305s] Level 1:colcon.colcon_core.package_identification:_identify(ESP32) by extension 'colcon_pkg'
+[0.305s] Level 1:colcon.colcon_core.package_identification:_identify(ESP32) by extensions ['colcon_meta']
+[0.305s] Level 1:colcon.colcon_core.package_identification:_identify(ESP32) by extension 'colcon_meta'
+[0.305s] Level 1:colcon.colcon_core.package_identification:_identify(ESP32) by extensions ['ros']
+[0.305s] Level 1:colcon.colcon_core.package_identification:_identify(ESP32) by extension 'ros'
+[0.305s] Level 1:colcon.colcon_core.package_identification:_identify(ESP32) by extensions ['cmake', 'python']
+[0.305s] Level 1:colcon.colcon_core.package_identification:_identify(ESP32) by extension 'cmake'
+[0.305s] Level 1:colcon.colcon_core.package_identification:_identify(ESP32) by extension 'python'
+[0.305s] Level 1:colcon.colcon_core.package_identification:_identify(ESP32) by extensions ['python_setup_py']
+[0.305s] Level 1:colcon.colcon_core.package_identification:_identify(ESP32) by extension 'python_setup_py'
+[0.306s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extensions ['ignore', 'ignore_ament_install']
+[0.306s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extension 'ignore'
+[0.306s] Level 1:colcon.colcon_core.package_identification:_identify(build) ignored
+[0.306s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extensions ['ignore', 'ignore_ament_install']
+[0.306s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extension 'ignore'
+[0.306s] Level 1:colcon.colcon_core.package_identification:_identify(install) ignored
+[0.306s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extensions ['ignore', 'ignore_ament_install']
+[0.306s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extension 'ignore'
+[0.306s] Level 1:colcon.colcon_core.package_identification:_identify(log) ignored
+[0.306s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ignore', 'ignore_ament_install']
+[0.307s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore'
+[0.307s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore_ament_install'
+[0.307s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_pkg']
+[0.307s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_pkg'
+[0.307s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_meta']
+[0.307s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_meta'
+[0.307s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ros']
+[0.307s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ros'
+[0.307s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['cmake', 'python']
+[0.307s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'cmake'
+[0.307s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python'
+[0.307s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['python_setup_py']
+[0.307s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python_setup_py'
+[0.307s] Level 1:colcon.colcon_core.package_identification:_identify(src/laser_filters) by extensions ['ignore', 'ignore_ament_install']
+[0.307s] Level 1:colcon.colcon_core.package_identification:_identify(src/laser_filters) by extension 'ignore'
+[0.307s] Level 1:colcon.colcon_core.package_identification:_identify(src/laser_filters) by extension 'ignore_ament_install'
+[0.307s] Level 1:colcon.colcon_core.package_identification:_identify(src/laser_filters) by extensions ['colcon_pkg']
+[0.308s] Level 1:colcon.colcon_core.package_identification:_identify(src/laser_filters) by extension 'colcon_pkg'
+[0.308s] Level 1:colcon.colcon_core.package_identification:_identify(src/laser_filters) by extensions ['colcon_meta']
+[0.308s] Level 1:colcon.colcon_core.package_identification:_identify(src/laser_filters) by extension 'colcon_meta'
+[0.308s] Level 1:colcon.colcon_core.package_identification:_identify(src/laser_filters) by extensions ['ros']
+[0.308s] Level 1:colcon.colcon_core.package_identification:_identify(src/laser_filters) by extension 'ros'
+[0.311s] DEBUG:colcon.colcon_core.package_identification:Package 'src/laser_filters' with type 'ros.ament_cmake' and name 'laser_filters'
+[0.311s] Level 1:colcon.colcon_core.package_identification:_identify(src/roboclaw_hardware_interface) by extensions ['ignore', 'ignore_ament_install']
+[0.311s] Level 1:colcon.colcon_core.package_identification:_identify(src/roboclaw_hardware_interface) by extension 'ignore'
+[0.311s] Level 1:colcon.colcon_core.package_identification:_identify(src/roboclaw_hardware_interface) by extension 'ignore_ament_install'
+[0.312s] Level 1:colcon.colcon_core.package_identification:_identify(src/roboclaw_hardware_interface) by extensions ['colcon_pkg']
+[0.312s] Level 1:colcon.colcon_core.package_identification:_identify(src/roboclaw_hardware_interface) by extension 'colcon_pkg'
+[0.312s] Level 1:colcon.colcon_core.package_identification:_identify(src/roboclaw_hardware_interface) by extensions ['colcon_meta']
+[0.312s] Level 1:colcon.colcon_core.package_identification:_identify(src/roboclaw_hardware_interface) by extension 'colcon_meta'
+[0.312s] Level 1:colcon.colcon_core.package_identification:_identify(src/roboclaw_hardware_interface) by extensions ['ros']
+[0.312s] Level 1:colcon.colcon_core.package_identification:_identify(src/roboclaw_hardware_interface) by extension 'ros'
+[0.313s] DEBUG:colcon.colcon_core.package_identification:Package 'src/roboclaw_hardware_interface' with type 'ros.ament_cmake' and name 'roboclaw_hardware_interface'
+[0.313s] Level 1:colcon.colcon_core.package_identification:_identify(src/roboclaw_serial) by extensions ['ignore', 'ignore_ament_install']
+[0.313s] Level 1:colcon.colcon_core.package_identification:_identify(src/roboclaw_serial) by extension 'ignore'
+[0.313s] Level 1:colcon.colcon_core.package_identification:_identify(src/roboclaw_serial) by extension 'ignore_ament_install'
+[0.313s] Level 1:colcon.colcon_core.package_identification:_identify(src/roboclaw_serial) by extensions ['colcon_pkg']
+[0.313s] Level 1:colcon.colcon_core.package_identification:_identify(src/roboclaw_serial) by extension 'colcon_pkg'
+[0.313s] Level 1:colcon.colcon_core.package_identification:_identify(src/roboclaw_serial) by extensions ['colcon_meta']
+[0.313s] Level 1:colcon.colcon_core.package_identification:_identify(src/roboclaw_serial) by extension 'colcon_meta'
+[0.313s] Level 1:colcon.colcon_core.package_identification:_identify(src/roboclaw_serial) by extensions ['ros']
+[0.313s] Level 1:colcon.colcon_core.package_identification:_identify(src/roboclaw_serial) by extension 'ros'
+[0.314s] DEBUG:colcon.colcon_core.package_identification:Package 'src/roboclaw_serial' with type 'ros.catkin' and name 'roboclaw_serial'
+[0.314s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_mpu9250_driver) by extensions ['ignore', 'ignore_ament_install']
+[0.314s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_mpu9250_driver) by extension 'ignore'
+[0.314s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_mpu9250_driver) by extension 'ignore_ament_install'
+[0.314s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_mpu9250_driver) by extensions ['colcon_pkg']
+[0.314s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_mpu9250_driver) by extension 'colcon_pkg'
+[0.314s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_mpu9250_driver) by extensions ['colcon_meta']
+[0.314s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_mpu9250_driver) by extension 'colcon_meta'
+[0.315s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_mpu9250_driver) by extensions ['ros']
+[0.315s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_mpu9250_driver) by extension 'ros'
+[0.315s] DEBUG:colcon.colcon_core.package_identification:Package 'src/ros2_mpu9250_driver' with type 'ros.ament_cmake' and name 'mpu9250driver'
+[0.315s] Level 1:colcon.colcon_core.package_identification:_identify(src/sweepy_bringup) by extensions ['ignore', 'ignore_ament_install']
+[0.315s] Level 1:colcon.colcon_core.package_identification:_identify(src/sweepy_bringup) by extension 'ignore'
+[0.315s] Level 1:colcon.colcon_core.package_identification:_identify(src/sweepy_bringup) by extension 'ignore_ament_install'
+[0.316s] Level 1:colcon.colcon_core.package_identification:_identify(src/sweepy_bringup) by extensions ['colcon_pkg']
+[0.316s] Level 1:colcon.colcon_core.package_identification:_identify(src/sweepy_bringup) by extension 'colcon_pkg'
+[0.316s] Level 1:colcon.colcon_core.package_identification:_identify(src/sweepy_bringup) by extensions ['colcon_meta']
+[0.316s] Level 1:colcon.colcon_core.package_identification:_identify(src/sweepy_bringup) by extension 'colcon_meta'
+[0.316s] Level 1:colcon.colcon_core.package_identification:_identify(src/sweepy_bringup) by extensions ['ros']
+[0.316s] Level 1:colcon.colcon_core.package_identification:_identify(src/sweepy_bringup) by extension 'ros'
+[0.316s] DEBUG:colcon.colcon_core.package_identification:Package 'src/sweepy_bringup' with type 'ros.ament_cmake' and name 'sweepy_bringup'
+[0.317s] Level 1:colcon.colcon_core.package_identification:_identify(src/sweepy_hardware_drivers) by extensions ['ignore', 'ignore_ament_install']
+[0.317s] Level 1:colcon.colcon_core.package_identification:_identify(src/sweepy_hardware_drivers) by extension 'ignore'
+[0.317s] Level 1:colcon.colcon_core.package_identification:_identify(src/sweepy_hardware_drivers) by extension 'ignore_ament_install'
+[0.317s] Level 1:colcon.colcon_core.package_identification:_identify(src/sweepy_hardware_drivers) by extensions ['colcon_pkg']
+[0.317s] Level 1:colcon.colcon_core.package_identification:_identify(src/sweepy_hardware_drivers) by extension 'colcon_pkg'
+[0.317s] Level 1:colcon.colcon_core.package_identification:_identify(src/sweepy_hardware_drivers) by extensions ['colcon_meta']
+[0.317s] Level 1:colcon.colcon_core.package_identification:_identify(src/sweepy_hardware_drivers) by extension 'colcon_meta'
+[0.317s] Level 1:colcon.colcon_core.package_identification:_identify(src/sweepy_hardware_drivers) by extensions ['ros']
+[0.317s] Level 1:colcon.colcon_core.package_identification:_identify(src/sweepy_hardware_drivers) by extension 'ros'
+[0.318s] DEBUG:colcon.colcon_core.package_identification:Package 'src/sweepy_hardware_drivers' with type 'ros.ament_cmake' and name 'sweepy_hardware_drivers'
+[0.318s] Level 1:colcon.colcon_core.package_identification:_identify(src/sweepy_nav) by extensions ['ignore', 'ignore_ament_install']
+[0.318s] Level 1:colcon.colcon_core.package_identification:_identify(src/sweepy_nav) by extension 'ignore'
+[0.318s] Level 1:colcon.colcon_core.package_identification:_identify(src/sweepy_nav) by extension 'ignore_ament_install'
+[0.318s] Level 1:colcon.colcon_core.package_identification:_identify(src/sweepy_nav) by extensions ['colcon_pkg']
+[0.318s] Level 1:colcon.colcon_core.package_identification:_identify(src/sweepy_nav) by extension 'colcon_pkg'
+[0.318s] Level 1:colcon.colcon_core.package_identification:_identify(src/sweepy_nav) by extensions ['colcon_meta']
+[0.318s] Level 1:colcon.colcon_core.package_identification:_identify(src/sweepy_nav) by extension 'colcon_meta'
+[0.318s] Level 1:colcon.colcon_core.package_identification:_identify(src/sweepy_nav) by extensions ['ros']
+[0.318s] Level 1:colcon.colcon_core.package_identification:_identify(src/sweepy_nav) by extension 'ros'
+[0.319s] DEBUG:colcon.colcon_core.package_identification:Package 'src/sweepy_nav' with type 'ros.ament_cmake' and name 'sweepy_nav'
+[0.319s] Level 1:colcon.colcon_core.package_identification:_identify(src/sweepy_perception) by extensions ['ignore', 'ignore_ament_install']
+[0.319s] Level 1:colcon.colcon_core.package_identification:_identify(src/sweepy_perception) by extension 'ignore'
+[0.319s] Level 1:colcon.colcon_core.package_identification:_identify(src/sweepy_perception) by extension 'ignore_ament_install'
+[0.319s] Level 1:colcon.colcon_core.package_identification:_identify(src/sweepy_perception) by extensions ['colcon_pkg']
+[0.319s] Level 1:colcon.colcon_core.package_identification:_identify(src/sweepy_perception) by extension 'colcon_pkg'
+[0.320s] Level 1:colcon.colcon_core.package_identification:_identify(src/sweepy_perception) by extensions ['colcon_meta']
+[0.320s] Level 1:colcon.colcon_core.package_identification:_identify(src/sweepy_perception) by extension 'colcon_meta'
+[0.320s] Level 1:colcon.colcon_core.package_identification:_identify(src/sweepy_perception) by extensions ['ros']
+[0.320s] Level 1:colcon.colcon_core.package_identification:_identify(src/sweepy_perception) by extension 'ros'
+[0.320s] DEBUG:colcon.colcon_core.package_identification:Package 'src/sweepy_perception' with type 'ros.ament_cmake' and name 'sweepy_perception'
+[0.320s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[0.320s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) discover
+[0.321s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) using defaults
+[0.321s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) discover
+[0.321s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) using defaults
+[0.352s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) check parameters
+[0.352s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) discover
+[0.353s] WARNING:colcon.colcon_core.prefix_path.colcon:The path '/home/robot/sweepy_ws/install' in the environment variable COLCON_PREFIX_PATH doesn't exist
+[0.353s] WARNING:colcon.colcon_ros.prefix_path.ament:The path '/home/robot/sweepy_ws/install/sweeper_bot' in the environment variable AMENT_PREFIX_PATH doesn't exist
+[0.353s] WARNING:colcon.colcon_ros.prefix_path.ament:The path '/home/robot/sweepy_ws/install/roboclaw_hardware_interface' in the environment variable AMENT_PREFIX_PATH doesn't exist
+[0.354s] WARNING:colcon.colcon_ros.prefix_path.ament:The path '/home/robot/sweepy_ws/install/mpu9250driver' in the environment variable AMENT_PREFIX_PATH doesn't exist
+[0.354s] WARNING:colcon.colcon_ros.prefix_path.ament:The path '/home/robot/sweepy_ws/install/laser_filters' in the environment variable AMENT_PREFIX_PATH doesn't exist
+[0.354s] WARNING:colcon.colcon_ros.prefix_path.catkin:The path '/home/robot/sweepy_ws/install/sweeper_bot' in the environment variable CMAKE_PREFIX_PATH doesn't exist
+[0.354s] WARNING:colcon.colcon_ros.prefix_path.catkin:The path '/home/robot/sweepy_ws/install/roboclaw_serial' in the environment variable CMAKE_PREFIX_PATH doesn't exist
+[0.354s] WARNING:colcon.colcon_ros.prefix_path.catkin:The path '/home/robot/sweepy_ws/install/roboclaw_hardware_interface' in the environment variable CMAKE_PREFIX_PATH doesn't exist
+[0.354s] WARNING:colcon.colcon_ros.prefix_path.catkin:The path '/home/robot/sweepy_ws/install/mpu9250driver' in the environment variable CMAKE_PREFIX_PATH doesn't exist
+[0.354s] WARNING:colcon.colcon_ros.prefix_path.catkin:The path '/home/robot/sweepy_ws/install/laser_filters' in the environment variable CMAKE_PREFIX_PATH doesn't exist
+[0.355s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 8 installed packages in /home/robot/sweepy_dev_ws/install
+[0.357s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 386 installed packages in /opt/ros/humble
+[0.359s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) using defaults
+[0.421s] Level 5:colcon.colcon_core.verb:set package 'laser_filters' build argument 'cmake_args' from command line to 'None'
+[0.421s] Level 5:colcon.colcon_core.verb:set package 'laser_filters' build argument 'cmake_target' from command line to 'None'
+[0.421s] Level 5:colcon.colcon_core.verb:set package 'laser_filters' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.421s] Level 5:colcon.colcon_core.verb:set package 'laser_filters' build argument 'cmake_clean_cache' from command line to 'False'
+[0.422s] Level 5:colcon.colcon_core.verb:set package 'laser_filters' build argument 'cmake_clean_first' from command line to 'False'
+[0.422s] Level 5:colcon.colcon_core.verb:set package 'laser_filters' build argument 'cmake_force_configure' from command line to 'False'
+[0.422s] Level 5:colcon.colcon_core.verb:set package 'laser_filters' build argument 'ament_cmake_args' from command line to 'None'
+[0.422s] Level 5:colcon.colcon_core.verb:set package 'laser_filters' build argument 'catkin_cmake_args' from command line to 'None'
+[0.422s] Level 5:colcon.colcon_core.verb:set package 'laser_filters' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.422s] DEBUG:colcon.colcon_core.verb:Building package 'laser_filters' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/robot/sweepy_dev_ws/build/laser_filters', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/robot/sweepy_dev_ws/install/laser_filters', 'merge_install': False, 'path': '/home/robot/sweepy_dev_ws/src/laser_filters', 'symlink_install': False, 'test_result_base': None}
+[0.422s] Level 5:colcon.colcon_core.verb:set package 'mpu9250driver' build argument 'cmake_args' from command line to 'None'
+[0.422s] Level 5:colcon.colcon_core.verb:set package 'mpu9250driver' build argument 'cmake_target' from command line to 'None'
+[0.422s] Level 5:colcon.colcon_core.verb:set package 'mpu9250driver' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.422s] Level 5:colcon.colcon_core.verb:set package 'mpu9250driver' build argument 'cmake_clean_cache' from command line to 'False'
+[0.422s] Level 5:colcon.colcon_core.verb:set package 'mpu9250driver' build argument 'cmake_clean_first' from command line to 'False'
+[0.422s] Level 5:colcon.colcon_core.verb:set package 'mpu9250driver' build argument 'cmake_force_configure' from command line to 'False'
+[0.422s] Level 5:colcon.colcon_core.verb:set package 'mpu9250driver' build argument 'ament_cmake_args' from command line to 'None'
+[0.422s] Level 5:colcon.colcon_core.verb:set package 'mpu9250driver' build argument 'catkin_cmake_args' from command line to 'None'
+[0.422s] Level 5:colcon.colcon_core.verb:set package 'mpu9250driver' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.422s] DEBUG:colcon.colcon_core.verb:Building package 'mpu9250driver' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/robot/sweepy_dev_ws/build/mpu9250driver', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/robot/sweepy_dev_ws/install/mpu9250driver', 'merge_install': False, 'path': '/home/robot/sweepy_dev_ws/src/ros2_mpu9250_driver', 'symlink_install': False, 'test_result_base': None}
+[0.423s] Level 5:colcon.colcon_core.verb:set package 'roboclaw_serial' build argument 'cmake_args' from command line to 'None'
+[0.423s] Level 5:colcon.colcon_core.verb:set package 'roboclaw_serial' build argument 'cmake_target' from command line to 'None'
+[0.423s] Level 5:colcon.colcon_core.verb:set package 'roboclaw_serial' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.423s] Level 5:colcon.colcon_core.verb:set package 'roboclaw_serial' build argument 'cmake_clean_cache' from command line to 'False'
+[0.423s] Level 5:colcon.colcon_core.verb:set package 'roboclaw_serial' build argument 'cmake_clean_first' from command line to 'False'
+[0.423s] Level 5:colcon.colcon_core.verb:set package 'roboclaw_serial' build argument 'cmake_force_configure' from command line to 'False'
+[0.423s] Level 5:colcon.colcon_core.verb:set package 'roboclaw_serial' build argument 'ament_cmake_args' from command line to 'None'
+[0.423s] Level 5:colcon.colcon_core.verb:set package 'roboclaw_serial' build argument 'catkin_cmake_args' from command line to 'None'
+[0.423s] Level 5:colcon.colcon_core.verb:set package 'roboclaw_serial' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.423s] DEBUG:colcon.colcon_core.verb:Building package 'roboclaw_serial' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/robot/sweepy_dev_ws/build/roboclaw_serial', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/robot/sweepy_dev_ws/install/roboclaw_serial', 'merge_install': False, 'path': '/home/robot/sweepy_dev_ws/src/roboclaw_serial', 'symlink_install': False, 'test_result_base': None}
+[0.423s] Level 5:colcon.colcon_core.verb:set package 'sweepy_bringup' build argument 'cmake_args' from command line to 'None'
+[0.424s] Level 5:colcon.colcon_core.verb:set package 'sweepy_bringup' build argument 'cmake_target' from command line to 'None'
+[0.424s] Level 5:colcon.colcon_core.verb:set package 'sweepy_bringup' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.424s] Level 5:colcon.colcon_core.verb:set package 'sweepy_bringup' build argument 'cmake_clean_cache' from command line to 'False'
+[0.424s] Level 5:colcon.colcon_core.verb:set package 'sweepy_bringup' build argument 'cmake_clean_first' from command line to 'False'
+[0.424s] Level 5:colcon.colcon_core.verb:set package 'sweepy_bringup' build argument 'cmake_force_configure' from command line to 'False'
+[0.424s] Level 5:colcon.colcon_core.verb:set package 'sweepy_bringup' build argument 'ament_cmake_args' from command line to 'None'
+[0.424s] Level 5:colcon.colcon_core.verb:set package 'sweepy_bringup' build argument 'catkin_cmake_args' from command line to 'None'
+[0.424s] Level 5:colcon.colcon_core.verb:set package 'sweepy_bringup' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.424s] DEBUG:colcon.colcon_core.verb:Building package 'sweepy_bringup' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/robot/sweepy_dev_ws/build/sweepy_bringup', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/robot/sweepy_dev_ws/install/sweepy_bringup', 'merge_install': False, 'path': '/home/robot/sweepy_dev_ws/src/sweepy_bringup', 'symlink_install': False, 'test_result_base': None}
+[0.424s] Level 5:colcon.colcon_core.verb:set package 'sweepy_hardware_drivers' build argument 'cmake_args' from command line to 'None'
+[0.424s] Level 5:colcon.colcon_core.verb:set package 'sweepy_hardware_drivers' build argument 'cmake_target' from command line to 'None'
+[0.424s] Level 5:colcon.colcon_core.verb:set package 'sweepy_hardware_drivers' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.424s] Level 5:colcon.colcon_core.verb:set package 'sweepy_hardware_drivers' build argument 'cmake_clean_cache' from command line to 'False'
+[0.424s] Level 5:colcon.colcon_core.verb:set package 'sweepy_hardware_drivers' build argument 'cmake_clean_first' from command line to 'False'
+[0.424s] Level 5:colcon.colcon_core.verb:set package 'sweepy_hardware_drivers' build argument 'cmake_force_configure' from command line to 'False'
+[0.424s] Level 5:colcon.colcon_core.verb:set package 'sweepy_hardware_drivers' build argument 'ament_cmake_args' from command line to 'None'
+[0.424s] Level 5:colcon.colcon_core.verb:set package 'sweepy_hardware_drivers' build argument 'catkin_cmake_args' from command line to 'None'
+[0.424s] Level 5:colcon.colcon_core.verb:set package 'sweepy_hardware_drivers' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.425s] DEBUG:colcon.colcon_core.verb:Building package 'sweepy_hardware_drivers' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/robot/sweepy_dev_ws/build/sweepy_hardware_drivers', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/robot/sweepy_dev_ws/install/sweepy_hardware_drivers', 'merge_install': False, 'path': '/home/robot/sweepy_dev_ws/src/sweepy_hardware_drivers', 'symlink_install': False, 'test_result_base': None}
+[0.425s] Level 5:colcon.colcon_core.verb:set package 'sweepy_nav' build argument 'cmake_args' from command line to 'None'
+[0.425s] Level 5:colcon.colcon_core.verb:set package 'sweepy_nav' build argument 'cmake_target' from command line to 'None'
+[0.425s] Level 5:colcon.colcon_core.verb:set package 'sweepy_nav' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.425s] Level 5:colcon.colcon_core.verb:set package 'sweepy_nav' build argument 'cmake_clean_cache' from command line to 'False'
+[0.425s] Level 5:colcon.colcon_core.verb:set package 'sweepy_nav' build argument 'cmake_clean_first' from command line to 'False'
+[0.425s] Level 5:colcon.colcon_core.verb:set package 'sweepy_nav' build argument 'cmake_force_configure' from command line to 'False'
+[0.425s] Level 5:colcon.colcon_core.verb:set package 'sweepy_nav' build argument 'ament_cmake_args' from command line to 'None'
+[0.425s] Level 5:colcon.colcon_core.verb:set package 'sweepy_nav' build argument 'catkin_cmake_args' from command line to 'None'
+[0.425s] Level 5:colcon.colcon_core.verb:set package 'sweepy_nav' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.425s] DEBUG:colcon.colcon_core.verb:Building package 'sweepy_nav' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/robot/sweepy_dev_ws/build/sweepy_nav', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/robot/sweepy_dev_ws/install/sweepy_nav', 'merge_install': False, 'path': '/home/robot/sweepy_dev_ws/src/sweepy_nav', 'symlink_install': False, 'test_result_base': None}
+[0.426s] Level 5:colcon.colcon_core.verb:set package 'sweepy_perception' build argument 'cmake_args' from command line to 'None'
+[0.426s] Level 5:colcon.colcon_core.verb:set package 'sweepy_perception' build argument 'cmake_target' from command line to 'None'
+[0.426s] Level 5:colcon.colcon_core.verb:set package 'sweepy_perception' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.426s] Level 5:colcon.colcon_core.verb:set package 'sweepy_perception' build argument 'cmake_clean_cache' from command line to 'False'
+[0.426s] Level 5:colcon.colcon_core.verb:set package 'sweepy_perception' build argument 'cmake_clean_first' from command line to 'False'
+[0.426s] Level 5:colcon.colcon_core.verb:set package 'sweepy_perception' build argument 'cmake_force_configure' from command line to 'False'
+[0.426s] Level 5:colcon.colcon_core.verb:set package 'sweepy_perception' build argument 'ament_cmake_args' from command line to 'None'
+[0.426s] Level 5:colcon.colcon_core.verb:set package 'sweepy_perception' build argument 'catkin_cmake_args' from command line to 'None'
+[0.426s] Level 5:colcon.colcon_core.verb:set package 'sweepy_perception' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.426s] DEBUG:colcon.colcon_core.verb:Building package 'sweepy_perception' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/robot/sweepy_dev_ws/build/sweepy_perception', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/robot/sweepy_dev_ws/install/sweepy_perception', 'merge_install': False, 'path': '/home/robot/sweepy_dev_ws/src/sweepy_perception', 'symlink_install': False, 'test_result_base': None}
+[0.426s] Level 5:colcon.colcon_core.verb:set package 'roboclaw_hardware_interface' build argument 'cmake_args' from command line to 'None'
+[0.426s] Level 5:colcon.colcon_core.verb:set package 'roboclaw_hardware_interface' build argument 'cmake_target' from command line to 'None'
+[0.426s] Level 5:colcon.colcon_core.verb:set package 'roboclaw_hardware_interface' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.426s] Level 5:colcon.colcon_core.verb:set package 'roboclaw_hardware_interface' build argument 'cmake_clean_cache' from command line to 'False'
+[0.426s] Level 5:colcon.colcon_core.verb:set package 'roboclaw_hardware_interface' build argument 'cmake_clean_first' from command line to 'False'
+[0.426s] Level 5:colcon.colcon_core.verb:set package 'roboclaw_hardware_interface' build argument 'cmake_force_configure' from command line to 'False'
+[0.427s] Level 5:colcon.colcon_core.verb:set package 'roboclaw_hardware_interface' build argument 'ament_cmake_args' from command line to 'None'
+[0.427s] Level 5:colcon.colcon_core.verb:set package 'roboclaw_hardware_interface' build argument 'catkin_cmake_args' from command line to 'None'
+[0.427s] Level 5:colcon.colcon_core.verb:set package 'roboclaw_hardware_interface' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.427s] DEBUG:colcon.colcon_core.verb:Building package 'roboclaw_hardware_interface' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/robot/sweepy_dev_ws/build/roboclaw_hardware_interface', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/robot/sweepy_dev_ws/install/roboclaw_hardware_interface', 'merge_install': False, 'path': '/home/robot/sweepy_dev_ws/src/roboclaw_hardware_interface', 'symlink_install': False, 'test_result_base': None}
+[0.427s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[0.428s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[0.429s] INFO:colcon.colcon_ros.task.catkin.build:Building ROS package in '/home/robot/sweepy_dev_ws/src/roboclaw_serial' with build type 'catkin'
+[0.429s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/robot/sweepy_dev_ws/src/roboclaw_serial'
+[0.432s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[0.432s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.432s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.438s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/robot/sweepy_dev_ws/src/laser_filters' with build type 'ament_cmake'
+[0.438s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/robot/sweepy_dev_ws/src/laser_filters'
+[0.438s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.438s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.445s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/robot/sweepy_dev_ws/src/ros2_mpu9250_driver' with build type 'ament_cmake'
+[0.445s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/robot/sweepy_dev_ws/src/ros2_mpu9250_driver'
+[0.446s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.446s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.453s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/robot/sweepy_dev_ws/src/sweepy_bringup' with build type 'ament_cmake'
+[0.453s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/robot/sweepy_dev_ws/src/sweepy_bringup'
+[0.454s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.454s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.462s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/robot/sweepy_dev_ws/src/sweepy_hardware_drivers' with build type 'ament_cmake'
+[0.462s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/robot/sweepy_dev_ws/src/sweepy_hardware_drivers'
+[0.463s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.463s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.471s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/robot/sweepy_dev_ws/src/sweepy_nav' with build type 'ament_cmake'
+[0.471s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/robot/sweepy_dev_ws/src/sweepy_nav'
+[0.472s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.472s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.481s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/robot/sweepy_dev_ws/src/sweepy_perception' with build type 'ament_cmake'
+[0.481s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/robot/sweepy_dev_ws/src/sweepy_perception'
+[0.481s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.481s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.500s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/robot/sweepy_dev_ws/build/roboclaw_serial': /usr/bin/cmake --build /home/robot/sweepy_dev_ws/build/roboclaw_serial -- -j8 -l8
+[0.506s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/robot/sweepy_dev_ws/build/laser_filters': CMAKE_PREFIX_PATH=/home/robot/sweepy_dev_ws/install/sweepy_perception:/home/robot/sweepy_dev_ws/install/sweepy_nav:/home/robot/sweepy_dev_ws/install/sweepy_hardware_drivers:/home/robot/sweepy_dev_ws/install/sweepy_bringup:/opt/ros/humble:/home/robot/sweepy_dev_ws/install/roboclaw_serial:/home/robot/sweepy_dev_ws/install/roboclaw_hardware_interface:/home/robot/sweepy_dev_ws/install/mpu9250driver:/home/robot/sweepy_dev_ws/install/laser_filters:/home/robot/sweepy_ws/install/sweeper_bot:/home/robot/sweepy_ws/install/roboclaw_serial:/home/robot/sweepy_ws/install/roboclaw_hardware_interface:/home/robot/sweepy_ws/install/mpu9250driver:/home/robot/sweepy_ws/install/laser_filters /usr/bin/cmake --build /home/robot/sweepy_dev_ws/build/laser_filters -- -j8 -l8
+[0.511s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/robot/sweepy_dev_ws/build/mpu9250driver': CMAKE_PREFIX_PATH=/home/robot/sweepy_dev_ws/install/sweepy_perception:/home/robot/sweepy_dev_ws/install/sweepy_nav:/home/robot/sweepy_dev_ws/install/sweepy_hardware_drivers:/home/robot/sweepy_dev_ws/install/sweepy_bringup:/opt/ros/humble:/home/robot/sweepy_dev_ws/install/roboclaw_serial:/home/robot/sweepy_dev_ws/install/roboclaw_hardware_interface:/home/robot/sweepy_dev_ws/install/mpu9250driver:/home/robot/sweepy_dev_ws/install/laser_filters:/home/robot/sweepy_ws/install/sweeper_bot:/home/robot/sweepy_ws/install/roboclaw_serial:/home/robot/sweepy_ws/install/roboclaw_hardware_interface:/home/robot/sweepy_ws/install/mpu9250driver:/home/robot/sweepy_ws/install/laser_filters /usr/bin/cmake --build /home/robot/sweepy_dev_ws/build/mpu9250driver -- -j8 -l8
+[0.518s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/robot/sweepy_dev_ws/build/sweepy_bringup': CMAKE_PREFIX_PATH=/home/robot/sweepy_dev_ws/install/sweepy_perception:/home/robot/sweepy_dev_ws/install/sweepy_nav:/home/robot/sweepy_dev_ws/install/sweepy_hardware_drivers:/home/robot/sweepy_dev_ws/install/sweepy_bringup:/opt/ros/humble:/home/robot/sweepy_dev_ws/install/roboclaw_serial:/home/robot/sweepy_dev_ws/install/roboclaw_hardware_interface:/home/robot/sweepy_dev_ws/install/mpu9250driver:/home/robot/sweepy_dev_ws/install/laser_filters:/home/robot/sweepy_ws/install/sweeper_bot:/home/robot/sweepy_ws/install/roboclaw_serial:/home/robot/sweepy_ws/install/roboclaw_hardware_interface:/home/robot/sweepy_ws/install/mpu9250driver:/home/robot/sweepy_ws/install/laser_filters /usr/bin/cmake --build /home/robot/sweepy_dev_ws/build/sweepy_bringup -- -j8 -l8
+[0.525s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/robot/sweepy_dev_ws/build/sweepy_hardware_drivers': CMAKE_PREFIX_PATH=/home/robot/sweepy_dev_ws/install/sweepy_perception:/home/robot/sweepy_dev_ws/install/sweepy_nav:/home/robot/sweepy_dev_ws/install/sweepy_hardware_drivers:/home/robot/sweepy_dev_ws/install/sweepy_bringup:/opt/ros/humble:/home/robot/sweepy_dev_ws/install/roboclaw_serial:/home/robot/sweepy_dev_ws/install/roboclaw_hardware_interface:/home/robot/sweepy_dev_ws/install/mpu9250driver:/home/robot/sweepy_dev_ws/install/laser_filters:/home/robot/sweepy_ws/install/sweeper_bot:/home/robot/sweepy_ws/install/roboclaw_serial:/home/robot/sweepy_ws/install/roboclaw_hardware_interface:/home/robot/sweepy_ws/install/mpu9250driver:/home/robot/sweepy_ws/install/laser_filters /usr/bin/cmake --build /home/robot/sweepy_dev_ws/build/sweepy_hardware_drivers -- -j8 -l8
+[0.533s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/robot/sweepy_dev_ws/build/sweepy_nav': CMAKE_PREFIX_PATH=/home/robot/sweepy_dev_ws/install/sweepy_perception:/home/robot/sweepy_dev_ws/install/sweepy_nav:/home/robot/sweepy_dev_ws/install/sweepy_hardware_drivers:/home/robot/sweepy_dev_ws/install/sweepy_bringup:/opt/ros/humble:/home/robot/sweepy_dev_ws/install/roboclaw_serial:/home/robot/sweepy_dev_ws/install/roboclaw_hardware_interface:/home/robot/sweepy_dev_ws/install/mpu9250driver:/home/robot/sweepy_dev_ws/install/laser_filters:/home/robot/sweepy_ws/install/sweeper_bot:/home/robot/sweepy_ws/install/roboclaw_serial:/home/robot/sweepy_ws/install/roboclaw_hardware_interface:/home/robot/sweepy_ws/install/mpu9250driver:/home/robot/sweepy_ws/install/laser_filters /usr/bin/cmake --build /home/robot/sweepy_dev_ws/build/sweepy_nav -- -j8 -l8
+[0.550s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/robot/sweepy_dev_ws/build/sweepy_perception': CMAKE_PREFIX_PATH=/home/robot/sweepy_dev_ws/install/sweepy_perception:/home/robot/sweepy_dev_ws/install/sweepy_nav:/home/robot/sweepy_dev_ws/install/sweepy_hardware_drivers:/home/robot/sweepy_dev_ws/install/sweepy_bringup:/opt/ros/humble:/home/robot/sweepy_dev_ws/install/roboclaw_serial:/home/robot/sweepy_dev_ws/install/roboclaw_hardware_interface:/home/robot/sweepy_dev_ws/install/mpu9250driver:/home/robot/sweepy_dev_ws/install/laser_filters:/home/robot/sweepy_ws/install/sweeper_bot:/home/robot/sweepy_ws/install/roboclaw_serial:/home/robot/sweepy_ws/install/roboclaw_hardware_interface:/home/robot/sweepy_ws/install/mpu9250driver:/home/robot/sweepy_ws/install/laser_filters /usr/bin/cmake --build /home/robot/sweepy_dev_ws/build/sweepy_perception -- -j8 -l8
+[0.613s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/robot/sweepy_dev_ws/build/mpu9250driver' returned '0': CMAKE_PREFIX_PATH=/home/robot/sweepy_dev_ws/install/sweepy_perception:/home/robot/sweepy_dev_ws/install/sweepy_nav:/home/robot/sweepy_dev_ws/install/sweepy_hardware_drivers:/home/robot/sweepy_dev_ws/install/sweepy_bringup:/opt/ros/humble:/home/robot/sweepy_dev_ws/install/roboclaw_serial:/home/robot/sweepy_dev_ws/install/roboclaw_hardware_interface:/home/robot/sweepy_dev_ws/install/mpu9250driver:/home/robot/sweepy_dev_ws/install/laser_filters:/home/robot/sweepy_ws/install/sweeper_bot:/home/robot/sweepy_ws/install/roboclaw_serial:/home/robot/sweepy_ws/install/roboclaw_hardware_interface:/home/robot/sweepy_ws/install/mpu9250driver:/home/robot/sweepy_ws/install/laser_filters /usr/bin/cmake --build /home/robot/sweepy_dev_ws/build/mpu9250driver -- -j8 -l8
+[0.634s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/robot/sweepy_dev_ws/build/mpu9250driver': CMAKE_PREFIX_PATH=/home/robot/sweepy_dev_ws/install/sweepy_perception:/home/robot/sweepy_dev_ws/install/sweepy_nav:/home/robot/sweepy_dev_ws/install/sweepy_hardware_drivers:/home/robot/sweepy_dev_ws/install/sweepy_bringup:/opt/ros/humble:/home/robot/sweepy_dev_ws/install/roboclaw_serial:/home/robot/sweepy_dev_ws/install/roboclaw_hardware_interface:/home/robot/sweepy_dev_ws/install/mpu9250driver:/home/robot/sweepy_dev_ws/install/laser_filters:/home/robot/sweepy_ws/install/sweeper_bot:/home/robot/sweepy_ws/install/roboclaw_serial:/home/robot/sweepy_ws/install/roboclaw_hardware_interface:/home/robot/sweepy_ws/install/mpu9250driver:/home/robot/sweepy_ws/install/laser_filters /usr/bin/cmake --install /home/robot/sweepy_dev_ws/build/mpu9250driver
+[0.636s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/robot/sweepy_dev_ws/build/sweepy_nav' returned '0': CMAKE_PREFIX_PATH=/home/robot/sweepy_dev_ws/install/sweepy_perception:/home/robot/sweepy_dev_ws/install/sweepy_nav:/home/robot/sweepy_dev_ws/install/sweepy_hardware_drivers:/home/robot/sweepy_dev_ws/install/sweepy_bringup:/opt/ros/humble:/home/robot/sweepy_dev_ws/install/roboclaw_serial:/home/robot/sweepy_dev_ws/install/roboclaw_hardware_interface:/home/robot/sweepy_dev_ws/install/mpu9250driver:/home/robot/sweepy_dev_ws/install/laser_filters:/home/robot/sweepy_ws/install/sweeper_bot:/home/robot/sweepy_ws/install/roboclaw_serial:/home/robot/sweepy_ws/install/roboclaw_hardware_interface:/home/robot/sweepy_ws/install/mpu9250driver:/home/robot/sweepy_ws/install/laser_filters /usr/bin/cmake --build /home/robot/sweepy_dev_ws/build/sweepy_nav -- -j8 -l8
+[0.645s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/robot/sweepy_dev_ws/build/sweepy_nav': CMAKE_PREFIX_PATH=/home/robot/sweepy_dev_ws/install/sweepy_perception:/home/robot/sweepy_dev_ws/install/sweepy_nav:/home/robot/sweepy_dev_ws/install/sweepy_hardware_drivers:/home/robot/sweepy_dev_ws/install/sweepy_bringup:/opt/ros/humble:/home/robot/sweepy_dev_ws/install/roboclaw_serial:/home/robot/sweepy_dev_ws/install/roboclaw_hardware_interface:/home/robot/sweepy_dev_ws/install/mpu9250driver:/home/robot/sweepy_dev_ws/install/laser_filters:/home/robot/sweepy_ws/install/sweeper_bot:/home/robot/sweepy_ws/install/roboclaw_serial:/home/robot/sweepy_ws/install/roboclaw_hardware_interface:/home/robot/sweepy_ws/install/mpu9250driver:/home/robot/sweepy_ws/install/laser_filters /usr/bin/cmake --install /home/robot/sweepy_dev_ws/build/sweepy_nav
+[0.673s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(mpu9250driver)
+[0.680s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/robot/sweepy_dev_ws/build/sweepy_bringup' returned '0': CMAKE_PREFIX_PATH=/home/robot/sweepy_dev_ws/install/sweepy_perception:/home/robot/sweepy_dev_ws/install/sweepy_nav:/home/robot/sweepy_dev_ws/install/sweepy_hardware_drivers:/home/robot/sweepy_dev_ws/install/sweepy_bringup:/opt/ros/humble:/home/robot/sweepy_dev_ws/install/roboclaw_serial:/home/robot/sweepy_dev_ws/install/roboclaw_hardware_interface:/home/robot/sweepy_dev_ws/install/mpu9250driver:/home/robot/sweepy_dev_ws/install/laser_filters:/home/robot/sweepy_ws/install/sweeper_bot:/home/robot/sweepy_ws/install/roboclaw_serial:/home/robot/sweepy_ws/install/roboclaw_hardware_interface:/home/robot/sweepy_ws/install/mpu9250driver:/home/robot/sweepy_ws/install/laser_filters /usr/bin/cmake --build /home/robot/sweepy_dev_ws/build/sweepy_bringup -- -j8 -l8
+[0.681s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/robot/sweepy_dev_ws/build/sweepy_bringup': CMAKE_PREFIX_PATH=/home/robot/sweepy_dev_ws/install/sweepy_perception:/home/robot/sweepy_dev_ws/install/sweepy_nav:/home/robot/sweepy_dev_ws/install/sweepy_hardware_drivers:/home/robot/sweepy_dev_ws/install/sweepy_bringup:/opt/ros/humble:/home/robot/sweepy_dev_ws/install/roboclaw_serial:/home/robot/sweepy_dev_ws/install/roboclaw_hardware_interface:/home/robot/sweepy_dev_ws/install/mpu9250driver:/home/robot/sweepy_dev_ws/install/laser_filters:/home/robot/sweepy_ws/install/sweeper_bot:/home/robot/sweepy_ws/install/roboclaw_serial:/home/robot/sweepy_ws/install/roboclaw_hardware_interface:/home/robot/sweepy_ws/install/mpu9250driver:/home/robot/sweepy_ws/install/laser_filters /usr/bin/cmake --install /home/robot/sweepy_dev_ws/build/sweepy_bringup
+[0.682s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/robot/sweepy_dev_ws/build/sweepy_perception' returned '0': CMAKE_PREFIX_PATH=/home/robot/sweepy_dev_ws/install/sweepy_perception:/home/robot/sweepy_dev_ws/install/sweepy_nav:/home/robot/sweepy_dev_ws/install/sweepy_hardware_drivers:/home/robot/sweepy_dev_ws/install/sweepy_bringup:/opt/ros/humble:/home/robot/sweepy_dev_ws/install/roboclaw_serial:/home/robot/sweepy_dev_ws/install/roboclaw_hardware_interface:/home/robot/sweepy_dev_ws/install/mpu9250driver:/home/robot/sweepy_dev_ws/install/laser_filters:/home/robot/sweepy_ws/install/sweeper_bot:/home/robot/sweepy_ws/install/roboclaw_serial:/home/robot/sweepy_ws/install/roboclaw_hardware_interface:/home/robot/sweepy_ws/install/mpu9250driver:/home/robot/sweepy_ws/install/laser_filters /usr/bin/cmake --build /home/robot/sweepy_dev_ws/build/sweepy_perception -- -j8 -l8
+[0.684s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/robot/sweepy_dev_ws/build/sweepy_perception': CMAKE_PREFIX_PATH=/home/robot/sweepy_dev_ws/install/sweepy_perception:/home/robot/sweepy_dev_ws/install/sweepy_nav:/home/robot/sweepy_dev_ws/install/sweepy_hardware_drivers:/home/robot/sweepy_dev_ws/install/sweepy_bringup:/opt/ros/humble:/home/robot/sweepy_dev_ws/install/roboclaw_serial:/home/robot/sweepy_dev_ws/install/roboclaw_hardware_interface:/home/robot/sweepy_dev_ws/install/mpu9250driver:/home/robot/sweepy_dev_ws/install/laser_filters:/home/robot/sweepy_ws/install/sweeper_bot:/home/robot/sweepy_ws/install/roboclaw_serial:/home/robot/sweepy_ws/install/roboclaw_hardware_interface:/home/robot/sweepy_ws/install/mpu9250driver:/home/robot/sweepy_ws/install/laser_filters /usr/bin/cmake --install /home/robot/sweepy_dev_ws/build/sweepy_perception
+[0.688s] Level 1:colcon.colcon_core.environment:checking '/home/robot/sweepy_dev_ws/install/mpu9250driver' for CMake module files
+[0.689s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/robot/sweepy_dev_ws/build/roboclaw_serial' returned '0': /usr/bin/cmake --build /home/robot/sweepy_dev_ws/build/roboclaw_serial -- -j8 -l8
+[0.690s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/robot/sweepy_dev_ws/build/roboclaw_serial': /usr/bin/cmake --install /home/robot/sweepy_dev_ws/build/roboclaw_serial
+[0.694s] Level 1:colcon.colcon_core.environment:checking '/home/robot/sweepy_dev_ws/install/mpu9250driver' for CMake config files
+[0.695s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/robot/sweepy_dev_ws/build/mpu9250driver' returned '0': CMAKE_PREFIX_PATH=/home/robot/sweepy_dev_ws/install/sweepy_perception:/home/robot/sweepy_dev_ws/install/sweepy_nav:/home/robot/sweepy_dev_ws/install/sweepy_hardware_drivers:/home/robot/sweepy_dev_ws/install/sweepy_bringup:/opt/ros/humble:/home/robot/sweepy_dev_ws/install/roboclaw_serial:/home/robot/sweepy_dev_ws/install/roboclaw_hardware_interface:/home/robot/sweepy_dev_ws/install/mpu9250driver:/home/robot/sweepy_dev_ws/install/laser_filters:/home/robot/sweepy_ws/install/sweeper_bot:/home/robot/sweepy_ws/install/roboclaw_serial:/home/robot/sweepy_ws/install/roboclaw_hardware_interface:/home/robot/sweepy_ws/install/mpu9250driver:/home/robot/sweepy_ws/install/laser_filters /usr/bin/cmake --install /home/robot/sweepy_dev_ws/build/mpu9250driver
+[0.703s] Level 1:colcon.colcon_core.shell:create_environment_hook('mpu9250driver', 'cmake_prefix_path')
+[0.703s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/robot/sweepy_dev_ws/install/mpu9250driver/share/mpu9250driver/hook/cmake_prefix_path.ps1'
+[0.705s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/robot/sweepy_dev_ws/install/mpu9250driver/share/mpu9250driver/hook/cmake_prefix_path.dsv'
+[0.706s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/robot/sweepy_dev_ws/install/mpu9250driver/share/mpu9250driver/hook/cmake_prefix_path.sh'
+[0.708s] Level 1:colcon.colcon_core.environment:checking '/home/robot/sweepy_dev_ws/install/mpu9250driver/lib'
+[0.709s] Level 1:colcon.colcon_core.environment:checking '/home/robot/sweepy_dev_ws/install/mpu9250driver/bin'
+[0.709s] Level 1:colcon.colcon_core.environment:checking '/home/robot/sweepy_dev_ws/install/mpu9250driver/lib/pkgconfig/mpu9250driver.pc'
+[0.710s] Level 1:colcon.colcon_core.environment:checking '/home/robot/sweepy_dev_ws/install/mpu9250driver/lib/python3.10/site-packages'
+[0.711s] Level 1:colcon.colcon_core.environment:checking '/home/robot/sweepy_dev_ws/install/mpu9250driver/bin'
+[0.711s] INFO:colcon.colcon_core.shell:Creating package script '/home/robot/sweepy_dev_ws/install/mpu9250driver/share/mpu9250driver/package.ps1'
+[0.714s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/robot/sweepy_dev_ws/install/mpu9250driver/share/mpu9250driver/package.dsv'
+[0.716s] INFO:colcon.colcon_core.shell:Creating package script '/home/robot/sweepy_dev_ws/install/mpu9250driver/share/mpu9250driver/package.sh'
+[0.718s] INFO:colcon.colcon_core.shell:Creating package script '/home/robot/sweepy_dev_ws/install/mpu9250driver/share/mpu9250driver/package.bash'
+[0.720s] INFO:colcon.colcon_core.shell:Creating package script '/home/robot/sweepy_dev_ws/install/mpu9250driver/share/mpu9250driver/package.zsh'
+[0.722s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/robot/sweepy_dev_ws/install/mpu9250driver/share/colcon-core/packages/mpu9250driver)
+[0.723s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(mpu9250driver)
+[0.723s] Level 1:colcon.colcon_core.environment:checking '/home/robot/sweepy_dev_ws/install/mpu9250driver' for CMake module files
+[0.724s] Level 1:colcon.colcon_core.environment:checking '/home/robot/sweepy_dev_ws/install/mpu9250driver' for CMake config files
+[0.725s] Level 1:colcon.colcon_core.shell:create_environment_hook('mpu9250driver', 'cmake_prefix_path')
+[0.725s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/robot/sweepy_dev_ws/install/mpu9250driver/share/mpu9250driver/hook/cmake_prefix_path.ps1'
+[0.726s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/robot/sweepy_dev_ws/install/mpu9250driver/share/mpu9250driver/hook/cmake_prefix_path.dsv'
+[0.727s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/robot/sweepy_dev_ws/install/mpu9250driver/share/mpu9250driver/hook/cmake_prefix_path.sh'
+[0.728s] Level 1:colcon.colcon_core.environment:checking '/home/robot/sweepy_dev_ws/install/mpu9250driver/lib'
+[0.728s] Level 1:colcon.colcon_core.environment:checking '/home/robot/sweepy_dev_ws/install/mpu9250driver/bin'
+[0.729s] Level 1:colcon.colcon_core.environment:checking '/home/robot/sweepy_dev_ws/install/mpu9250driver/lib/pkgconfig/mpu9250driver.pc'
+[0.729s] Level 1:colcon.colcon_core.environment:checking '/home/robot/sweepy_dev_ws/install/mpu9250driver/lib/python3.10/site-packages'
+[0.730s] Level 1:colcon.colcon_core.environment:checking '/home/robot/sweepy_dev_ws/install/mpu9250driver/bin'
+[0.731s] INFO:colcon.colcon_core.shell:Creating package script '/home/robot/sweepy_dev_ws/install/mpu9250driver/share/mpu9250driver/package.ps1'
+[0.732s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/robot/sweepy_dev_ws/install/mpu9250driver/share/mpu9250driver/package.dsv'
+[0.733s] INFO:colcon.colcon_core.shell:Creating package script '/home/robot/sweepy_dev_ws/install/mpu9250driver/share/mpu9250driver/package.sh'
+[0.733s] INFO:colcon.colcon_core.shell:Creating package script '/home/robot/sweepy_dev_ws/install/mpu9250driver/share/mpu9250driver/package.bash'
+[0.734s] INFO:colcon.colcon_core.shell:Creating package script '/home/robot/sweepy_dev_ws/install/mpu9250driver/share/mpu9250driver/package.zsh'
+[0.735s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/robot/sweepy_dev_ws/install/mpu9250driver/share/colcon-core/packages/mpu9250driver)
+[0.737s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(sweepy_nav)
+[0.738s] Level 1:colcon.colcon_core.environment:checking '/home/robot/sweepy_dev_ws/install/sweepy_nav' for CMake module files
+[0.740s] Level 1:colcon.colcon_core.environment:checking '/home/robot/sweepy_dev_ws/install/sweepy_nav' for CMake config files
+[0.741s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/robot/sweepy_dev_ws/build/sweepy_nav' returned '0': CMAKE_PREFIX_PATH=/home/robot/sweepy_dev_ws/install/sweepy_perception:/home/robot/sweepy_dev_ws/install/sweepy_nav:/home/robot/sweepy_dev_ws/install/sweepy_hardware_drivers:/home/robot/sweepy_dev_ws/install/sweepy_bringup:/opt/ros/humble:/home/robot/sweepy_dev_ws/install/roboclaw_serial:/home/robot/sweepy_dev_ws/install/roboclaw_hardware_interface:/home/robot/sweepy_dev_ws/install/mpu9250driver:/home/robot/sweepy_dev_ws/install/laser_filters:/home/robot/sweepy_ws/install/sweeper_bot:/home/robot/sweepy_ws/install/roboclaw_serial:/home/robot/sweepy_ws/install/roboclaw_hardware_interface:/home/robot/sweepy_ws/install/mpu9250driver:/home/robot/sweepy_ws/install/laser_filters /usr/bin/cmake --install /home/robot/sweepy_dev_ws/build/sweepy_nav
+[0.741s] Level 1:colcon.colcon_core.shell:create_environment_hook('sweepy_nav', 'cmake_prefix_path')
+[0.742s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/robot/sweepy_dev_ws/install/sweepy_nav/share/sweepy_nav/hook/cmake_prefix_path.ps1'
+[0.742s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/robot/sweepy_dev_ws/install/sweepy_nav/share/sweepy_nav/hook/cmake_prefix_path.dsv'
+[0.743s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/robot/sweepy_dev_ws/install/sweepy_nav/share/sweepy_nav/hook/cmake_prefix_path.sh'
+[0.743s] Level 1:colcon.colcon_core.environment:checking '/home/robot/sweepy_dev_ws/install/sweepy_nav/bin'
+[0.743s] Level 1:colcon.colcon_core.environment:checking '/home/robot/sweepy_dev_ws/install/sweepy_nav/lib/pkgconfig/sweepy_nav.pc'
+[0.744s] Level 1:colcon.colcon_core.environment:checking '/home/robot/sweepy_dev_ws/install/sweepy_nav/lib/python3.10/site-packages'
+[0.744s] Level 1:colcon.colcon_core.environment:checking '/home/robot/sweepy_dev_ws/install/sweepy_nav/bin'
+[0.745s] INFO:colcon.colcon_core.shell:Creating package script '/home/robot/sweepy_dev_ws/install/sweepy_nav/share/sweepy_nav/package.ps1'
+[0.745s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/robot/sweepy_dev_ws/install/sweepy_nav/share/sweepy_nav/package.dsv'
+[0.746s] INFO:colcon.colcon_core.shell:Creating package script '/home/robot/sweepy_dev_ws/install/sweepy_nav/share/sweepy_nav/package.sh'
+[0.746s] INFO:colcon.colcon_core.shell:Creating package script '/home/robot/sweepy_dev_ws/install/sweepy_nav/share/sweepy_nav/package.bash'
+[0.746s] INFO:colcon.colcon_core.shell:Creating package script '/home/robot/sweepy_dev_ws/install/sweepy_nav/share/sweepy_nav/package.zsh'
+[0.747s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/robot/sweepy_dev_ws/install/sweepy_nav/share/colcon-core/packages/sweepy_nav)
+[0.748s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(sweepy_nav)
+[0.748s] Level 1:colcon.colcon_core.environment:checking '/home/robot/sweepy_dev_ws/install/sweepy_nav' for CMake module files
+[0.748s] Level 1:colcon.colcon_core.environment:checking '/home/robot/sweepy_dev_ws/install/sweepy_nav' for CMake config files
+[0.749s] Level 1:colcon.colcon_core.shell:create_environment_hook('sweepy_nav', 'cmake_prefix_path')
+[0.749s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/robot/sweepy_dev_ws/install/sweepy_nav/share/sweepy_nav/hook/cmake_prefix_path.ps1'
+[0.750s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/robot/sweepy_dev_ws/install/sweepy_nav/share/sweepy_nav/hook/cmake_prefix_path.dsv'
+[0.750s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/robot/sweepy_dev_ws/install/sweepy_nav/share/sweepy_nav/hook/cmake_prefix_path.sh'
+[0.751s] Level 1:colcon.colcon_core.environment:checking '/home/robot/sweepy_dev_ws/install/sweepy_nav/bin'
+[0.751s] Level 1:colcon.colcon_core.environment:checking '/home/robot/sweepy_dev_ws/install/sweepy_nav/lib/pkgconfig/sweepy_nav.pc'
+[0.751s] Level 1:colcon.colcon_core.environment:checking '/home/robot/sweepy_dev_ws/install/sweepy_nav/lib/python3.10/site-packages'
+[0.751s] Level 1:colcon.colcon_core.environment:checking '/home/robot/sweepy_dev_ws/install/sweepy_nav/bin'
+[0.752s] INFO:colcon.colcon_core.shell:Creating package script '/home/robot/sweepy_dev_ws/install/sweepy_nav/share/sweepy_nav/package.ps1'
+[0.752s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/robot/sweepy_dev_ws/install/sweepy_nav/share/sweepy_nav/package.dsv'
+[0.753s] INFO:colcon.colcon_core.shell:Creating package script '/home/robot/sweepy_dev_ws/install/sweepy_nav/share/sweepy_nav/package.sh'
+[0.753s] INFO:colcon.colcon_core.shell:Creating package script '/home/robot/sweepy_dev_ws/install/sweepy_nav/share/sweepy_nav/package.bash'
+[0.754s] INFO:colcon.colcon_core.shell:Creating package script '/home/robot/sweepy_dev_ws/install/sweepy_nav/share/sweepy_nav/package.zsh'
+[0.755s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/robot/sweepy_dev_ws/install/sweepy_nav/share/colcon-core/packages/sweepy_nav)
+[0.755s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(sweepy_bringup)
+[0.756s] Level 1:colcon.colcon_core.environment:checking '/home/robot/sweepy_dev_ws/install/sweepy_bringup' for CMake module files
+[0.759s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/robot/sweepy_dev_ws/build/sweepy_bringup' returned '0': CMAKE_PREFIX_PATH=/home/robot/sweepy_dev_ws/install/sweepy_perception:/home/robot/sweepy_dev_ws/install/sweepy_nav:/home/robot/sweepy_dev_ws/install/sweepy_hardware_drivers:/home/robot/sweepy_dev_ws/install/sweepy_bringup:/opt/ros/humble:/home/robot/sweepy_dev_ws/install/roboclaw_serial:/home/robot/sweepy_dev_ws/install/roboclaw_hardware_interface:/home/robot/sweepy_dev_ws/install/mpu9250driver:/home/robot/sweepy_dev_ws/install/laser_filters:/home/robot/sweepy_ws/install/sweeper_bot:/home/robot/sweepy_ws/install/roboclaw_serial:/home/robot/sweepy_ws/install/roboclaw_hardware_interface:/home/robot/sweepy_ws/install/mpu9250driver:/home/robot/sweepy_ws/install/laser_filters /usr/bin/cmake --install /home/robot/sweepy_dev_ws/build/sweepy_bringup
+[0.759s] Level 1:colcon.colcon_core.environment:checking '/home/robot/sweepy_dev_ws/install/sweepy_bringup' for CMake config files
+[0.759s] Level 1:colcon.colcon_core.shell:create_environment_hook('sweepy_bringup', 'cmake_prefix_path')
+[0.760s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/robot/sweepy_dev_ws/install/sweepy_bringup/share/sweepy_bringup/hook/cmake_prefix_path.ps1'
+[0.761s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/robot/sweepy_dev_ws/install/sweepy_bringup/share/sweepy_bringup/hook/cmake_prefix_path.dsv'
+[0.761s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/robot/sweepy_dev_ws/install/sweepy_bringup/share/sweepy_bringup/hook/cmake_prefix_path.sh'
+[0.762s] Level 1:colcon.colcon_core.environment:checking '/home/robot/sweepy_dev_ws/install/sweepy_bringup/bin'
+[0.762s] Level 1:colcon.colcon_core.environment:checking '/home/robot/sweepy_dev_ws/install/sweepy_bringup/lib/pkgconfig/sweepy_bringup.pc'
+[0.763s] Level 1:colcon.colcon_core.environment:checking '/home/robot/sweepy_dev_ws/install/sweepy_bringup/lib/python3.10/site-packages'
+[0.763s] Level 1:colcon.colcon_core.environment:checking '/home/robot/sweepy_dev_ws/install/sweepy_bringup/bin'
+[0.764s] INFO:colcon.colcon_core.shell:Creating package script '/home/robot/sweepy_dev_ws/install/sweepy_bringup/share/sweepy_bringup/package.ps1'
+[0.765s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/robot/sweepy_dev_ws/install/sweepy_bringup/share/sweepy_bringup/package.dsv'
+[0.765s] INFO:colcon.colcon_core.shell:Creating package script '/home/robot/sweepy_dev_ws/install/sweepy_bringup/share/sweepy_bringup/package.sh'
+[0.766s] INFO:colcon.colcon_core.shell:Creating package script '/home/robot/sweepy_dev_ws/install/sweepy_bringup/share/sweepy_bringup/package.bash'
+[0.767s] INFO:colcon.colcon_core.shell:Creating package script '/home/robot/sweepy_dev_ws/install/sweepy_bringup/share/sweepy_bringup/package.zsh'
+[0.767s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/robot/sweepy_dev_ws/install/sweepy_bringup/share/colcon-core/packages/sweepy_bringup)
+[0.768s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(sweepy_bringup)
+[0.768s] Level 1:colcon.colcon_core.environment:checking '/home/robot/sweepy_dev_ws/install/sweepy_bringup' for CMake module files
+[0.769s] Level 1:colcon.colcon_core.environment:checking '/home/robot/sweepy_dev_ws/install/sweepy_bringup' for CMake config files
+[0.770s] Level 1:colcon.colcon_core.shell:create_environment_hook('sweepy_bringup', 'cmake_prefix_path')
+[0.771s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/robot/sweepy_dev_ws/install/sweepy_bringup/share/sweepy_bringup/hook/cmake_prefix_path.ps1'
+[0.772s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/robot/sweepy_dev_ws/install/sweepy_bringup/share/sweepy_bringup/hook/cmake_prefix_path.dsv'
+[0.773s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/robot/sweepy_dev_ws/install/sweepy_bringup/share/sweepy_bringup/hook/cmake_prefix_path.sh'
+[0.774s] Level 1:colcon.colcon_core.environment:checking '/home/robot/sweepy_dev_ws/install/sweepy_bringup/bin'
+[0.774s] Level 1:colcon.colcon_core.environment:checking '/home/robot/sweepy_dev_ws/install/sweepy_bringup/lib/pkgconfig/sweepy_bringup.pc'
+[0.775s] Level 1:colcon.colcon_core.environment:checking '/home/robot/sweepy_dev_ws/install/sweepy_bringup/lib/python3.10/site-packages'
+[0.775s] Level 1:colcon.colcon_core.environment:checking '/home/robot/sweepy_dev_ws/install/sweepy_bringup/bin'
+[0.776s] INFO:colcon.colcon_core.shell:Creating package script '/home/robot/sweepy_dev_ws/install/sweepy_bringup/share/sweepy_bringup/package.ps1'
+[0.777s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/robot/sweepy_dev_ws/install/sweepy_bringup/share/sweepy_bringup/package.dsv'
+[0.778s] INFO:colcon.colcon_core.shell:Creating package script '/home/robot/sweepy_dev_ws/install/sweepy_bringup/share/sweepy_bringup/package.sh'
+[0.779s] INFO:colcon.colcon_core.shell:Creating package script '/home/robot/sweepy_dev_ws/install/sweepy_bringup/share/sweepy_bringup/package.bash'
+[0.780s] INFO:colcon.colcon_core.shell:Creating package script '/home/robot/sweepy_dev_ws/install/sweepy_bringup/share/sweepy_bringup/package.zsh'
+[0.781s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/robot/sweepy_dev_ws/install/sweepy_bringup/share/colcon-core/packages/sweepy_bringup)
+[0.781s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(sweepy_perception)
+[0.782s] Level 1:colcon.colcon_core.environment:checking '/home/robot/sweepy_dev_ws/install/sweepy_perception' for CMake module files
+[0.784s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/robot/sweepy_dev_ws/build/sweepy_perception' returned '0': CMAKE_PREFIX_PATH=/home/robot/sweepy_dev_ws/install/sweepy_perception:/home/robot/sweepy_dev_ws/install/sweepy_nav:/home/robot/sweepy_dev_ws/install/sweepy_hardware_drivers:/home/robot/sweepy_dev_ws/install/sweepy_bringup:/opt/ros/humble:/home/robot/sweepy_dev_ws/install/roboclaw_serial:/home/robot/sweepy_dev_ws/install/roboclaw_hardware_interface:/home/robot/sweepy_dev_ws/install/mpu9250driver:/home/robot/sweepy_dev_ws/install/laser_filters:/home/robot/sweepy_ws/install/sweeper_bot:/home/robot/sweepy_ws/install/roboclaw_serial:/home/robot/sweepy_ws/install/roboclaw_hardware_interface:/home/robot/sweepy_ws/install/mpu9250driver:/home/robot/sweepy_ws/install/laser_filters /usr/bin/cmake --install /home/robot/sweepy_dev_ws/build/sweepy_perception
+[0.784s] Level 1:colcon.colcon_core.environment:checking '/home/robot/sweepy_dev_ws/install/sweepy_perception' for CMake config files
+[0.785s] Level 1:colcon.colcon_core.shell:create_environment_hook('sweepy_perception', 'cmake_prefix_path')
+[0.785s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/robot/sweepy_dev_ws/install/sweepy_perception/share/sweepy_perception/hook/cmake_prefix_path.ps1'
+[0.786s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/robot/sweepy_dev_ws/install/sweepy_perception/share/sweepy_perception/hook/cmake_prefix_path.dsv'
+[0.786s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/robot/sweepy_dev_ws/install/sweepy_perception/share/sweepy_perception/hook/cmake_prefix_path.sh'
+[0.787s] Level 1:colcon.colcon_core.environment:checking '/home/robot/sweepy_dev_ws/install/sweepy_perception/bin'
+[0.787s] Level 1:colcon.colcon_core.environment:checking '/home/robot/sweepy_dev_ws/install/sweepy_perception/lib/pkgconfig/sweepy_perception.pc'
+[0.788s] Level 1:colcon.colcon_core.environment:checking '/home/robot/sweepy_dev_ws/install/sweepy_perception/lib/python3.10/site-packages'
+[0.788s] Level 1:colcon.colcon_core.environment:checking '/home/robot/sweepy_dev_ws/install/sweepy_perception/bin'
+[0.789s] INFO:colcon.colcon_core.shell:Creating package script '/home/robot/sweepy_dev_ws/install/sweepy_perception/share/sweepy_perception/package.ps1'
+[0.790s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/robot/sweepy_dev_ws/install/sweepy_perception/share/sweepy_perception/package.dsv'
+[0.792s] INFO:colcon.colcon_core.shell:Creating package script '/home/robot/sweepy_dev_ws/install/sweepy_perception/share/sweepy_perception/package.sh'
+[0.793s] INFO:colcon.colcon_core.shell:Creating package script '/home/robot/sweepy_dev_ws/install/sweepy_perception/share/sweepy_perception/package.bash'
+[0.794s] INFO:colcon.colcon_core.shell:Creating package script '/home/robot/sweepy_dev_ws/install/sweepy_perception/share/sweepy_perception/package.zsh'
+[0.795s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/robot/sweepy_dev_ws/install/sweepy_perception/share/colcon-core/packages/sweepy_perception)
+[0.797s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(sweepy_perception)
+[0.797s] Level 1:colcon.colcon_core.environment:checking '/home/robot/sweepy_dev_ws/install/sweepy_perception' for CMake module files
+[0.799s] Level 1:colcon.colcon_core.environment:checking '/home/robot/sweepy_dev_ws/install/sweepy_perception' for CMake config files
+[0.799s] Level 1:colcon.colcon_core.shell:create_environment_hook('sweepy_perception', 'cmake_prefix_path')
+[0.800s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/robot/sweepy_dev_ws/install/sweepy_perception/share/sweepy_perception/hook/cmake_prefix_path.ps1'
+[0.801s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/robot/sweepy_dev_ws/install/sweepy_perception/share/sweepy_perception/hook/cmake_prefix_path.dsv'
+[0.802s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/robot/sweepy_dev_ws/install/sweepy_perception/share/sweepy_perception/hook/cmake_prefix_path.sh'
+[0.803s] Level 1:colcon.colcon_core.environment:checking '/home/robot/sweepy_dev_ws/install/sweepy_perception/bin'
+[0.803s] Level 1:colcon.colcon_core.environment:checking '/home/robot/sweepy_dev_ws/install/sweepy_perception/lib/pkgconfig/sweepy_perception.pc'
+[0.803s] Level 1:colcon.colcon_core.environment:checking '/home/robot/sweepy_dev_ws/install/sweepy_perception/lib/python3.10/site-packages'
+[0.804s] Level 1:colcon.colcon_core.environment:checking '/home/robot/sweepy_dev_ws/install/sweepy_perception/bin'
+[0.805s] INFO:colcon.colcon_core.shell:Creating package script '/home/robot/sweepy_dev_ws/install/sweepy_perception/share/sweepy_perception/package.ps1'
+[0.805s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/robot/sweepy_dev_ws/install/sweepy_perception/share/sweepy_perception/package.dsv'
+[0.806s] INFO:colcon.colcon_core.shell:Creating package script '/home/robot/sweepy_dev_ws/install/sweepy_perception/share/sweepy_perception/package.sh'
+[0.807s] INFO:colcon.colcon_core.shell:Creating package script '/home/robot/sweepy_dev_ws/install/sweepy_perception/share/sweepy_perception/package.bash'
+[0.808s] INFO:colcon.colcon_core.shell:Creating package script '/home/robot/sweepy_dev_ws/install/sweepy_perception/share/sweepy_perception/package.zsh'
+[0.809s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/robot/sweepy_dev_ws/install/sweepy_perception/share/colcon-core/packages/sweepy_perception)
+[0.812s] Level 1:colcon.colcon_core.shell:create_environment_hook('roboclaw_serial', 'ros_package_path')
+[0.813s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/robot/sweepy_dev_ws/install/roboclaw_serial/share/roboclaw_serial/hook/ros_package_path.ps1'
+[0.814s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/robot/sweepy_dev_ws/build/roboclaw_serial' returned '0': /usr/bin/cmake --install /home/robot/sweepy_dev_ws/build/roboclaw_serial
+[0.815s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/robot/sweepy_dev_ws/install/roboclaw_serial/share/roboclaw_serial/hook/ros_package_path.dsv'
+[0.816s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/robot/sweepy_dev_ws/install/roboclaw_serial/share/roboclaw_serial/hook/ros_package_path.sh'
+[0.817s] Level 1:colcon.colcon_core.shell:create_environment_hook('roboclaw_serial', 'pkg_config_path')
+[0.818s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/robot/sweepy_dev_ws/install/roboclaw_serial/share/roboclaw_serial/hook/pkg_config_path.ps1'
+[0.819s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/robot/sweepy_dev_ws/install/roboclaw_serial/share/roboclaw_serial/hook/pkg_config_path.dsv'
+[0.820s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/robot/sweepy_dev_ws/install/roboclaw_serial/share/roboclaw_serial/hook/pkg_config_path.sh'
+[0.824s] Level 1:colcon.colcon_core.shell:create_environment_hook('roboclaw_serial', 'pkg_config_path_multiarch')
+[0.824s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/robot/sweepy_dev_ws/install/roboclaw_serial/share/roboclaw_serial/hook/pkg_config_path_multiarch.ps1'
+[0.825s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/robot/sweepy_dev_ws/install/roboclaw_serial/share/roboclaw_serial/hook/pkg_config_path_multiarch.dsv'
+[0.826s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/robot/sweepy_dev_ws/install/roboclaw_serial/share/roboclaw_serial/hook/pkg_config_path_multiarch.sh'
+[0.828s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(roboclaw_serial)
+[0.828s] Level 1:colcon.colcon_core.environment:checking '/home/robot/sweepy_dev_ws/install/roboclaw_serial' for CMake module files
+[0.830s] Level 1:colcon.colcon_core.environment:checking '/home/robot/sweepy_dev_ws/install/roboclaw_serial' for CMake config files
+[0.830s] Level 1:colcon.colcon_core.shell:create_environment_hook('roboclaw_serial', 'cmake_prefix_path')
+[0.831s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/robot/sweepy_dev_ws/install/roboclaw_serial/share/roboclaw_serial/hook/cmake_prefix_path.ps1'
+[0.831s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/robot/sweepy_dev_ws/install/roboclaw_serial/share/roboclaw_serial/hook/cmake_prefix_path.dsv'
+[0.832s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/robot/sweepy_dev_ws/install/roboclaw_serial/share/roboclaw_serial/hook/cmake_prefix_path.sh'
+[0.832s] Level 1:colcon.colcon_core.environment:checking '/home/robot/sweepy_dev_ws/install/roboclaw_serial/lib'
+[0.833s] Level 1:colcon.colcon_core.environment:checking '/home/robot/sweepy_dev_ws/install/roboclaw_serial/bin'
+[0.833s] Level 1:colcon.colcon_core.environment:checking '/home/robot/sweepy_dev_ws/install/roboclaw_serial/lib/pkgconfig/roboclaw_serial.pc'
+[0.833s] Level 1:colcon.colcon_core.environment:checking '/home/robot/sweepy_dev_ws/install/roboclaw_serial/lib/python3.10/site-packages'
+[0.833s] Level 1:colcon.colcon_core.environment:checking '/home/robot/sweepy_dev_ws/install/roboclaw_serial/bin'
+[0.834s] INFO:colcon.colcon_core.shell:Creating package script '/home/robot/sweepy_dev_ws/install/roboclaw_serial/share/roboclaw_serial/package.ps1'
+[0.835s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/robot/sweepy_dev_ws/install/roboclaw_serial/share/roboclaw_serial/package.dsv'
+[0.836s] INFO:colcon.colcon_core.shell:Creating package script '/home/robot/sweepy_dev_ws/install/roboclaw_serial/share/roboclaw_serial/package.sh'
+[0.836s] INFO:colcon.colcon_core.shell:Creating package script '/home/robot/sweepy_dev_ws/install/roboclaw_serial/share/roboclaw_serial/package.bash'
+[0.837s] INFO:colcon.colcon_core.shell:Creating package script '/home/robot/sweepy_dev_ws/install/roboclaw_serial/share/roboclaw_serial/package.zsh'
+[0.838s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/robot/sweepy_dev_ws/install/roboclaw_serial/share/colcon-core/packages/roboclaw_serial)
+[0.839s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/robot/sweepy_dev_ws/src/roboclaw_hardware_interface' with build type 'ament_cmake'
+[0.840s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/robot/sweepy_dev_ws/src/roboclaw_hardware_interface'
+[0.841s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.841s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.852s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/robot/sweepy_dev_ws/build/laser_filters' returned '0': CMAKE_PREFIX_PATH=/home/robot/sweepy_dev_ws/install/sweepy_perception:/home/robot/sweepy_dev_ws/install/sweepy_nav:/home/robot/sweepy_dev_ws/install/sweepy_hardware_drivers:/home/robot/sweepy_dev_ws/install/sweepy_bringup:/opt/ros/humble:/home/robot/sweepy_dev_ws/install/roboclaw_serial:/home/robot/sweepy_dev_ws/install/roboclaw_hardware_interface:/home/robot/sweepy_dev_ws/install/mpu9250driver:/home/robot/sweepy_dev_ws/install/laser_filters:/home/robot/sweepy_ws/install/sweeper_bot:/home/robot/sweepy_ws/install/roboclaw_serial:/home/robot/sweepy_ws/install/roboclaw_hardware_interface:/home/robot/sweepy_ws/install/mpu9250driver:/home/robot/sweepy_ws/install/laser_filters /usr/bin/cmake --build /home/robot/sweepy_dev_ws/build/laser_filters -- -j8 -l8
+[0.859s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/robot/sweepy_dev_ws/build/laser_filters': CMAKE_PREFIX_PATH=/home/robot/sweepy_dev_ws/install/sweepy_perception:/home/robot/sweepy_dev_ws/install/sweepy_nav:/home/robot/sweepy_dev_ws/install/sweepy_hardware_drivers:/home/robot/sweepy_dev_ws/install/sweepy_bringup:/opt/ros/humble:/home/robot/sweepy_dev_ws/install/roboclaw_serial:/home/robot/sweepy_dev_ws/install/roboclaw_hardware_interface:/home/robot/sweepy_dev_ws/install/mpu9250driver:/home/robot/sweepy_dev_ws/install/laser_filters:/home/robot/sweepy_ws/install/sweeper_bot:/home/robot/sweepy_ws/install/roboclaw_serial:/home/robot/sweepy_ws/install/roboclaw_hardware_interface:/home/robot/sweepy_ws/install/mpu9250driver:/home/robot/sweepy_ws/install/laser_filters /usr/bin/cmake --install /home/robot/sweepy_dev_ws/build/laser_filters
+[0.865s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/robot/sweepy_dev_ws/build/roboclaw_hardware_interface': CMAKE_PREFIX_PATH=/opt/ros/humble:/home/robot/sweepy_dev_ws/install/roboclaw_serial:/home/robot/sweepy_dev_ws/install/sweepy_perception:/home/robot/sweepy_dev_ws/install/sweepy_nav:/home/robot/sweepy_dev_ws/install/sweepy_hardware_drivers:/home/robot/sweepy_dev_ws/install/sweepy_bringup:/home/robot/sweepy_dev_ws/install/roboclaw_hardware_interface:/home/robot/sweepy_dev_ws/install/mpu9250driver:/home/robot/sweepy_dev_ws/install/laser_filters:/home/robot/sweepy_ws/install/sweeper_bot:/home/robot/sweepy_ws/install/roboclaw_serial:/home/robot/sweepy_ws/install/roboclaw_hardware_interface:/home/robot/sweepy_ws/install/mpu9250driver:/home/robot/sweepy_ws/install/laser_filters /usr/bin/cmake --build /home/robot/sweepy_dev_ws/build/roboclaw_hardware_interface -- -j8 -l8
+[0.884s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(laser_filters)
+[0.885s] Level 1:colcon.colcon_core.environment:checking '/home/robot/sweepy_dev_ws/install/laser_filters' for CMake module files
+[0.886s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/robot/sweepy_dev_ws/build/laser_filters' returned '0': CMAKE_PREFIX_PATH=/home/robot/sweepy_dev_ws/install/sweepy_perception:/home/robot/sweepy_dev_ws/install/sweepy_nav:/home/robot/sweepy_dev_ws/install/sweepy_hardware_drivers:/home/robot/sweepy_dev_ws/install/sweepy_bringup:/opt/ros/humble:/home/robot/sweepy_dev_ws/install/roboclaw_serial:/home/robot/sweepy_dev_ws/install/roboclaw_hardware_interface:/home/robot/sweepy_dev_ws/install/mpu9250driver:/home/robot/sweepy_dev_ws/install/laser_filters:/home/robot/sweepy_ws/install/sweeper_bot:/home/robot/sweepy_ws/install/roboclaw_serial:/home/robot/sweepy_ws/install/roboclaw_hardware_interface:/home/robot/sweepy_ws/install/mpu9250driver:/home/robot/sweepy_ws/install/laser_filters /usr/bin/cmake --install /home/robot/sweepy_dev_ws/build/laser_filters
+[0.887s] Level 1:colcon.colcon_core.environment:checking '/home/robot/sweepy_dev_ws/install/laser_filters' for CMake config files
+[0.887s] Level 1:colcon.colcon_core.shell:create_environment_hook('laser_filters', 'cmake_prefix_path')
+[0.888s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/robot/sweepy_dev_ws/install/laser_filters/share/laser_filters/hook/cmake_prefix_path.ps1'
+[0.889s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/robot/sweepy_dev_ws/install/laser_filters/share/laser_filters/hook/cmake_prefix_path.dsv'
+[0.889s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/robot/sweepy_dev_ws/install/laser_filters/share/laser_filters/hook/cmake_prefix_path.sh'
+[0.890s] Level 1:colcon.colcon_core.environment:checking '/home/robot/sweepy_dev_ws/install/laser_filters/lib'
+[0.890s] Level 1:colcon.colcon_core.shell:create_environment_hook('laser_filters', 'ld_library_path_lib')
+[0.890s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/robot/sweepy_dev_ws/install/laser_filters/share/laser_filters/hook/ld_library_path_lib.ps1'
+[0.891s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/robot/sweepy_dev_ws/install/laser_filters/share/laser_filters/hook/ld_library_path_lib.dsv'
+[0.891s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/robot/sweepy_dev_ws/install/laser_filters/share/laser_filters/hook/ld_library_path_lib.sh'
+[0.892s] Level 1:colcon.colcon_core.environment:checking '/home/robot/sweepy_dev_ws/install/laser_filters/bin'
+[0.892s] Level 1:colcon.colcon_core.environment:checking '/home/robot/sweepy_dev_ws/install/laser_filters/lib/pkgconfig/laser_filters.pc'
+[0.892s] Level 1:colcon.colcon_core.environment:checking '/home/robot/sweepy_dev_ws/install/laser_filters/lib/python3.10/site-packages'
+[0.892s] Level 1:colcon.colcon_core.environment:checking '/home/robot/sweepy_dev_ws/install/laser_filters/bin'
+[0.893s] INFO:colcon.colcon_core.shell:Creating package script '/home/robot/sweepy_dev_ws/install/laser_filters/share/laser_filters/package.ps1'
+[0.893s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/robot/sweepy_dev_ws/install/laser_filters/share/laser_filters/package.dsv'
+[0.894s] INFO:colcon.colcon_core.shell:Creating package script '/home/robot/sweepy_dev_ws/install/laser_filters/share/laser_filters/package.sh'
+[0.895s] INFO:colcon.colcon_core.shell:Creating package script '/home/robot/sweepy_dev_ws/install/laser_filters/share/laser_filters/package.bash'
+[0.895s] INFO:colcon.colcon_core.shell:Creating package script '/home/robot/sweepy_dev_ws/install/laser_filters/share/laser_filters/package.zsh'
+[0.895s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/robot/sweepy_dev_ws/install/laser_filters/share/colcon-core/packages/laser_filters)
+[0.897s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(laser_filters)
+[0.897s] Level 1:colcon.colcon_core.environment:checking '/home/robot/sweepy_dev_ws/install/laser_filters' for CMake module files
+[0.898s] Level 1:colcon.colcon_core.environment:checking '/home/robot/sweepy_dev_ws/install/laser_filters' for CMake config files
+[0.898s] Level 1:colcon.colcon_core.shell:create_environment_hook('laser_filters', 'cmake_prefix_path')
+[0.898s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/robot/sweepy_dev_ws/install/laser_filters/share/laser_filters/hook/cmake_prefix_path.ps1'
+[0.899s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/robot/sweepy_dev_ws/install/laser_filters/share/laser_filters/hook/cmake_prefix_path.dsv'
+[0.900s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/robot/sweepy_dev_ws/install/laser_filters/share/laser_filters/hook/cmake_prefix_path.sh'
+[0.900s] Level 1:colcon.colcon_core.environment:checking '/home/robot/sweepy_dev_ws/install/laser_filters/lib'
+[0.900s] Level 1:colcon.colcon_core.shell:create_environment_hook('laser_filters', 'ld_library_path_lib')
+[0.901s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/robot/sweepy_dev_ws/install/laser_filters/share/laser_filters/hook/ld_library_path_lib.ps1'
+[0.901s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/robot/sweepy_dev_ws/install/laser_filters/share/laser_filters/hook/ld_library_path_lib.dsv'
+[0.901s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/robot/sweepy_dev_ws/install/laser_filters/share/laser_filters/hook/ld_library_path_lib.sh'
+[0.902s] Level 1:colcon.colcon_core.environment:checking '/home/robot/sweepy_dev_ws/install/laser_filters/bin'
+[0.902s] Level 1:colcon.colcon_core.environment:checking '/home/robot/sweepy_dev_ws/install/laser_filters/lib/pkgconfig/laser_filters.pc'
+[0.902s] Level 1:colcon.colcon_core.environment:checking '/home/robot/sweepy_dev_ws/install/laser_filters/lib/python3.10/site-packages'
+[0.903s] Level 1:colcon.colcon_core.environment:checking '/home/robot/sweepy_dev_ws/install/laser_filters/bin'
+[0.903s] INFO:colcon.colcon_core.shell:Creating package script '/home/robot/sweepy_dev_ws/install/laser_filters/share/laser_filters/package.ps1'
+[0.904s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/robot/sweepy_dev_ws/install/laser_filters/share/laser_filters/package.dsv'
+[0.904s] INFO:colcon.colcon_core.shell:Creating package script '/home/robot/sweepy_dev_ws/install/laser_filters/share/laser_filters/package.sh'
+[0.905s] INFO:colcon.colcon_core.shell:Creating package script '/home/robot/sweepy_dev_ws/install/laser_filters/share/laser_filters/package.bash'
+[0.905s] INFO:colcon.colcon_core.shell:Creating package script '/home/robot/sweepy_dev_ws/install/laser_filters/share/laser_filters/package.zsh'
+[0.906s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/robot/sweepy_dev_ws/install/laser_filters/share/colcon-core/packages/laser_filters)
+[0.977s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/robot/sweepy_dev_ws/build/roboclaw_hardware_interface' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble:/home/robot/sweepy_dev_ws/install/roboclaw_serial:/home/robot/sweepy_dev_ws/install/sweepy_perception:/home/robot/sweepy_dev_ws/install/sweepy_nav:/home/robot/sweepy_dev_ws/install/sweepy_hardware_drivers:/home/robot/sweepy_dev_ws/install/sweepy_bringup:/home/robot/sweepy_dev_ws/install/roboclaw_hardware_interface:/home/robot/sweepy_dev_ws/install/mpu9250driver:/home/robot/sweepy_dev_ws/install/laser_filters:/home/robot/sweepy_ws/install/sweeper_bot:/home/robot/sweepy_ws/install/roboclaw_serial:/home/robot/sweepy_ws/install/roboclaw_hardware_interface:/home/robot/sweepy_ws/install/mpu9250driver:/home/robot/sweepy_ws/install/laser_filters /usr/bin/cmake --build /home/robot/sweepy_dev_ws/build/roboclaw_hardware_interface -- -j8 -l8
+[0.981s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/robot/sweepy_dev_ws/build/roboclaw_hardware_interface': CMAKE_PREFIX_PATH=/opt/ros/humble:/home/robot/sweepy_dev_ws/install/roboclaw_serial:/home/robot/sweepy_dev_ws/install/sweepy_perception:/home/robot/sweepy_dev_ws/install/sweepy_nav:/home/robot/sweepy_dev_ws/install/sweepy_hardware_drivers:/home/robot/sweepy_dev_ws/install/sweepy_bringup:/home/robot/sweepy_dev_ws/install/roboclaw_hardware_interface:/home/robot/sweepy_dev_ws/install/mpu9250driver:/home/robot/sweepy_dev_ws/install/laser_filters:/home/robot/sweepy_ws/install/sweeper_bot:/home/robot/sweepy_ws/install/roboclaw_serial:/home/robot/sweepy_ws/install/roboclaw_hardware_interface:/home/robot/sweepy_ws/install/mpu9250driver:/home/robot/sweepy_ws/install/laser_filters /usr/bin/cmake --install /home/robot/sweepy_dev_ws/build/roboclaw_hardware_interface
+[0.996s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(roboclaw_hardware_interface)
+[0.996s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/robot/sweepy_dev_ws/build/roboclaw_hardware_interface' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble:/home/robot/sweepy_dev_ws/install/roboclaw_serial:/home/robot/sweepy_dev_ws/install/sweepy_perception:/home/robot/sweepy_dev_ws/install/sweepy_nav:/home/robot/sweepy_dev_ws/install/sweepy_hardware_drivers:/home/robot/sweepy_dev_ws/install/sweepy_bringup:/home/robot/sweepy_dev_ws/install/roboclaw_hardware_interface:/home/robot/sweepy_dev_ws/install/mpu9250driver:/home/robot/sweepy_dev_ws/install/laser_filters:/home/robot/sweepy_ws/install/sweeper_bot:/home/robot/sweepy_ws/install/roboclaw_serial:/home/robot/sweepy_ws/install/roboclaw_hardware_interface:/home/robot/sweepy_ws/install/mpu9250driver:/home/robot/sweepy_ws/install/laser_filters /usr/bin/cmake --install /home/robot/sweepy_dev_ws/build/roboclaw_hardware_interface
+[0.996s] Level 1:colcon.colcon_core.environment:checking '/home/robot/sweepy_dev_ws/install/roboclaw_hardware_interface' for CMake module files
+[0.997s] Level 1:colcon.colcon_core.environment:checking '/home/robot/sweepy_dev_ws/install/roboclaw_hardware_interface' for CMake config files
+[0.997s] Level 1:colcon.colcon_core.shell:create_environment_hook('roboclaw_hardware_interface', 'cmake_prefix_path')
+[0.998s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/robot/sweepy_dev_ws/install/roboclaw_hardware_interface/share/roboclaw_hardware_interface/hook/cmake_prefix_path.ps1'
+[0.998s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/robot/sweepy_dev_ws/install/roboclaw_hardware_interface/share/roboclaw_hardware_interface/hook/cmake_prefix_path.dsv'
+[0.999s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/robot/sweepy_dev_ws/install/roboclaw_hardware_interface/share/roboclaw_hardware_interface/hook/cmake_prefix_path.sh'
+[0.999s] Level 1:colcon.colcon_core.environment:checking '/home/robot/sweepy_dev_ws/install/roboclaw_hardware_interface/lib'
+[0.999s] Level 1:colcon.colcon_core.shell:create_environment_hook('roboclaw_hardware_interface', 'ld_library_path_lib')
+[1.000s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/robot/sweepy_dev_ws/install/roboclaw_hardware_interface/share/roboclaw_hardware_interface/hook/ld_library_path_lib.ps1'
+[1.000s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/robot/sweepy_dev_ws/install/roboclaw_hardware_interface/share/roboclaw_hardware_interface/hook/ld_library_path_lib.dsv'
+[1.001s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/robot/sweepy_dev_ws/install/roboclaw_hardware_interface/share/roboclaw_hardware_interface/hook/ld_library_path_lib.sh'
+[1.001s] Level 1:colcon.colcon_core.environment:checking '/home/robot/sweepy_dev_ws/install/roboclaw_hardware_interface/bin'
+[1.001s] Level 1:colcon.colcon_core.environment:checking '/home/robot/sweepy_dev_ws/install/roboclaw_hardware_interface/lib/pkgconfig/roboclaw_hardware_interface.pc'
+[1.002s] Level 1:colcon.colcon_core.environment:checking '/home/robot/sweepy_dev_ws/install/roboclaw_hardware_interface/lib/python3.10/site-packages'
+[1.002s] Level 1:colcon.colcon_core.environment:checking '/home/robot/sweepy_dev_ws/install/roboclaw_hardware_interface/bin'
+[1.002s] INFO:colcon.colcon_core.shell:Creating package script '/home/robot/sweepy_dev_ws/install/roboclaw_hardware_interface/share/roboclaw_hardware_interface/package.ps1'
+[1.003s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/robot/sweepy_dev_ws/install/roboclaw_hardware_interface/share/roboclaw_hardware_interface/package.dsv'
+[1.004s] INFO:colcon.colcon_core.shell:Creating package script '/home/robot/sweepy_dev_ws/install/roboclaw_hardware_interface/share/roboclaw_hardware_interface/package.sh'
+[1.004s] INFO:colcon.colcon_core.shell:Creating package script '/home/robot/sweepy_dev_ws/install/roboclaw_hardware_interface/share/roboclaw_hardware_interface/package.bash'
+[1.005s] INFO:colcon.colcon_core.shell:Creating package script '/home/robot/sweepy_dev_ws/install/roboclaw_hardware_interface/share/roboclaw_hardware_interface/package.zsh'
+[1.005s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/robot/sweepy_dev_ws/install/roboclaw_hardware_interface/share/colcon-core/packages/roboclaw_hardware_interface)
+[1.006s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(roboclaw_hardware_interface)
+[1.006s] Level 1:colcon.colcon_core.environment:checking '/home/robot/sweepy_dev_ws/install/roboclaw_hardware_interface' for CMake module files
+[1.006s] Level 1:colcon.colcon_core.environment:checking '/home/robot/sweepy_dev_ws/install/roboclaw_hardware_interface' for CMake config files
+[1.007s] Level 1:colcon.colcon_core.shell:create_environment_hook('roboclaw_hardware_interface', 'cmake_prefix_path')
+[1.007s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/robot/sweepy_dev_ws/install/roboclaw_hardware_interface/share/roboclaw_hardware_interface/hook/cmake_prefix_path.ps1'
+[1.007s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/robot/sweepy_dev_ws/install/roboclaw_hardware_interface/share/roboclaw_hardware_interface/hook/cmake_prefix_path.dsv'
+[1.008s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/robot/sweepy_dev_ws/install/roboclaw_hardware_interface/share/roboclaw_hardware_interface/hook/cmake_prefix_path.sh'
+[1.008s] Level 1:colcon.colcon_core.environment:checking '/home/robot/sweepy_dev_ws/install/roboclaw_hardware_interface/lib'
+[1.009s] Level 1:colcon.colcon_core.shell:create_environment_hook('roboclaw_hardware_interface', 'ld_library_path_lib')
+[1.009s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/robot/sweepy_dev_ws/install/roboclaw_hardware_interface/share/roboclaw_hardware_interface/hook/ld_library_path_lib.ps1'
+[1.009s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/robot/sweepy_dev_ws/install/roboclaw_hardware_interface/share/roboclaw_hardware_interface/hook/ld_library_path_lib.dsv'
+[1.010s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/robot/sweepy_dev_ws/install/roboclaw_hardware_interface/share/roboclaw_hardware_interface/hook/ld_library_path_lib.sh'
+[1.010s] Level 1:colcon.colcon_core.environment:checking '/home/robot/sweepy_dev_ws/install/roboclaw_hardware_interface/bin'
+[1.010s] Level 1:colcon.colcon_core.environment:checking '/home/robot/sweepy_dev_ws/install/roboclaw_hardware_interface/lib/pkgconfig/roboclaw_hardware_interface.pc'
+[1.011s] Level 1:colcon.colcon_core.environment:checking '/home/robot/sweepy_dev_ws/install/roboclaw_hardware_interface/lib/python3.10/site-packages'
+[1.011s] Level 1:colcon.colcon_core.environment:checking '/home/robot/sweepy_dev_ws/install/roboclaw_hardware_interface/bin'
+[1.011s] INFO:colcon.colcon_core.shell:Creating package script '/home/robot/sweepy_dev_ws/install/roboclaw_hardware_interface/share/roboclaw_hardware_interface/package.ps1'
+[1.012s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/robot/sweepy_dev_ws/install/roboclaw_hardware_interface/share/roboclaw_hardware_interface/package.dsv'
+[1.012s] INFO:colcon.colcon_core.shell:Creating package script '/home/robot/sweepy_dev_ws/install/roboclaw_hardware_interface/share/roboclaw_hardware_interface/package.sh'
+[1.013s] INFO:colcon.colcon_core.shell:Creating package script '/home/robot/sweepy_dev_ws/install/roboclaw_hardware_interface/share/roboclaw_hardware_interface/package.bash'
+[1.014s] INFO:colcon.colcon_core.shell:Creating package script '/home/robot/sweepy_dev_ws/install/roboclaw_hardware_interface/share/roboclaw_hardware_interface/package.zsh'
+[1.014s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/robot/sweepy_dev_ws/install/roboclaw_hardware_interface/share/colcon-core/packages/roboclaw_hardware_interface)
+[1.016s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/robot/sweepy_dev_ws/build/sweepy_hardware_drivers' returned '0': CMAKE_PREFIX_PATH=/home/robot/sweepy_dev_ws/install/sweepy_perception:/home/robot/sweepy_dev_ws/install/sweepy_nav:/home/robot/sweepy_dev_ws/install/sweepy_hardware_drivers:/home/robot/sweepy_dev_ws/install/sweepy_bringup:/opt/ros/humble:/home/robot/sweepy_dev_ws/install/roboclaw_serial:/home/robot/sweepy_dev_ws/install/roboclaw_hardware_interface:/home/robot/sweepy_dev_ws/install/mpu9250driver:/home/robot/sweepy_dev_ws/install/laser_filters:/home/robot/sweepy_ws/install/sweeper_bot:/home/robot/sweepy_ws/install/roboclaw_serial:/home/robot/sweepy_ws/install/roboclaw_hardware_interface:/home/robot/sweepy_ws/install/mpu9250driver:/home/robot/sweepy_ws/install/laser_filters /usr/bin/cmake --build /home/robot/sweepy_dev_ws/build/sweepy_hardware_drivers -- -j8 -l8
+[1.018s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/robot/sweepy_dev_ws/build/sweepy_hardware_drivers': CMAKE_PREFIX_PATH=/home/robot/sweepy_dev_ws/install/sweepy_perception:/home/robot/sweepy_dev_ws/install/sweepy_nav:/home/robot/sweepy_dev_ws/install/sweepy_hardware_drivers:/home/robot/sweepy_dev_ws/install/sweepy_bringup:/opt/ros/humble:/home/robot/sweepy_dev_ws/install/roboclaw_serial:/home/robot/sweepy_dev_ws/install/roboclaw_hardware_interface:/home/robot/sweepy_dev_ws/install/mpu9250driver:/home/robot/sweepy_dev_ws/install/laser_filters:/home/robot/sweepy_ws/install/sweeper_bot:/home/robot/sweepy_ws/install/roboclaw_serial:/home/robot/sweepy_ws/install/roboclaw_hardware_interface:/home/robot/sweepy_ws/install/mpu9250driver:/home/robot/sweepy_ws/install/laser_filters /usr/bin/cmake --install /home/robot/sweepy_dev_ws/build/sweepy_hardware_drivers
+[1.034s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(sweepy_hardware_drivers)
+[1.035s] Level 1:colcon.colcon_core.environment:checking '/home/robot/sweepy_dev_ws/install/sweepy_hardware_drivers' for CMake module files
+[1.035s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/robot/sweepy_dev_ws/build/sweepy_hardware_drivers' returned '0': CMAKE_PREFIX_PATH=/home/robot/sweepy_dev_ws/install/sweepy_perception:/home/robot/sweepy_dev_ws/install/sweepy_nav:/home/robot/sweepy_dev_ws/install/sweepy_hardware_drivers:/home/robot/sweepy_dev_ws/install/sweepy_bringup:/opt/ros/humble:/home/robot/sweepy_dev_ws/install/roboclaw_serial:/home/robot/sweepy_dev_ws/install/roboclaw_hardware_interface:/home/robot/sweepy_dev_ws/install/mpu9250driver:/home/robot/sweepy_dev_ws/install/laser_filters:/home/robot/sweepy_ws/install/sweeper_bot:/home/robot/sweepy_ws/install/roboclaw_serial:/home/robot/sweepy_ws/install/roboclaw_hardware_interface:/home/robot/sweepy_ws/install/mpu9250driver:/home/robot/sweepy_ws/install/laser_filters /usr/bin/cmake --install /home/robot/sweepy_dev_ws/build/sweepy_hardware_drivers
+[1.036s] Level 1:colcon.colcon_core.environment:checking '/home/robot/sweepy_dev_ws/install/sweepy_hardware_drivers' for CMake config files
+[1.037s] Level 1:colcon.colcon_core.shell:create_environment_hook('sweepy_hardware_drivers', 'cmake_prefix_path')
+[1.037s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/robot/sweepy_dev_ws/install/sweepy_hardware_drivers/share/sweepy_hardware_drivers/hook/cmake_prefix_path.ps1'
+[1.038s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/robot/sweepy_dev_ws/install/sweepy_hardware_drivers/share/sweepy_hardware_drivers/hook/cmake_prefix_path.dsv'
+[1.040s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/robot/sweepy_dev_ws/install/sweepy_hardware_drivers/share/sweepy_hardware_drivers/hook/cmake_prefix_path.sh'
+[1.041s] Level 1:colcon.colcon_core.environment:checking '/home/robot/sweepy_dev_ws/install/sweepy_hardware_drivers/lib'
+[1.041s] Level 1:colcon.colcon_core.environment:checking '/home/robot/sweepy_dev_ws/install/sweepy_hardware_drivers/bin'
+[1.041s] Level 1:colcon.colcon_core.environment:checking '/home/robot/sweepy_dev_ws/install/sweepy_hardware_drivers/lib/pkgconfig/sweepy_hardware_drivers.pc'
+[1.042s] Level 1:colcon.colcon_core.environment:checking '/home/robot/sweepy_dev_ws/install/sweepy_hardware_drivers/lib/python3.10/site-packages'
+[1.042s] Level 1:colcon.colcon_core.environment:checking '/home/robot/sweepy_dev_ws/install/sweepy_hardware_drivers/bin'
+[1.043s] INFO:colcon.colcon_core.shell:Creating package script '/home/robot/sweepy_dev_ws/install/sweepy_hardware_drivers/share/sweepy_hardware_drivers/package.ps1'
+[1.044s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/robot/sweepy_dev_ws/install/sweepy_hardware_drivers/share/sweepy_hardware_drivers/package.dsv'
+[1.044s] INFO:colcon.colcon_core.shell:Creating package script '/home/robot/sweepy_dev_ws/install/sweepy_hardware_drivers/share/sweepy_hardware_drivers/package.sh'
+[1.045s] INFO:colcon.colcon_core.shell:Creating package script '/home/robot/sweepy_dev_ws/install/sweepy_hardware_drivers/share/sweepy_hardware_drivers/package.bash'
+[1.045s] INFO:colcon.colcon_core.shell:Creating package script '/home/robot/sweepy_dev_ws/install/sweepy_hardware_drivers/share/sweepy_hardware_drivers/package.zsh'
+[1.046s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/robot/sweepy_dev_ws/install/sweepy_hardware_drivers/share/colcon-core/packages/sweepy_hardware_drivers)
+[1.047s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(sweepy_hardware_drivers)
+[1.048s] Level 1:colcon.colcon_core.environment:checking '/home/robot/sweepy_dev_ws/install/sweepy_hardware_drivers' for CMake module files
+[1.049s] Level 1:colcon.colcon_core.environment:checking '/home/robot/sweepy_dev_ws/install/sweepy_hardware_drivers' for CMake config files
+[1.049s] Level 1:colcon.colcon_core.shell:create_environment_hook('sweepy_hardware_drivers', 'cmake_prefix_path')
+[1.050s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/robot/sweepy_dev_ws/install/sweepy_hardware_drivers/share/sweepy_hardware_drivers/hook/cmake_prefix_path.ps1'
+[1.051s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/robot/sweepy_dev_ws/install/sweepy_hardware_drivers/share/sweepy_hardware_drivers/hook/cmake_prefix_path.dsv'
+[1.051s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/robot/sweepy_dev_ws/install/sweepy_hardware_drivers/share/sweepy_hardware_drivers/hook/cmake_prefix_path.sh'
+[1.052s] Level 1:colcon.colcon_core.environment:checking '/home/robot/sweepy_dev_ws/install/sweepy_hardware_drivers/lib'
+[1.052s] Level 1:colcon.colcon_core.environment:checking '/home/robot/sweepy_dev_ws/install/sweepy_hardware_drivers/bin'
+[1.052s] Level 1:colcon.colcon_core.environment:checking '/home/robot/sweepy_dev_ws/install/sweepy_hardware_drivers/lib/pkgconfig/sweepy_hardware_drivers.pc'
+[1.053s] Level 1:colcon.colcon_core.environment:checking '/home/robot/sweepy_dev_ws/install/sweepy_hardware_drivers/lib/python3.10/site-packages'
+[1.053s] Level 1:colcon.colcon_core.environment:checking '/home/robot/sweepy_dev_ws/install/sweepy_hardware_drivers/bin'
+[1.054s] INFO:colcon.colcon_core.shell:Creating package script '/home/robot/sweepy_dev_ws/install/sweepy_hardware_drivers/share/sweepy_hardware_drivers/package.ps1'
+[1.054s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/robot/sweepy_dev_ws/install/sweepy_hardware_drivers/share/sweepy_hardware_drivers/package.dsv'
+[1.055s] INFO:colcon.colcon_core.shell:Creating package script '/home/robot/sweepy_dev_ws/install/sweepy_hardware_drivers/share/sweepy_hardware_drivers/package.sh'
+[1.056s] INFO:colcon.colcon_core.shell:Creating package script '/home/robot/sweepy_dev_ws/install/sweepy_hardware_drivers/share/sweepy_hardware_drivers/package.bash'
+[1.056s] INFO:colcon.colcon_core.shell:Creating package script '/home/robot/sweepy_dev_ws/install/sweepy_hardware_drivers/share/sweepy_hardware_drivers/package.zsh'
+[1.057s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/robot/sweepy_dev_ws/install/sweepy_hardware_drivers/share/colcon-core/packages/sweepy_hardware_drivers)
+[1.057s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[1.057s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[1.057s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished with '0'
+[1.058s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[1.067s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[1.067s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[1.068s] INFO:colcon.colcon_notification.desktop_notification:Sending desktop notification using 'notify2'
+[1.087s] DEBUG:colcon.colcon_core.event_reactor:joined thread
+[1.087s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/robot/sweepy_dev_ws/install/local_setup.ps1'
+[1.089s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/robot/sweepy_dev_ws/install/_local_setup_util_ps1.py'
+[1.091s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/robot/sweepy_dev_ws/install/setup.ps1'
+[1.093s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/robot/sweepy_dev_ws/install/local_setup.sh'
+[1.094s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/robot/sweepy_dev_ws/install/_local_setup_util_sh.py'
+[1.095s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/robot/sweepy_dev_ws/install/setup.sh'
+[1.098s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/robot/sweepy_dev_ws/install/local_setup.bash'
+[1.099s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/robot/sweepy_dev_ws/install/setup.bash'
+[1.101s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/robot/sweepy_dev_ws/install/local_setup.zsh'
+[1.102s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/robot/sweepy_dev_ws/install/setup.zsh'

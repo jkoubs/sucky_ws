@@ -1,0 +1,77 @@
+slam_toolbox:
+  ros__parameters:
+
+    scan_queue_size: 1  # Queue size for incoming scan messages. Default: 1
+
+    # Plugin params
+    solver_plugin: solver_plugins::CeresSolver  # The solver plugin to use. Default: solver_plugins::CeresSolver
+    ceres_linear_solver: SPARSE_NORMAL_CHOLESKY  # The linear solver type used by Ceres Solver. Default: SPARSE_NORMAL_CHOLESKY
+    ceres_preconditioner: SCHUR_JACOBI  # Preconditioner type used by Ceres Solver. Default: SCHUR_JACOBI
+    ceres_trust_strategy: LEVENBERG_MARQUARDT  # Trust region strategy used by Ceres Solver. Default: LEVENBERG_MARQUARDT
+    ceres_dogleg_type: TRADITIONAL_DOGLEG  # Dogleg strategy used by Ceres Solver. Default: TRADITIONAL_DOGLEG
+    ceres_loss_function: None  # Loss function used by Ceres Solver. Default: None
+
+    # ROS Parameters
+    odom_frame: odom  # The frame ID of the odometry. Default: odom
+    map_frame: map  # The frame ID of the map. Default: map
+    base_frame: base_footprint  # The frame ID of the robot base. Default: base_footprint
+    scan_topic: /scan_filtered  # The topic name for incoming laser scans. Default: /scan
+    use_map_saver: true  # Whether to use the map saver plugin. Default: true
+    mode: mapping # The mode of operation: mapping or localization. Default: localization
+
+    # if you'd like to immediately start continuing a map at a given pose
+    # or at the dock, but they are mutually exclusive, if pose is given
+    # will use pose
+    #map_file_name: /home/sweepynvidia/sweepy_ws/src/sweeper_bot/maps/new_map_serial
+    # The file name of the map to load. Default: None
+    #map_start_pose: [-4.425251007080078, 0.1910037398338318, 0.0]  # The starting pose to use with the map. Default: [0.0, 0.0, 0.0]
+    #map_start_at_dock: true  # Whether to start the map at the dock. Default: false
+
+    debug_logging: false  # Whether to enable debug logging. Default: false
+    throttle_scans: 1  # Number of scans to skip between processing. Default: 1
+    transform_publish_period: 0.02  # Period (seconds) at which to publish transforms. Default: 0.05
+    map_update_interval: 1.0  # Interval (seconds) at which to update the map. Default: 5.0
+    resolution: 0.05  # Resolution of the map (meters per cell). Default: 0.05
+    min_laser_range: 0.0  # Minimum laser range to consider (meters). Default: 0.0
+    max_laser_range: 25.0  # Maximum laser range to consider (meters). Default: 30.0
+    minimum_time_interval: 0.1  # Minimum time interval between scans (seconds). Default: 0.5
+    transform_timeout: 0.2  # Timeout for transform lookups (seconds). Default: 0.2
+    tf_buffer_duration: 30.0  # Duration to buffer transforms (seconds). Default: 10.0
+    stack_size_to_use: 400000000  # Stack size to use for serialization. Default: 40000000
+    enable_interactive_mode: false  # Whether to enable interactive mode. Default: true
+
+    # General Parameters
+    use_scan_matching: true  # Whether to use scan matching. Default: true
+    use_scan_barycenter: true  # Whether to use the barycenter of the scan. Default: true
+    minimum_travel_distance: 0.1  # Minimum travel distance to trigger a new scan match (meters). Default: 0.5
+    minimum_travel_heading: 0.05  # Minimum travel heading to trigger a new scan match (radians). Default: 0.5
+    scan_buffer_size: 10  # Size of the scan buffer. Default: 20
+    scan_buffer_maximum_scan_distance: 10.0  # Maximum distance to keep in the scan buffer (meters). Default: 10.0
+    link_match_minimum_response_fine: 0.1  # Minimum response for fine link matches. Default: 0.1
+    link_scan_maximum_distance: 1.5  # Maximum distance for scan links (meters). Default: 1.0
+    loop_search_maximum_distance: 3.0  # Maximum distance for loop closure search (meters). Default: 3.0
+    do_loop_closing: true  # Whether to perform loop closing. Default: true
+    loop_match_minimum_chain_size: 10  # Minimum chain size for loop matches. Default: 10
+    loop_match_maximum_variance_coarse: 3.0  # Maximum variance for coarse loop matches. Default: 3.0
+    loop_match_minimum_response_coarse: 0.35  # Minimum response for coarse loop matches. Default: 0.35
+    loop_match_minimum_response_fine: 0.45  # Minimum response for fine loop matches. Default: 0.45
+
+    # Correlation Parameters - Correlation Parameters
+    correlation_search_space_dimension: 0.5  # Search space dimension for correlation (meters). Default: 1.0
+    correlation_search_space_resolution: 0.01  # Search space resolution for correlation (meters). Default: 0.05
+    correlation_search_space_smear_deviation: 0.1  # Smear deviation for correlation search space. Default: 0.03
+
+    # Correlation Parameters - Loop Closure Parameters
+    loop_search_space_dimension: 8.0  # Search space dimension for loop closure (meters). Default: 10.0
+    loop_search_space_resolution: 0.05  # Search space resolution for loop closure (meters). Default: 0.1
+    loop_search_space_smear_deviation: 0.03  # Smear deviation for loop closure search space. Default: 0.03
+
+    # Scan Matcher Parameters
+    distance_variance_penalty: 0.5  # Penalty for distance variance in scan matching. Default: 1.0
+    angle_variance_penalty: 1.0  # Penalty for angle variance in scan matching. Default: 1.0
+    fine_search_angle_offset: 0.00349  # Angle offset for fine search in scan matching (radians). Default: 0.005
+    coarse_search_angle_offset: 0.349  # Angle offset for coarse search in scan matching (radians). Default: 0.07
+    coarse_angle_resolution: 0.0349  # Angle resolution for coarse search in scan matching (radians). Default: 0.07
+    minimum_angle_penalty: 0.9  # Minimum penalty for angle variance. Default: 0.9
+    minimum_distance_penalty: 0.5  # Minimum penalty for distance variance. Default: 0.5
+    use_response_expansion: true  # Whether to use response expansion in scan matching. Default: true

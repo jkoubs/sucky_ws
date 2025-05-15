@@ -1,0 +1,6 @@
+/home/robot/sweepy_dev_ws/install/roboclaw_serial/include/roboclaw_serial/serialized_buffer.hpp
+/home/robot/sweepy_dev_ws/install/roboclaw_serial/include/roboclaw_serial/crc.hpp
+/home/robot/sweepy_dev_ws/install/roboclaw_serial/include/roboclaw_serial/device.hpp
+/home/robot/sweepy_dev_ws/install/roboclaw_serial/include/roboclaw_serial/interface.hpp
+/home/robot/sweepy_dev_ws/install/roboclaw_serial/include/roboclaw_serial/command.hpp
+/home/robot/sweepy_dev_ws/install/roboclaw_serial/lib/cmake/roboclaw_serial/roboclaw_serialConfig.cmake

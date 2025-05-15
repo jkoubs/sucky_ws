@@ -1,0 +1,5 @@
+add_test( TestExecutor.WriteVelocityPIDConstantsM1SerializationTest /home/robot/sweepy_dev_ws/build/roboclaw_serial/test_roboclaw_serial [==[--gtest_filter=TestExecutor.WriteVelocityPIDConstantsM1SerializationTest]==] --gtest_also_run_disabled_tests)
+set_tests_properties( TestExecutor.WriteVelocityPIDConstantsM1SerializationTest PROPERTIES WORKING_DIRECTORY /home/robot/sweepy_dev_ws/build/roboclaw_serial SKIP_REGULAR_EXPRESSION [==[\[  SKIPPED \]]==])
+add_test( TestExecutor.ReadEncoderCountersSerializationTest /home/robot/sweepy_dev_ws/build/roboclaw_serial/test_roboclaw_serial [==[--gtest_filter=TestExecutor.ReadEncoderCountersSerializationTest]==] --gtest_also_run_disabled_tests)
+set_tests_properties( TestExecutor.ReadEncoderCountersSerializationTest PROPERTIES WORKING_DIRECTORY /home/robot/sweepy_dev_ws/build/roboclaw_serial SKIP_REGULAR_EXPRESSION [==[\[  SKIPPED \]]==])
+set( test_roboclaw_serial_TESTS TestExecutor.WriteVelocityPIDConstantsM1SerializationTest TestExecutor.ReadEncoderCountersSerializationTest)

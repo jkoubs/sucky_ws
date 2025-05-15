@@ -1,0 +1,8 @@
+source;share/sweepy_nav/hook/cmake_prefix_path.ps1
+source;share/sweepy_nav/hook/cmake_prefix_path.dsv
+source;share/sweepy_nav/hook/cmake_prefix_path.sh
+source;share/sweepy_nav/local_setup.bash
+source;share/sweepy_nav/local_setup.dsv
+source;share/sweepy_nav/local_setup.ps1
+source;share/sweepy_nav/local_setup.sh
+source;share/sweepy_nav/local_setup.zsh
