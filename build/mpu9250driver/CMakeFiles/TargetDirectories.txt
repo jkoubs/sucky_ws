@@ -1,9 +1,0 @@
-/home/robot/sweepy_dev_ws/build/mpu9250driver/CMakeFiles/uninstall.dir
-/home/robot/sweepy_dev_ws/build/mpu9250driver/CMakeFiles/mpu9250driver_uninstall.dir
-/home/robot/sweepy_dev_ws/build/mpu9250driver/CMakeFiles/test.dir
-/home/robot/sweepy_dev_ws/build/mpu9250driver/CMakeFiles/edit_cache.dir
-/home/robot/sweepy_dev_ws/build/mpu9250driver/CMakeFiles/rebuild_cache.dir
-/home/robot/sweepy_dev_ws/build/mpu9250driver/CMakeFiles/list_install_components.dir
-/home/robot/sweepy_dev_ws/build/mpu9250driver/CMakeFiles/install.dir
-/home/robot/sweepy_dev_ws/build/mpu9250driver/CMakeFiles/install/local.dir
-/home/robot/sweepy_dev_ws/build/mpu9250driver/CMakeFiles/install/strip.dir

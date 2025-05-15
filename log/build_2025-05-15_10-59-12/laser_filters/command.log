@@ -1,6 +1,0 @@
-Invoking command in '/home/robot/sweepy_dev_ws/build/laser_filters': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/robot/sweepy_dev_ws/src/laser_filters -DCMAKE_INSTALL_PREFIX=/home/robot/sweepy_dev_ws/install/laser_filters
-Invoked command in '/home/robot/sweepy_dev_ws/build/laser_filters' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/robot/sweepy_dev_ws/src/laser_filters -DCMAKE_INSTALL_PREFIX=/home/robot/sweepy_dev_ws/install/laser_filters
-Invoking command in '/home/robot/sweepy_dev_ws/build/laser_filters': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/robot/sweepy_dev_ws/build/laser_filters -- -j8 -l8
-Invoked command in '/home/robot/sweepy_dev_ws/build/laser_filters' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/robot/sweepy_dev_ws/build/laser_filters -- -j8 -l8
-Invoking command in '/home/robot/sweepy_dev_ws/build/laser_filters': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/robot/sweepy_dev_ws/build/laser_filters
-Invoked command in '/home/robot/sweepy_dev_ws/build/laser_filters' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/robot/sweepy_dev_ws/build/laser_filters

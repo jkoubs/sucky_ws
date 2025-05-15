@@ -1,9 +1,0 @@
-/home/robot/sweepy_dev_ws/build/sweepy_hardware_drivers/CMakeFiles/uninstall.dir
-/home/robot/sweepy_dev_ws/build/sweepy_hardware_drivers/CMakeFiles/sweepy_hardware_drivers_uninstall.dir
-/home/robot/sweepy_dev_ws/build/sweepy_hardware_drivers/CMakeFiles/test.dir
-/home/robot/sweepy_dev_ws/build/sweepy_hardware_drivers/CMakeFiles/edit_cache.dir
-/home/robot/sweepy_dev_ws/build/sweepy_hardware_drivers/CMakeFiles/rebuild_cache.dir
-/home/robot/sweepy_dev_ws/build/sweepy_hardware_drivers/CMakeFiles/list_install_components.dir
-/home/robot/sweepy_dev_ws/build/sweepy_hardware_drivers/CMakeFiles/install.dir
-/home/robot/sweepy_dev_ws/build/sweepy_hardware_drivers/CMakeFiles/install/local.dir
-/home/robot/sweepy_dev_ws/build/sweepy_hardware_drivers/CMakeFiles/install/strip.dir

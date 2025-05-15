@@ -1,1 +1,0 @@
-/usr/bin/c++ CMakeFiles/test_roboclaw_serial.dir/test/test_main.cpp.o -o test_roboclaw_serial  /usr/lib/x86_64-linux-gnu/libgtest.a /usr/lib/x86_64-linux-gnu/libgtest_main.a /usr/lib/x86_64-linux-gnu/libgtest.a 

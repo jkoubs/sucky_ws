@@ -1,6 +1,0 @@
-Invoking command in '/home/robot/sweepy_dev_ws/build/roboclaw_serial': /usr/bin/cmake /home/robot/sweepy_dev_ws/src/roboclaw_serial -DCATKIN_INSTALL_INTO_PREFIX_ROOT=0 -DCMAKE_INSTALL_PREFIX=/home/robot/sweepy_dev_ws/install/roboclaw_serial
-Invoked command in '/home/robot/sweepy_dev_ws/build/roboclaw_serial' returned '0': /usr/bin/cmake /home/robot/sweepy_dev_ws/src/roboclaw_serial -DCATKIN_INSTALL_INTO_PREFIX_ROOT=0 -DCMAKE_INSTALL_PREFIX=/home/robot/sweepy_dev_ws/install/roboclaw_serial
-Invoking command in '/home/robot/sweepy_dev_ws/build/roboclaw_serial': /usr/bin/cmake --build /home/robot/sweepy_dev_ws/build/roboclaw_serial -- -j8 -l8
-Invoked command in '/home/robot/sweepy_dev_ws/build/roboclaw_serial' returned '0': /usr/bin/cmake --build /home/robot/sweepy_dev_ws/build/roboclaw_serial -- -j8 -l8
-Invoking command in '/home/robot/sweepy_dev_ws/build/roboclaw_serial': /usr/bin/cmake --install /home/robot/sweepy_dev_ws/build/roboclaw_serial
-Invoked command in '/home/robot/sweepy_dev_ws/build/roboclaw_serial' returned '0': /usr/bin/cmake --install /home/robot/sweepy_dev_ws/build/roboclaw_serial

@@ -1,5 +1,0 @@
-if(EXISTS "/home/robot/sweepy_dev_ws/build/roboclaw_serial/test_roboclaw_serial[1]_tests.cmake")
-  include("/home/robot/sweepy_dev_ws/build/roboclaw_serial/test_roboclaw_serial[1]_tests.cmake")
-else()
-  add_test(test_roboclaw_serial_NOT_BUILT test_roboclaw_serial_NOT_BUILT)
-endif()

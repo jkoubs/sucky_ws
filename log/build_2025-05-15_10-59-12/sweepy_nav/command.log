@@ -1,6 +1,0 @@
-Invoking command in '/home/robot/sweepy_dev_ws/build/sweepy_nav': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/robot/sweepy_dev_ws/src/sweepy_nav -DCMAKE_INSTALL_PREFIX=/home/robot/sweepy_dev_ws/install/sweepy_nav
-Invoked command in '/home/robot/sweepy_dev_ws/build/sweepy_nav' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/robot/sweepy_dev_ws/src/sweepy_nav -DCMAKE_INSTALL_PREFIX=/home/robot/sweepy_dev_ws/install/sweepy_nav
-Invoking command in '/home/robot/sweepy_dev_ws/build/sweepy_nav': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/robot/sweepy_dev_ws/build/sweepy_nav -- -j8 -l8
-Invoked command in '/home/robot/sweepy_dev_ws/build/sweepy_nav' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/robot/sweepy_dev_ws/build/sweepy_nav -- -j8 -l8
-Invoking command in '/home/robot/sweepy_dev_ws/build/sweepy_nav': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/robot/sweepy_dev_ws/build/sweepy_nav
-Invoked command in '/home/robot/sweepy_dev_ws/build/sweepy_nav' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/robot/sweepy_dev_ws/build/sweepy_nav
