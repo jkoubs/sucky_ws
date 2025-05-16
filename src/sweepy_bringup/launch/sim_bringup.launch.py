@@ -9,6 +9,9 @@ from launch.event_handlers import OnProcessExit
 
 def generate_launch_description():
     bringup_pkg = get_package_share_directory('sweepy_bringup')
+    rviz_config_path = os.path.join(
+        get_package_share_directory('sweepy_bringup'),'rviz','bringup.rviz')
+    
 
     # Gazebo Launch
     gazebo = IncludeLaunchDescription(
@@ -49,10 +52,20 @@ def generate_launch_description():
         output='screen'
     )
 
+    # Rviz config
+    rviz_node = Node(
+        package='rviz2',
+        executable='rviz2',
+        name='rviz2',
+        output='screen',
+        arguments=['-d', rviz_config_path],
+    )
+
     return LaunchDescription([
         gazebo,
         robot_state_publisher,
         spawn_entity,
         RegisterEventHandler(OnProcessExit(target_action=spawn_entity, on_exit=[load_joint_state_broadcaster])),
-        RegisterEventHandler(OnProcessExit(target_action=load_joint_state_broadcaster, on_exit=[load_diff_drive_controller]))
+        RegisterEventHandler(OnProcessExit(target_action=load_joint_state_broadcaster, on_exit=[load_diff_drive_controller])),
+        rviz_node
     ])
