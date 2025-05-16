@@ -11,10 +11,12 @@ find_package(rclpy REQUIRED)
 find_package(sensor_msgs REQUIRED)
 find_package(ros2_control REQUIRED)
 find_package(ros2_controllers REQUIRED)
+find_package(controller_manager REQUIRED)
+find_package(gazebo_ros2_control REQUIRED)
 
 # Install directories
 install(
-  DIRECTORY src launch worlds urdf rviz
+  DIRECTORY src launch worlds urdf rviz config
   DESTINATION share/${PROJECT_NAME}
 )
 
