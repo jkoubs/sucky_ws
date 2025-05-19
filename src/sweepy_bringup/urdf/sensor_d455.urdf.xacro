@@ -23,8 +23,8 @@ aluminum peripherial evaluation case.
 
 <robot name="sensor_d455" xmlns:xacro="http://ros.org/wiki/xacro">
   <!-- Includes -->
-  <xacro:include filename="$(find realsense2_description)/urdf/_materials.urdf.xacro" />
-  <xacro:include filename="$(find realsense2_description)/urdf/_usb_plug.urdf.xacro" />
+  <xacro:include filename="$(find sweepy_bringup)/urdf/sensor_d455_materials.urdf.xacro" />
+  <xacro:include filename="$(find sweepy_bringup)/urdf/sensor_d455_usb_plug.urdf.xacro" />
 
   <xacro:macro name="sensor_d455" params="parent *origin name:=camera use_nominal_extrinsics:=false">
     <xacro:arg name="add_plug" default="false" />

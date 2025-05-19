@@ -4,6 +4,12 @@
   <xacro:include filename="$(find sweepy_bringup)/urdf/robot_core.xacro"/>
   <xacro:include filename="$(find sweepy_bringup)/urdf/gazebo_control.xacro"/>
   <xacro:include filename="$(find sweepy_bringup)/urdf/sensor_sick.xacro"/>
+  <xacro:include filename="$(find sweepy_bringup)/urdf/sensor_d455.urdf.xacro"/>
   <xacro:include filename="$(find sweepy_bringup)/urdf/gazebo_sensors.xacro"/>
 
+  <!-- Mount the D455 on base_link -->
+  <xacro:sensor_d455 parent="base_link" name="d455" use_nominal_extrinsics="true">
+    <origin xyz="0.8 0 0.45" rpy="0 0 0"/>
+  </xacro:sensor_d455>
+  
 </robot>
