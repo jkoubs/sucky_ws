@@ -5,11 +5,24 @@
   <xacro:include filename="$(find sweepy_bringup)/urdf/gazebo_control.xacro"/>
   <xacro:include filename="$(find sweepy_bringup)/urdf/sensor_sick.xacro"/>
   <xacro:include filename="$(find sweepy_bringup)/urdf/sensor_d455.urdf.xacro"/>
+  <xacro:include filename="$(find sweepy_bringup)/urdf/sensor_d455.gazebo.xacro"/>
   <xacro:include filename="$(find sweepy_bringup)/urdf/gazebo_sensors.xacro"/>
 
   <!-- Mount the D455 on base_link -->
   <xacro:sensor_d455 parent="base_link" name="d455" use_nominal_extrinsics="true">
     <origin xyz="0.8 0 0.45" rpy="0 0 0"/>
   </xacro:sensor_d455>
-  
+
+  <!-- Add the Gazebo simulation plugin -->
+  <xacro:gazebo_d455 
+    camera_name="d455_" 
+    reference_link="d455_link" 
+    topics_ns="d455" 
+    depth_optical_frame="d455_depth_optical_frame" 
+    color_optical_frame="d455_color_optical_frame" 
+    infrared1_optical_frame="d455_infra1_optical_frame" 
+    infrared2_optical_frame="d455_infra2_optical_frame" 
+    publish_pointcloud="true"
+  />
+
 </robot>
