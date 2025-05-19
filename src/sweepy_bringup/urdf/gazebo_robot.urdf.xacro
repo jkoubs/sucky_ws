@@ -3,7 +3,7 @@
 
   <xacro:include filename="$(find sweepy_bringup)/urdf/robot_core.xacro"/>
   <xacro:include filename="$(find sweepy_bringup)/urdf/gazebo_control.xacro"/>
-  <xacro:include filename="$(find sweepy_bringup)/urdf/sick.xacro"/>
+  <xacro:include filename="$(find sweepy_bringup)/urdf/sensor_sick.xacro"/>
   <xacro:include filename="$(find sweepy_bringup)/urdf/gazebo_sensors.xacro"/>
 
 </robot>
