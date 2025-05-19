@@ -24,18 +24,18 @@
   <!-- chasis bottom point is the back bottom metal frame near the motors -->
   <!-- mass inaccurate, only matters for simulation -->
 
-  <!-- colors -->
+  <!-- colors for RViz visualization-->
   <material name="white">
     <color rgba="1 1 1 1" />
   </material>
   <material name="orange">
-    <color rgba="1 .3 .1 1" />
+    <color rgba="1 .3 .1 0.7" />
   </material>
   <material name="blue">
     <color rgba=".2 .2 1 1" />
   </material>
   <material name="black">
-    <color rgba="0 0 0 1" />
+    <color rgba="0 0 0 0.7" />
   </material>
   <material name="red">
     <color rgba="1 0 0 1" />
@@ -96,7 +96,7 @@
           <geometry>
               <cylinder radius="${wheel_radius}" length="${wheel_thickness}"/>
           </geometry>
-          <material name="blue"/>
+          <material name="black"/>
       </visual>
       <collision>
           <geometry>
@@ -109,7 +109,7 @@
   </link>
 
   <gazebo reference="left_wheel">
-      <material>Gazebo/Blue</material>
+      <material>Gazebo/Black</material>
   </gazebo>
 
   <!-- RIGHT WHEEL LINK -->
@@ -125,7 +125,7 @@
           <geometry>
               <cylinder radius="${wheel_radius}" length="${wheel_thickness}"/>
           </geometry>
-          <material name="blue"/>
+          <material name="black"/>
       </visual>
       <collision>
           <geometry>
@@ -138,7 +138,7 @@
   </link>
 
   <gazebo reference="right_wheel">
-      <material>Gazebo/Blue</material>
+      <material>Gazebo/Black</material>
   </gazebo>
 
   <!-- CASTER WHEEL LINK -->

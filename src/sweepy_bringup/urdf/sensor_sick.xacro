@@ -1,20 +1,25 @@
 <?xml version="1.0"?>
 <robot name="sweeper" xmlns:xacro="http://ros.org/wiki/xacro">
 
-    <xacro:property name="realsense_offset_z" value=".210"/>    <!--8.25" (center of realsense to chasis low point)-->
-
+    <!-- <xacro:property name="realsense_offset_z" value=".210"/>    8.25" (center of realsense to chasis low point) -->
+    <material name="grey">
+        <color rgba="0.5 0.5 0.5 1" />
+    </material>
+    
     <link name="sick_link">
         <visual>
-            <origin xyz="${.057/2} 0 0" rpy="0 0 0"/>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
             <geometry>
-            <box size="0.057 0.057 0.089"/>
+                <!-- <box size="0.057 0.057 0.089"/> -->
+                <mesh filename="file://$(find sweepy_bringup)/meshes/sick781.stl" />
             </geometry>
+            <material name="grey"/>
         </visual>
 
         <collision>
-            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <origin xyz="-0.00 0 -0.02" rpy="0 0 0"/>
             <geometry>
-            <box size="0.057 0.057 0.089"/>
+                <box size="0.057 0.057 0.089"/>
             </geometry>
         </collision>
 
@@ -28,7 +33,10 @@
     <joint name="sick_joint" type="fixed">
         <parent link="base_link"/>
         <child link="sick_link"/>
-        <origin xyz=".813 0 .127" rpy="0 0 0"/>
+        <origin xyz=".858 0 .127" rpy="0 0 0"/>
     </joint>
 
+    <gazebo reference="sick_link">
+        <material>Gazebo/Grey</material>
+    </gazebo>
 </robot>

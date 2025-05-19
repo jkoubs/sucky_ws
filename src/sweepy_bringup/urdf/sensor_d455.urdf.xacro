@@ -96,6 +96,10 @@ aluminum peripherial evaluation case.
       </inertial>
     </link>
 
+    <gazebo reference="${name}_link">
+        <material>Gazebo/Grey</material>
+    </gazebo>
+
     <!-- Use the nominal extrinsics between camera frames if the calibrated extrinsics aren't being published. e.g. running the device in simulation  -->
     <xacro:if value="${use_nominal_extrinsics}">
       <!-- camera depth joints and links -->
