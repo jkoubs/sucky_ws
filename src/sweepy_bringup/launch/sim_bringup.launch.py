@@ -14,9 +14,21 @@ def generate_launch_description():
     
 
     # Gazebo Launch
+    # gazebo = IncludeLaunchDescription(
+    #     PythonLaunchDescriptionSource(os.path.join(get_package_share_directory('gazebo_ros'), 'launch', 'gazebo.launch.py')),
+    #     launch_arguments={'world': os.path.join(bringup_pkg, 'worlds', 'empty.world')}.items()
+    # )
+
+    # Gazebo Launch with safe plugin overrides
     gazebo = IncludeLaunchDescription(
-        PythonLaunchDescriptionSource(os.path.join(get_package_share_directory('gazebo_ros'), 'launch', 'gazebo.launch.py')),
-        launch_arguments={'world': os.path.join(bringup_pkg, 'worlds', 'empty.world')}.items()
+        PythonLaunchDescriptionSource(
+            os.path.join(get_package_share_directory('gazebo_ros'), 'launch', 'gazebo.launch.py')
+        ),
+        launch_arguments={
+            'world': os.path.join(bringup_pkg, 'worlds', 'empty.world'),
+            'gui_plugins': '[]',
+            'server_required_plugins': "['libgazebo_ros_init.so','libgazebo_ros_factory.so']"
+        }.items()
     )
 
     # Load and Process Xacro
