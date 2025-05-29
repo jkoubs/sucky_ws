@@ -16,7 +16,7 @@ find_package(gazebo_ros2_control REQUIRED)
 
 # Install directories
 install(
-  DIRECTORY launch worlds urdf rviz config meshes
+  DIRECTORY launch worlds urdf rviz config meshes models
   DESTINATION share/${PROJECT_NAME}
 )
 
