@@ -65,13 +65,13 @@ def generate_launch_description():
     )
 
     # Rviz config
-    rviz_node = Node(
-        package='rviz2',
-        executable='rviz2',
-        name='rviz2',
-        output='screen',
-        arguments=['-d', rviz_config_path],
-    )
+    # rviz_node = Node(
+    #     package='rviz2',
+    #     executable='rviz2',
+    #     name='rviz2',
+    #     output='screen',
+    #     arguments=['-d', rviz_config_path],
+    # )
 
     return LaunchDescription([
         gazebo,
@@ -79,5 +79,5 @@ def generate_launch_description():
         spawn_entity,
         RegisterEventHandler(OnProcessExit(target_action=spawn_entity, on_exit=[load_joint_state_broadcaster])),
         RegisterEventHandler(OnProcessExit(target_action=load_joint_state_broadcaster, on_exit=[load_diff_drive_controller])),
-        rviz_node
+        #rviz_node
     ])

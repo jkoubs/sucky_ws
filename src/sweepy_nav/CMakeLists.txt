@@ -16,6 +16,13 @@ install(
   DESTINATION share/${PROJECT_NAME}
 )
 
+# Install Python scripts (e.g. initial_pose_publisher.py)
+install(
+  PROGRAMS
+    scripts/initial_pose_publisher.py
+  DESTINATION lib/${PROJECT_NAME}
+)
+
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)
   # the following line skips the linter which checks for copyrights
