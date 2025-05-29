@@ -30,7 +30,7 @@
       </ray>
       <plugin name="simulated_sick_lidar_plugin" filename="libgazebo_ros_ray_sensor.so">
         <ros>
-          <remapping>~/out:=/laser_scan</remapping>
+          <remapping>~/out:=/scan_filtered</remapping>
         </ros>
         <output_type>sensor_msgs/LaserScan</output_type>
         <frame_name>sick_link</frame_name>
