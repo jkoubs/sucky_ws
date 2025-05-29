@@ -12,7 +12,7 @@ find_package(rclpy REQUIRED)
 
 # Install directories
 install(
-  DIRECTORY launch config
+  DIRECTORY launch config maps rviz
   DESTINATION share/${PROJECT_NAME}
 )
 
