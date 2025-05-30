@@ -5,7 +5,7 @@ import os
 
 def generate_launch_description():
     sweepy_nav_dir = get_package_share_directory('sweepy_nav')
-    nav2_params = os.path.join(sweepy_nav_dir, 'config', 'nav2_params.yaml')
+    nav2_params = os.path.join(sweepy_nav_dir, 'config', 'sim_nav2_params.yaml')
 
     # Individual Nav2 nodes
     controller_server = Node(
@@ -13,7 +13,14 @@ def generate_launch_description():
         executable='controller_server',
         name='controller_server',
         output='screen',
-        parameters=[nav2_params, {'use_sim_time': True}]
+        parameters=[nav2_params, {'use_sim_time': True}],
+        remappings=[
+        ('/cmd_vel', '/cmd_vel_nav')
+    ]
+    #     remappings=[
+    #     ('/cmd_vel', '/diffbot_base_controller/cmd_vel_unstamped')
+    # ]
+
     )
 
     smoother_server = Node(
@@ -29,15 +36,15 @@ def generate_launch_description():
         executable='planner_server',
         name='planner_server',
         output='screen',
-        parameters=[nav2_params, {'use_sim_time': True}]
+        parameters=[nav2_params, {'use_sim_time': True}],
     )
 
     behavior_server = Node(
-        package='nav2_behavior_tree',
+        package='nav2_behaviors',
         executable='behavior_server',
         name='behavior_server',
         output='screen',
-        parameters=[nav2_params, {'use_sim_time': True}]
+        parameters=[nav2_params]
     )
 
     bt_navigator = Node(
@@ -61,7 +68,11 @@ def generate_launch_description():
         executable='velocity_smoother',
         name='velocity_smoother',
         output='screen',
-        parameters=[nav2_params, {'use_sim_time': True}]
+        parameters=[nav2_params, {'use_sim_time': True}],
+        remappings=[
+            ('cmd_vel', 'cmd_vel_nav'),  # input from controller_server
+            ('cmd_vel_smoothed', '/diffbot_base_controller/cmd_vel_unstamped')  # final output
+        ],
     )
 
     # Lifecycle manager

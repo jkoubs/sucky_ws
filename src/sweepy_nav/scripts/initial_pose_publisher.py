@@ -3,7 +3,6 @@
 import rclpy
 from rclpy.node import Node
 from geometry_msgs.msg import PoseWithCovarianceStamped
-from time import sleep
 
 class InitialPosePublisher(Node):
     def __init__(self):

@@ -12,8 +12,7 @@ def generate_launch_description():
 
     map_file = os.path.join(sweepy_nav_dir, 'maps', '1_obstacle.yaml')  # Update to match your map file name
     amcl_params = os.path.join(sweepy_nav_dir, 'config', 'nav2_params.yaml')  # Create or reference your AMCL param file here
-    rviz_config = os.path.join(sweepy_nav_dir, 'rviz', 'localization.rviz')  # Make sure this file exists
-    
+
     # Map Server Node
     map_server_node = Node(
         package='nav2_map_server',
@@ -45,17 +44,7 @@ def generate_launch_description():
         }]
     )
 
-    # RViz Node
-    rviz_node = Node(
-        package='rviz2',
-        executable='rviz2',
-        name='rviz2',
-        output='screen',
-        arguments=['-d', rviz_config],
-        parameters=[{'use_sim_time': True}]
-    )
-
-    # Publish initial pose after  delay
+    # Publish initial pose after delay
     initial_pose_node = Node(
         package='sweepy_nav',
         executable='initial_pose_publisher.py',
@@ -68,7 +57,6 @@ def generate_launch_description():
         map_server_node,
         amcl_node,
         lifecycle_manager_node,
-        rviz_node,
         initial_pose_node
     ])
  
