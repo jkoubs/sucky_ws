@@ -14,7 +14,7 @@ from tf2_ros import Buffer, TransformListener
 import tf2_ros
 import tf2_geometry_msgs
 from libs.list_helper import *
-from libs.marker_visualization import MarkerVisualization
+from planner.marker_visualization import MarkerVisualization
 from shapely.geometry import Polygon, Point
 from nav2_msgs.action import NavigateToPose
 from geometry_msgs.msg import PointStamped, PoseStamped
@@ -41,7 +41,7 @@ class MapDrive(Node, MarkerVisualization):
         self.declare_parameters(
             namespace='',
             parameters=[
-                ('robot_width', 0.3),
+                ('robot_width', 1.066),
                 ('costmap_max_non_lethal', 70),
                 ('boustrophedon_decomposition', True),
                 ('border_drive', False),

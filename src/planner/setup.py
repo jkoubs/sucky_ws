@@ -25,8 +25,7 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-            'my_planner = planner.my_planner:main',
-            'path_coverage_ros = planner.path_coverage_ros:main',
+            'path_coverage = planner.path_coverage:main'
         ],
     },
 )

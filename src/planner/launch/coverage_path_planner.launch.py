@@ -17,16 +17,18 @@ def generate_launch_description():
     # Create the node
     path_coverage_node = Node(
         package="planner",
-        executable="path_coverage_ros",
+        executable="path_coverage",
         name="path_coverage",
         output="screen",
         parameters=[
             {"boustrophedon_decomposition": LaunchConfiguration("boustrophedon_decomposition")},
             {"border_drive": LaunchConfiguration("border_drive")},
-            {"robot_width": 0.3},
+            {"robot_width": 1.066},
             {"costmap_max_non_lethal": 70},
             {"base_frame": "base_link"},
+            {"use_sim_time": True},
         ],
+        # arguments=["--ros-args", "--log-level", "debug"]
     )
 
     return LaunchDescription([

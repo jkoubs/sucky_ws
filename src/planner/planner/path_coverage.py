@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 import os
 import rclpy
 from rclpy.node import Node
@@ -15,24 +17,24 @@ from nav2_msgs.action import NavigateToPose
 import tf2_ros
 from planner.libs.border_drive import border_calc_path
 from planner.libs.list_helper import *
-from planner.libs.marker_visualization import MarkerVisualization
+from planner.marker_visualization import MarkerVisualization
 from planner.libs.trapezoidal_coverage import calc_path as trapezoid_calc_path
 from ament_index_python.packages import get_package_share_directory
 from nav2_simple_commander.robot_navigator import BasicNavigator, TaskResult
 
 INSCRIBED_INFLATED_OBSTACLE = 253
 
-class MapDrive(MarkerVisualization):
+class MapDrive(Node):
     def __init__(self):
-        # rclpy.init()
-        # super().__init__('map_drive')
-        MarkerVisualization.__init__(self)
+        super().__init__('path_coverage')
+        self.get_logger().info("MapDrive node created")
+        self.visualizer = MarkerVisualization(self)
         self.navigator = BasicNavigator()
         self.lClickPoints = []
         self.global_frame = "map"  # Default frame
         self.local_costmap = None
         self.global_costmap = None
-        self.robot_width = self.declare_parameter("robot_width", 0.3).value
+        self.robot_width = self.declare_parameter("robot_width", 1.066).value
         self.costmap_max_non_lethal = self.declare_parameter("costmap_max_non_lethal", 70).value
         self.boustrophedon_decomposition = self.declare_parameter("boustrophedon_decomposition", True).value
         self.border_drive = self.declare_parameter("border_drive", False).value
@@ -45,8 +47,14 @@ class MapDrive(MarkerVisualization):
         self.tf_buffer = tf2_ros.Buffer()
         self.tf_listener = tf2_ros.TransformListener(self.tf_buffer, self)
 
-        self.navigator.waitUntilNav2Active()
-        self.get_logger().info("Running...")
+        try:
+            self.navigator.waitUntilNav2Active()
+            self.get_logger().info("Running...")
+        except Exception as e:
+            self.get_logger().error(f"Failed while waiting for Nav2: {e}")
+
+        # self.navigator.waitUntilNav2Active()
+        # self.get_logger().info("Running...")
 
     def globalCostmapReceived(self, costmap):
         self.global_costmap = costmap
@@ -76,15 +84,15 @@ class MapDrive(MarkerVisualization):
             if dist_x_first_last < avg_x_dist / 10.0 and dist_y_first_last < avg_y_dist / 10.0:
                 # last point is close to maximum, construct polygon
                 self.get_logger().info(f"Creating polygon {points}")
-                self.visualize_area(points, close=True)
+                self.visualizer.visualize_area(points, close=True)
                 if self.boustrophedon_decomposition:
                     self.do_boustrophedon(Polygon(points), self.global_costmap)
                 else:
                     self.drive_polygon(Polygon(points))
-                self.visualize_area(points, close=True, show=False)
+                self.visualizer.visualize_area(points, close=True, show=False)
                 self.lClickPoints = []
                 return
-        self.visualize_area(points, close=False)
+        self.visualizer.visualize_area(points, close=False)
 
     def do_boustrophedon(self, poly, costmap):
         # Cut polygon area from costmap
@@ -125,7 +133,7 @@ class MapDrive(MarkerVisualization):
         with tempfile.NamedTemporaryFile(delete=False, mode='w') as ftmp:
             ftmp.write(json.dumps(rows))
             ftmp.flush()
-            boustrophedon_script = os.path.join("/home", "tilla22", "cudatech_ws", "src", "planner", "planner", "boustrophedon_decomposition.rb")
+            boustrophedon_script = os.path.join("/home", "robot", "sweepy_dev_ws", "src", "planner", "planner", "boustrophedon_decomposition.rb")
             with os.popen("%s %s" % (boustrophedon_script, ftmp.name)) as fscript:
                 polygons = json.loads(fscript.readline())
 
@@ -179,7 +187,7 @@ class MapDrive(MarkerVisualization):
         return pos_next
 
     def drive_path(self, path):
-        self.visualize_path(path)
+        self.visualizer.visualize_path(path)
 
         initial_pos = self.tf_buffer.lookup_transform(self.global_frame, self.base_frame, rclpy.time.Time())
         path.insert(0, (initial_pos.transform.translation.x, initial_pos.transform.translation.y))
@@ -200,10 +208,10 @@ class MapDrive(MarkerVisualization):
 
             self.next_pos(pos_last[0], pos_last[1], angle)  # rotate in direction of next goal
             self.next_pos(pos_next[0], pos_next[1], angle)
-        self.visualize_path(path, False)
+        self.visualizer.visualize_path(path, False)
 
     def drive_polygon(self, polygon):
-        self.visualize_cell(polygon.exterior.coords[:])
+        self.visualizer.visualize_cell(polygon.exterior.coords[:])
 
         # Align longest side of the polygon to the horizontal axis
         angle = get_angle_of_longest_side_to_horizontal(polygon)
@@ -225,11 +233,13 @@ class MapDrive(MarkerVisualization):
         self.drive_path(path)
 
         # cleanup
-        self.visualize_cell(polygon.exterior.coords[:], False)
+        self.visualizer.visualize_cell(polygon.exterior.coords[:], False)
         self.get_logger().debug("Polygon done")
 
 
 def main(args=None):
+    if rclpy.ok():
+        raise RuntimeError("rclpy is already initialized! Are you creating a second node?")
     rclpy.init(args=args)
     node = MapDrive()
     try:
@@ -239,6 +249,3 @@ def main(args=None):
     finally:
         node.destroy_node()
         rclpy.shutdown()
-
-if __name__ == "__main__":
-    main()

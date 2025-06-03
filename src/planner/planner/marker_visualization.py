@@ -4,20 +4,22 @@ from visualization_msgs.msg import Marker
 from geometry_msgs.msg import Point
 from planner.libs.list_helper import *
 
-class MarkerVisualization(Node):
-    def __init__(self):
-        super().__init__('marker_visualization')
+if rclpy.ok():
+    raise RuntimeError("rclpy is already initialized! Are you creating a second node?")
+
+class MarkerVisualization:
+    def __init__(self, node):
+        self.node = node
         self.last_points = {}
         self.last_path = None
-        self.pub_marker = self.create_publisher(Marker, "path_coverage_marker", 16)
-        self.declare_parameter('global_frame', 'map')
-        self.global_frame = self.get_parameter('global_frame').value
+        self.pub_marker = node.create_publisher(Marker, "path_coverage_marker", 16)
+        self.global_frame = node.declare_parameter('global_frame', 'map').value
 
     def visualization_cleanup(self):
         for id, points in self.last_points.items():
             if points is not None:
                 self.visualize_trapezoid(points, id=id, show=False)
-            self.last_points = {}
+        self.last_points = {}
         if self.last_path is not None:
             self.visualize_path(self.last_path, False)
             self.last_path = None
@@ -36,9 +38,10 @@ class MarkerVisualization(Node):
 
         msg = Marker()
         msg.header.frame_id = self.global_frame
-        msg.header.stamp = self.get_clock().now().to_msg()
+        msg.header.stamp = self.node.get_clock().now().to_msg()
         msg.ns = "trapezoid"
-        msg.lifetime = rclpy.duration.Duration().to_msg()
+        msg.lifetime.sec = 0  # infinite lifetime
+        msg.lifetime.nanosec = 0
         msg.id = id
         msg.type = Marker.LINE_STRIP
         msg.action = Marker.ADD if show else Marker.DELETE
@@ -63,9 +66,10 @@ class MarkerVisualization(Node):
         for pos_last, pos_cur in pairwise(path):
             msg = Marker()
             msg.header.frame_id = self.global_frame
-            msg.header.stamp = self.get_clock().now().to_msg()
+            msg.header.stamp = self.node.get_clock().now().to_msg()
             msg.ns = "path"
-            msg.lifetime = rclpy.duration.Duration().to_msg()
+            msg.lifetime.sec = 0  # infinite lifetime
+            msg.lifetime.nanosec = 0
             msg.id = i
             msg.type = Marker.ARROW
             msg.action = Marker.ADD if show else Marker.DELETE

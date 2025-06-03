@@ -10,7 +10,7 @@ from ament_index_python.packages import get_package_share_directory
 def generate_launch_description():
     bringup_pkg = get_package_share_directory('sweepy_bringup')
     nav_pkg = get_package_share_directory('sweepy_nav')
-    rviz_config = os.path.join(nav_pkg, 'rviz', 'navigation.rviz')  # Make sure this file exists
+    rviz_config = os.path.join(nav_pkg, 'rviz', 'path_coverage.rviz')  # Make sure this file exists
 
     bringup = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(
