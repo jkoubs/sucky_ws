@@ -25,7 +25,8 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-            'path_coverage = planner.path_coverage:main'
+            'path_coverage = planner.path_coverage:main',
+            'path_coverage_v2 = planner.path_coverage_v2:main'
         ],
     },
 )
