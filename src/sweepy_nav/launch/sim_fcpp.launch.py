@@ -15,7 +15,7 @@ def generate_launch_description():
         output='screen',
         parameters=[nav2_params, {'use_sim_time': True}],
         remappings=[
-        ('/cmd_vel', '/cmd_vel_nav')
+        ('/cmd_vel', '/cmd_vel_nav'),
     ]
     #     remappings=[
     #     ('/cmd_vel', '/diffbot_base_controller/cmd_vel_unstamped')

@@ -15,8 +15,8 @@ class InitialPosePublisher(Node):
         if self.pub.get_subscription_count() > 0 and not self.has_published:
             msg = PoseWithCovarianceStamped()
             msg.header.frame_id = 'map'
-            msg.pose.pose.position.x = 0.0
-            msg.pose.pose.position.y = 0.0
+            msg.pose.pose.position.x = 9.0
+            msg.pose.pose.position.y = -6.0
             msg.pose.pose.orientation.w = 1.0
             msg.pose.covariance[0] = 0.25
             msg.pose.covariance[7] = 0.25

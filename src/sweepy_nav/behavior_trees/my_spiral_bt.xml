@@ -1,20 +1,14 @@
 <root main_tree_to_execute="MainTree">
   <BehaviorTree ID="MainTree">
-    <RecoveryNode number_of_retries="6" name="NavigateRecovery">
-      <PipelineSequence name="NavigateWithWaypoints">
-        <NavigateThroughPoses goals="{goals}" />
-      </PipelineSequence>
-      <Fallback name="RecoveryFallback">
-        <RoundRobin name="RecoveryActions">
-          <Sequence name="ClearingActions">
-            <ClearEntireCostmap name="ClearLocalCostmap" service_name="local_costmap/clear_entirely_local_costmap"/>
-            <ClearEntireCostmap name="ClearGlobalCostmap" service_name="global_costmap/clear_entirely_global_costmap"/>
-          </Sequence>
-          <Spin spin_dist="1.57"/>
-          <Wait wait_duration="5"/>
-          <BackUp backup_dist="0.30" backup_speed="0.05"/>
-        </RoundRobin>
-      </Fallback>
-    </RecoveryNode>
+    <Sequence name="CoverageNavigation">
+      <TransformAvailable child="base_link" parent="map"/>
+      <!-- 1. Plan the path -->
+      <ComputePathToPose goal="{goal}" path="{path}" planner_id="SpiralSTC"/>
+      <!-- 2. Smooth the path -->
+      <SmoothPath unsmoothed_path="{path}" smoothed_path="{path}" smoother_id="simple_smoother"/>
+      <!-- 3. Follow the smoothed path -->
+      <FollowPath path="{path}" controller_id="FollowPath" goal_checker_id="general_goal_checker"/>
+      <GoalReached/>
+    </Sequence>
   </BehaviorTree>
 </root>
