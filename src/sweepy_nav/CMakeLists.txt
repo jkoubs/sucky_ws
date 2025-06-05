@@ -12,7 +12,7 @@ find_package(rclpy REQUIRED)
 
 # Install directories
 install(
-  DIRECTORY launch config maps rviz
+  DIRECTORY launch config maps rviz behavior_trees
   DESTINATION share/${PROJECT_NAME}
 )
 
@@ -20,6 +20,12 @@ install(
 install(
   PROGRAMS
     scripts/initial_pose_publisher.py
+    scripts/plan_to_navigate_through_poses.py
+    scripts/trigger_planner.py
+    scripts/full_nav_pipeline.py
+    scripts/full_nav_pipeline_v2.py
+    
+    
   DESTINATION lib/${PROJECT_NAME}
 )
 
