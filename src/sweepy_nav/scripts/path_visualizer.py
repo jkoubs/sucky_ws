@@ -9,7 +9,8 @@ class PathVisualizer(Node):
     def __init__(self):
         super().__init__('path_visualizer')
         self.marker_pub = self.create_publisher(Marker, 'path_markers', 10)
-        self.path_sub = self.create_subscription(Path, '/plan', self.path_callback, 10)
+        self.path_sub = self.create_subscription(Path, '/plan_smoothed', self.path_callback, 10)
+        self.get_logger().info("Initializing PathVisualizer node...")
 
     def path_callback(self, msg):
         marker = Marker()
@@ -18,7 +19,7 @@ class PathVisualizer(Node):
         marker.id = 0
         marker.type = Marker.SPHERE_LIST
         marker.action = Marker.ADD
-        marker.scale.x = 0.3 # Sphere radius
+        marker.scale.x = 0.3  # Sphere radius
         marker.scale.y = 0.3
         marker.scale.z = 0.3
         marker.color.r = 0.0
@@ -27,13 +28,15 @@ class PathVisualizer(Node):
         marker.color.a = 1.0
         marker.lifetime.sec = 0  # Forever
 
-        for pose in msg.poses:
-            p = Point()
-            p.x = pose.pose.position.x
-            p.y = pose.pose.position.y
-            p.z = 0.0
-            marker.points.append(p)
+        for i, pose in enumerate(msg.poses):
+            if i % 2 == 1:  # Only visualize odd-indexed points
+                p = Point()
+                p.x = pose.pose.position.x
+                p.y = pose.pose.position.y
+                p.z = 0.0
+                marker.points.append(p)
 
+        self.get_logger().info(f"Publishing {len(marker.points)} markers (only odd-indexed poses).")
         self.marker_pub.publish(marker)
 
 def main(args=None):
