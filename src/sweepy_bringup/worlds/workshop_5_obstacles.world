@@ -226,12 +226,6 @@
       </link>
     </model>
 
-    <physics type="ode">
-      <max_step_size>0.001</max_step_size>
-      <real_time_factor>1</real_time_factor>
-      <real_time_update_rate>1000</real_time_update_rate>
-    </physics><gravity>0 0 -9.8</gravity>
-
     <include>
       <uri>model://big_box</uri>
       <name>Big_box_1</name>
@@ -261,5 +255,19 @@
       <name>Big_box_5</name>
       <pose>-8.0 3.0 0.5 0 0 0</pose>
     </include>
-</world>
+
+    <!-- <physics type="ode">
+      <max_step_size>0.001</max_step_size>
+      <real_time_factor>1</real_time_factor>
+      <real_time_update_rate>1000</real_time_update_rate>
+    </physics><gravity>0 0 -9.8</gravity> -->
+
+    <physics type="ode">
+      <real_time_update_rate>1250</real_time_update_rate>  <!-- Run as fast as possible -->
+      <max_step_size>0.002</max_step_size>               <!-- Larger steps = faster sim -->
+    </physics>
+    <gravity>0 0 -9.8</gravity>
+
+
+  </world>
 </sdf>
