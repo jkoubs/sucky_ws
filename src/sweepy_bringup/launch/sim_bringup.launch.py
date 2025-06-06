@@ -25,7 +25,7 @@ def generate_launch_description():
             os.path.join(get_package_share_directory('gazebo_ros'), 'launch', 'gazebo.launch.py')
         ),
         launch_arguments={
-            'world': os.path.join(bringup_pkg, 'worlds', 'workshop_5_obstacles.world'),
+            'world': os.path.join(bringup_pkg, 'worlds', 'half_size_workshop.world'),
             'gui_plugins': '[]',
             'server_required_plugins': "['libgazebo_ros_init.so','libgazebo_ros_factory.so']"
         }.items()
@@ -52,8 +52,8 @@ def generate_launch_description():
         arguments=[
             '-topic', 'robot_description',
             '-entity', 'sweeper_bot',
-            '-x', '9.0',
-            '-y', '-6.0',
+            '-x', '0.0',
+            '-y', '0.0',
             '-z', '0.5'
         ],
         output='screen'
