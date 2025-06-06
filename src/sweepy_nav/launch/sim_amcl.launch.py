@@ -11,7 +11,7 @@ def generate_launch_description():
     sweepy_nav_dir = get_package_share_directory('sweepy_nav')
 
     map_file = os.path.join(sweepy_nav_dir, 'maps', '5_obstacle.yaml')  # Update to match your map file name
-    amcl_params = os.path.join(sweepy_nav_dir, 'config', 'sim_amcl.yaml')  # Create or reference your AMCL param file here
+    amcl_params = os.path.join(sweepy_nav_dir, 'config', 'small_map_3_obstacles.yaml')  # Create or reference your AMCL param file here
 
     # Map Server Node
     map_server_node = Node(
