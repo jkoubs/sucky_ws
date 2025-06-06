@@ -20,14 +20,12 @@ install(
 install(
   PROGRAMS
     scripts/initial_pose_publisher.py
-    scripts/plan_to_navigate_through_poses.py
-    scripts/trigger_planner.py
-    scripts/full_nav_pipeline.py
-    scripts/full_nav_pipeline_v2.py
     scripts/path_logger.py
     scripts/path_visualizer.py 
     scripts/path_interpolator.py 
+    scripts/path_interpolator_optimized.py 
     scripts/send_interpolated_path.py 
+    
     
   DESTINATION lib/${PROJECT_NAME}
 )
