@@ -49,7 +49,7 @@ def generate_launch_description():
     )
 
     bt_navigator = Node(
-        package='nav2_bt_navigator',
+        package='backported_bt_navigator',
         executable='bt_navigator',
         name='bt_navigator',
         output='screen',
