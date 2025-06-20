@@ -91,6 +91,10 @@ bt_navigator_navigate_to_pose_rclcpp_node:
   ros__parameters:
     use_sim_time: true  # Use simulation time (true) or real time (false). Default: false
 
+bt_navigator_navigate_complete_coverage_rclcpp_node:
+  ros__parameters:
+    use_sim_time: True
+    
 controller_server:
   ros__parameters:
     use_sim_time: True
@@ -403,16 +407,6 @@ map_saver:
     occupied_thresh_default: 0.65  # Default threshold for occupied space in the map. Default: 0.65
     map_subscribe_transient_local: True  # Whether to use transient local subscription for the map. Default: false
 
-planner_server:
-  ros__parameters:
-    expected_planner_frequency: 1.0  # Expected frequency of the planner in Hz. Default: 20.0
-    use_sim_time: true  # Use simulation time (true) or real time (false). Default: false
-    planner_plugins: ["SpiralSTC"]  # List of planner plugins. Default: ["GridBased"]
-    tf_buffer_duration: 30.0  # Duration to buffer transforms in seconds. Default: 10.0
-    SpiralSTC:
-      plugin: full_coverage_path_planner/SpiralSTC
-      robot_radius: 0.5
-      tool_radius: 0.45
 
 smoother_server:
   ros__parameters:
