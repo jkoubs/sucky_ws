@@ -24,7 +24,6 @@ row_coverage_server:
 
 bt_navigator:
   ros__parameters:
-    # default_nav_to_pose_bt_xml: "/home/robot/sweepy_dev_ws/src/sweepy_nav/behavior_trees/my_spiral_bt_v2_recovery.xml"
     use_sim_time: true  # Use simulation time (true) or real time (false). Default: false
     global_frame: map  # The global frame ID. Default: "map"
     robot_base_frame: base_link  # The base frame ID of the robot. Default: "base_link"
