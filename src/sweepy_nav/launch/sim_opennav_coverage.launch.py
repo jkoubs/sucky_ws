@@ -78,14 +78,15 @@ def generate_launch_description():
 
     coverage_server = Node(
         package='opennav_coverage',
-        executable='coverage_server',
+        executable='opennav_coverage',
         name='coverage_server',
         output='screen',
         parameters=[nav2_params, {'use_sim_time': True}],
         remappings=[
             ('/tf', 'tf'),
             ('/tf_static', 'tf_static')
-        ]
+        ],
+        arguments=['--ros-args', '--log-level', 'debug']
     )
 
     # Lifecycle manager
@@ -105,7 +106,7 @@ def generate_launch_description():
                 'bt_navigator',
                 'waypoint_follower',
                 'velocity_smoother',
-                'coverage_server'
+                # 'coverage_server'
             ]
         }]
     )
@@ -118,6 +119,6 @@ def generate_launch_description():
         bt_navigator,
         waypoint_follower,
         velocity_smoother,
-        coverage_server,
+        # coverage_server,
         lifecycle_manager
     ])
