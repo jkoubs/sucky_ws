@@ -335,6 +335,7 @@ planner_server:
       plugin: full_coverage_path_planner/SpiralSTC
       robot_radius: 0.5
       tool_radius: 0.45
+      interpolation_resolution: 0.4
 
 smoother_server:
   ros__parameters:
