@@ -22,8 +22,6 @@ install(
     scripts/initial_pose_publisher.py
     scripts/path_debugging.py
     scripts/path_interpolator.py 
-    scripts/path_interpolator_optimized.py 
-    scripts/path_interpolator_optimized_v2.py 
     scripts/send_interpolated_path.py 
     scripts/cleaning_visualizer.py 
     scripts/demo_coverage.py 
