@@ -5,11 +5,11 @@
         <!-- 0. Checks if a TF transform is available -->
         <TransformAvailable child="base_link" parent="map"/>
         <!-- 1. Plan the path -->
-          <ComputePathToPose goal="{goal}" path="{raw_path}" planner_id="SpiralSTC"/>
+        <ComputePathToPose goal="{goal}" path="{raw_path}" planner_id="SpiralSTC"/>
         <!-- 2. Smooth the path -->
-        <SmoothPath unsmoothed_path="{raw_path}" smoothed_path="{smoothed_path}" smoother_id="simple_smoother"/>
+        <!-- <SmoothPath unsmoothed_path="{raw_path}" smoothed_path="{smoothed_path}" smoother_id="simple_smoother"/> -->
         <!-- 3. Follow the smoothed path -->
-        <FollowPath path="{smoothed_path}" controller_id="FollowPath" goal_checker_id="general_goal_checker"/>
+        <FollowPath path="{raw_path}" controller_id="FollowPath" goal_checker_id="general_goal_checker"/>
         <GoalReached/>
       </Sequence>
     </SingleTrigger>
