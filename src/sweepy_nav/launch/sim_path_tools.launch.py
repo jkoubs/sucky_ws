@@ -5,7 +5,7 @@ def generate_launch_description():
     return LaunchDescription([
         Node(
             package='sweepy_nav',
-            executable='path_interpolator_optimized_v2.py',
+            executable='path_interpolator.py',
             name='path_interpolator',
             output='screen'
         ),
