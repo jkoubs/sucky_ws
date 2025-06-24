@@ -68,12 +68,12 @@ class CleanedAreaVisualizer(Node):
         x = msg.pose.pose.position.x
         y = msg.pose.pose.position.y
 
-        self.get_logger().info(f'Pose received: x={x:.2f}, y={y:.2f}')
+        #self.get_logger().info(f'Pose received: x={x:.2f}, y={y:.2f}')
 
         mx = int((x - self.map_metadata.origin.position.x) / self.map_metadata.resolution)
         my = int((y - self.map_metadata.origin.position.y) / self.map_metadata.resolution)
 
-        self.get_logger().info(f'Converted to map coordinates: mx={mx}, my={my}')
+        #self.get_logger().info(f'Converted to map coordinates: mx={mx}, my={my}')
 
         radius_in_cells = int(self.cleaning_radius / self.map_metadata.resolution)
         updated_cells = 0
@@ -92,7 +92,7 @@ class CleanedAreaVisualizer(Node):
         self.cleaned_map.header.stamp = self.get_clock().now().to_msg()
         self.cleaned_map_pub.publish(self.cleaned_map)
 
-        self.get_logger().info(f'Updated {updated_cells} cleaned cells and published map.')
+        #self.get_logger().info(f'Updated {updated_cells} cleaned cells and published map.')
 
 def main():
     rclpy.init()
