@@ -20,11 +20,9 @@ install(
 install(
   PROGRAMS
     scripts/initial_pose_publisher.py
-    scripts/path_debugging.py
-    scripts/path_interpolator.py 
-    scripts/send_interpolated_path.py 
     scripts/cleaning_visualizer.py 
     scripts/demo_coverage.py 
+    scripts/path_visualizer.py 
   DESTINATION lib/${PROJECT_NAME}
 )
 
