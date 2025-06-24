@@ -112,6 +112,7 @@ namespace full_coverage_path_planner
     rclcpp::Publisher<nav_msgs::msg::Path>::SharedPtr plan_pub_;
     double robot_radius_;
     double tool_radius_;
+    double interpolation_resolution_;
     double plan_resolution_;
     double tile_size_;
     dPoint_t grid_origin_;

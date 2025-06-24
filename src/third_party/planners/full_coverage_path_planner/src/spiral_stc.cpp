@@ -53,6 +53,10 @@ namespace full_coverage_path_planner
       declare_parameter_if_not_declared(node_, name_ + ".tool_radius", rclcpp::ParameterValue(tool_radius_default));
       node_->get_parameter(name_ + ".tool_radius", tool_radius_);
       initialized_ = true;
+      // Define interpolation resolution parameter
+      double interpolation_resolution_default = 0.2;
+      declare_parameter_if_not_declared(node_, name_ + ".interpolation_resolution", rclcpp::ParameterValue(interpolation_resolution_default));
+      node_->get_parameter(name_ + ".interpolation_resolution", interpolation_resolution_);
     }
   }
 
@@ -78,17 +82,77 @@ namespace full_coverage_path_planner
     // TODO(clopez) Add proper cleanup
   }
 
+  std::vector<geometry_msgs::msg::PoseStamped> interpolateSegment(
+  const geometry_msgs::msg::PoseStamped & from,
+  const geometry_msgs::msg::PoseStamped & to,
+  double resolution)
+{
+  std::vector<geometry_msgs::msg::PoseStamped> result;
+
+  double dx = to.pose.position.x - from.pose.position.x;
+  double dy = to.pose.position.y - from.pose.position.y;
+  double dz = to.pose.position.z - from.pose.position.z;
+  double distance = std::sqrt(dx * dx + dy * dy + dz * dz);
+
+  if (distance < 1e-6) {
+    return result;
+  }
+
+  int num_steps = std::max(2, static_cast<int>(distance / resolution));
+
+  tf2::Quaternion q1, q2;
+  tf2::fromMsg(from.pose.orientation, q1);
+  tf2::fromMsg(to.pose.orientation, q2);
+
+  for (int i = 0; i < num_steps; ++i) {
+    double t = static_cast<double>(i) / num_steps;
+
+    geometry_msgs::msg::PoseStamped interp;
+    interp.header = from.header;
+    interp.pose.position.x = from.pose.position.x + dx * t;
+    interp.pose.position.y = from.pose.position.y + dy * t;
+    interp.pose.position.z = from.pose.position.z + dz * t;
+
+    tf2::Quaternion q_interp = q1.slerp(q2, t);
+    interp.pose.orientation = tf2::toMsg(q_interp);
+
+    result.push_back(interp);
+  }
+
+  return result;
+}
+
   nav_msgs::msg::Path SpiralSTC::createPlan(
     const geometry_msgs::msg::PoseStamped & start,
     const geometry_msgs::msg::PoseStamped & goal)
   {
-    nav_msgs::msg::Path global_path;
-    SpiralSTC::makePlan(start, goal, global_path.poses);
+    // nav_msgs::msg::Path global_path;
+    // SpiralSTC::makePlan(start, goal, global_path.poses);
 
-    global_path.header.stamp = node_->now();
-    global_path.header.frame_id = global_frame_;
+    // global_path.header.stamp = node_->now();
+    // global_path.header.frame_id = global_frame_;
 
-    return global_path;
+    // return global_path;
+    nav_msgs::msg::Path raw_path;
+    SpiralSTC::makePlan(start, goal, raw_path.poses);
+    raw_path.header.stamp = node_->now();
+    raw_path.header.frame_id = global_frame_;
+
+    // Interpolate the raw path
+    nav_msgs::msg::Path interpolated_path;
+    interpolated_path.header = raw_path.header;
+
+    for (size_t i = 0; i < raw_path.poses.size() - 1; ++i) {
+      auto segment = interpolateSegment(raw_path.poses[i], raw_path.poses[i + 1], interpolation_resolution_);
+      interpolated_path.poses.insert(interpolated_path.poses.end(), segment.begin(), segment.end());
+    }
+
+    // Add final pose
+    if (!raw_path.poses.empty()) {
+      interpolated_path.poses.push_back(raw_path.poses.back());
+    }
+
+    return interpolated_path;
   }
   std::list<gridNode_t> SpiralSTC::spiral(std::vector<std::vector<bool>> const &grid, std::list<gridNode_t> &init,
                                           std::vector<std::vector<bool>> &visited)
