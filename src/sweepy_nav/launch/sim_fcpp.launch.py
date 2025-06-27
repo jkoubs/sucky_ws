@@ -10,7 +10,7 @@ def generate_launch_description():
     bt_xml_path = os.path.join(
         sweepy_nav_dir,
         'behavior_trees',
-        'my_spiral_bt_v2_recovery.xml'
+        'spiral.xml'
     )
 
     # Individual Nav2 nodes
