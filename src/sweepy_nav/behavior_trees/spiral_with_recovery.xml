@@ -1,0 +1,29 @@
+<root main_tree_to_execute="MainTree">
+  <BehaviorTree ID="MainTree">
+    <Sequence name="InitialCoverageSetup">
+      <!-- One-time coverage plan -->
+      <TransformAvailable child="base_link" parent="map"/>
+      <ComputePathToPose goal="{goal}" path="{global_path}" planner_id="SpiralSTC"/>
+    </Sequence>
+
+    <RepeatUntilSuccess>
+      <Fallback name="CoverageWithReplanIfBlocked">
+
+        <!-- Try following the original coverage path -->
+        <Sequence name="FollowGlobalPath">
+          <FollowPath path="{global_path}" controller_id="FollowPath" goal_checker_id="general_goal_checker"/>
+          <GoalReached/>
+        </Sequence>
+
+        <!-- Recovery sequence: blocked, temporarily replan and return -->
+        <Sequence name="BlockedRecoverySequence">
+          <!-- Replan path to reconnect to the original coverage path -->
+          <GetClosestPointOnPath path="{global_path}" current_pose="{current_pose}" target_point="{resume_point}"/>
+          <ComputePathToPose goal="{resume_point}" path="{recovery_path}" planner_id="GridBased" />
+          <FollowPath path="{recovery_path}" controller_id="FollowPath" goal_checker_id="general_goal_checker"/>
+        </Sequence>
+
+      </Fallback>
+    </RepeatUntilSuccess>
+  </BehaviorTree>
+</root>

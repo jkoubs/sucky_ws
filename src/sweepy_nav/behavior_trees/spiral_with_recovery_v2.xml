@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<root BTCPP_format="4" main_tree_to_execute="MainTree">
+  <BehaviorTree ID="MainTree">
+
+    <Sequence name="StartAndCover">
+
+      <!-- Ensure TF transform is available -->
+      <TransformAvailable child="base_link" parent="map"/>
+
+      <!-- Compute global Spiral STC path once -->
+      <ComputePathToPose goal="{goal}" path="{global_path}" planner_id="SpiralSTC"/>
+
+      <!-- Loop until the path is completed -->
+      <RepeatUntilSuccess>
+
+        <Fallback name="FollowCoverageWithRecovery">
+
+          <!-- Attempt to follow the global path -->
+          <Sequence name="FollowGlobalPath">
+            <FollowPath path="{global_path}" controller_id="FollowPath" goal_checker_id="general_goal_checker"/>
+            <GoalReached/>
+          </Sequence>
+
+          <!-- If blocked, replan a recovery path to rejoin -->
+          <Sequence name="BlockedRecovery">
+            <GetRobotPose output="{current_pose}"/>
+            <FindClosestPointOnPath path="{global_path}" pose="{current_pose}" output="{rejoin_point}"/>
+            <ComputePathToPose goal="{rejoin_point}" path="{recovery_path}" planner_id="GridBased"/>
+            <FollowPath path="{recovery_path}" controller_id="FollowPath" goal_checker_id="general_goal_checker"/>
+          </Sequence>
+
+        </Fallback>
+
+      </RepeatUntilSuccess>
+
+    </Sequence>
+
+  </BehaviorTree>
+</root>
