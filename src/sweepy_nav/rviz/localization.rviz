@@ -57,7 +57,7 @@ Visualization Manager:
     - Alpha: 1
       Class: rviz_default_plugins/RobotModel
       Collision Enabled: false
-      Description File: /home/robot/sweepy_dev_ws/src/sweepy_bringup/urdf/robot.urdf.xacro
+      Description File: /home/robot/sucky_ws/src/sweepy_bringup/urdf/robot.urdf.xacro
       Description Source: Topic
       Description Topic:
         Depth: 5
