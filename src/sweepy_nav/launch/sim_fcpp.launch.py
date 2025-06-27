@@ -62,7 +62,7 @@ def generate_launch_description():
         parameters=[
             nav2_params, 
             {'use_sim_time': True},
-            # {'default_nav_to_pose_bt_xml': bt_xml_path}        
+            {'default_nav_to_pose_bt_xml': bt_xml_path}        
         ]
     )
 
