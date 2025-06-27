@@ -7,6 +7,12 @@ def generate_launch_description():
     sweepy_nav_dir = get_package_share_directory('sweepy_nav')
     nav2_params = os.path.join(sweepy_nav_dir, 'config', 'sim_nav2_fcpp.yaml')
 
+    bt_xml_path = os.path.join(
+        sweepy_nav_dir,
+        'behavior_trees',
+        'my_spiral_bt_v2_recovery.xml'
+    )
+
     # Individual Nav2 nodes
     controller_server = Node(
         package='nav2_controller',
@@ -53,7 +59,11 @@ def generate_launch_description():
         executable='bt_navigator',
         name='bt_navigator',
         output='screen',
-        parameters=[nav2_params, {'use_sim_time': True}]
+        parameters=[
+            nav2_params, 
+            {'use_sim_time': True},
+            # {'default_nav_to_pose_bt_xml': bt_xml_path}        
+        ]
     )
 
     waypoint_follower = Node(
