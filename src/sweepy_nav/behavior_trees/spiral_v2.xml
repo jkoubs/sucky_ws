@@ -1,0 +1,5 @@
+<root main_tree_to_execute="MainTree">
+  <BehaviorTree ID="MainTree">
+    <FollowPath path="{spiral_path}" controller_id="FollowPath" goal_checker_id="general_goal_checker"/>
+  </BehaviorTree>
+</root>

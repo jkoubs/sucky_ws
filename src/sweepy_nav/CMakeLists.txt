@@ -23,6 +23,7 @@ install(
     scripts/cleaning_visualizer.py 
     scripts/demo_coverage.py 
     scripts/path_visualizer.py 
+    scripts/spiral_path_loader.py 
   DESTINATION lib/${PROJECT_NAME}
 )
 

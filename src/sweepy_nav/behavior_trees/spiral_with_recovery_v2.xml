@@ -1,15 +1,12 @@
 <root main_tree_to_execute="MainTree">
   <BehaviorTree ID="MainTree">
 
-    <Fallback name="NavigateWithRecovery">
+    <Fallback name="FollowOrRecover">
 
-      <!-- Main Spiral Coverage Plan -->
-      <Sequence name="SpiralSTC_Main">
-        <ComputePathToPose goal="{coverage_goal}" path="{spiral_path}" planner_id="SpiralSTC"/>
-        <FollowPath path="{spiral_path}" controller_id="FollowPath"/>
-      </Sequence>
+      <!-- Try to follow the precomputed SpiralSTC path -->
+      <FollowPath path="{spiral_path}" controller_id="FollowPath"/>
 
-      <!-- Recovery Branch if Blocked -->
+      <!-- If blocked, do recovery and rejoin path -->
       <Sequence name="RecoveryIfBlocked">
         <GetRobotPose output="{current_pose}"/>
         <FindUnoccupiedWaypoint path="{spiral_path}" pose="{current_pose}" output="{rejoin_point}"/>
