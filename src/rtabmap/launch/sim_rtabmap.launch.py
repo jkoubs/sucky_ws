@@ -71,7 +71,15 @@ def generate_launch_description():
             remappings=remappings),
 
         Node(
-            package='rviz2', executable='rviz2', name='rviz2', output='screen',
+            package='rviz2',
+            executable='rviz2',
+            name='rviz2',
+            output='screen',
             condition=IfCondition(LaunchConfiguration("rviz")),
+            arguments=['-d', os.path.join(
+                get_package_share_directory('rtabmap'),
+                'rviz',
+                'rtabmap_demo.rviz'
+            )],
         ),
     ])
