@@ -29,9 +29,9 @@ def generate_launch_description():
           'odom_frame_id':'odom',
           'odom_tf_linear_variance':0.001,
           'odom_tf_angular_variance':0.001,
-          'subscribe_rgbd':True,
+          'subscribe_rgbd':False,
           'subscribe_scan':True,
-          'approx_sync':True,
+          'approx_sync':False,
           'sync_queue_size': 10,
           # RTAB-Map's internal parameters should be strings
           'RGBD/NeighborLinkRefining': 'true',    # Do odometry correction with consecutive laser scans
