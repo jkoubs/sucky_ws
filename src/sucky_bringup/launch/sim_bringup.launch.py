@@ -51,7 +51,7 @@ def generate_launch_description():
         executable='spawn_entity.py',
         arguments=[
             '-topic', 'robot_description',
-            '-entity', 'sweeper_bot',
+            '-entity', 'sucky',
             '-x', '0.0',
             '-y', '0.0',
             '-z', '0.5'
