@@ -186,6 +186,13 @@ bool GazeboRosRealsense::FillPointCloudHelper(
           iter_rgb[1] = image_src[i * 3 + j * cols_arg * 3 + 1];
           iter_rgb[2] = image_src[i * 3 + j * cols_arg * 3 + 2];
         }
+        else if (this->image_msg_.encoding == sensor_msgs::image_encodings::TYPE_8UC1) {
+          // Treat grayscale image as RGB by duplicating the value across R, G, B
+          uint8_t gray = image_src[i + j * cols_arg];
+          iter_rgb[0] = gray;
+          iter_rgb[1] = gray;
+          iter_rgb[2] = gray;
+        }
         else {
           throw std::runtime_error("unsupported colour encoding: " + this->image_msg_.encoding);
         }
