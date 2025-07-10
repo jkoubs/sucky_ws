@@ -204,7 +204,7 @@
     <include>
       <uri>model://T-shape-obstacle</uri>
       <name>T-obstacle-1</name>
-      <pose>3 -2 0.0 0.0 0 0</pose>
+      <pose>4 0 0.0 0.0 0 1.5708</pose>
     </include>
 
     <include>
