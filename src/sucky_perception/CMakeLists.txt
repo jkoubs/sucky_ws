@@ -11,10 +11,16 @@ find_package(rclpy REQUIRED)
 
 # Install directories
 install(
-  DIRECTORY launch config
+  DIRECTORY launch config scripts rviz
   DESTINATION share/${PROJECT_NAME}
 )
 
+# Install Python scripts (e.g. initial_pose_publisher.py)
+install(
+  PROGRAMS
+    scripts/pc_filter_height.py
+  DESTINATION lib/${PROJECT_NAME}
+)
 
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)
