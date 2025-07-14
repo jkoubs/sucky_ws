@@ -22,7 +22,7 @@ def generate_launch_description():
           'odom_frame_id':'odom',
           'odom_tf_linear_variance':0.001,
           'odom_tf_angular_variance':0.001,
-          'subscribe_rgbd':False,
+          'subscribe_rgbd':True,
           'subscribe_scan':True,
           'approx_sync':True,
           'sync_queue_size': 30,
