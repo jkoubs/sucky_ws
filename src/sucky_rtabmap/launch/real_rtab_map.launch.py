@@ -20,7 +20,7 @@ def generate_launch_description():
     parameters={
           'frame_id':'base_footprint',
           'odom_frame_id':'odom',
-          'odom_tf_linear_variance':0.001,
+          'odom_tf_linear_variance':0.001, # set to low to trust odometry from wheel encoders
           'odom_tf_angular_variance':0.001,
           'subscribe_rgbd':True,
           'subscribe_scan':True,
@@ -35,14 +35,25 @@ def generate_launch_description():
           'RGBD/OptimizeFromGraphEnd': 'false',
           'RGBD/OptimizeMaxError':     '4',
           'Reg/Force3DoF':             'true',
-          'Grid/FromDepth':            'false',
           'Mem/STMSize':               '30',
           'RGBD/LocalRadius':          '5',
           'Icp/CorrespondenceRatio':   '0.2',
           'Icp/PM':                    'false',
           'Icp/PointToPlane':          'false',
           'Icp/MaxCorrespondenceDistance': '0.15',
-          'Icp/VoxelSize':             '0.05'
+          'Icp/VoxelSize':             '0.05',
+
+          # 2D Grid Map 
+          'Grid/Sensor': '2',                        # Use both scan and depth/point cloud
+          'Grid/NormalsSegmentation': 'true',        # Enable surface normal filtering
+          'Grid/FlatObstacleDetected': 'true',       # Keep tables, benches, etc.
+          'Grid/MaxGroundHeight': '0.1',             # Anything below 15cm = ground
+          'Grid/MaxObstacleHeight': '2.00',           # Filter out ceilings and tall objects
+          'Grid/RayTracing': 'false',                 # Simulate free space
+          'Grid/RangeMin': '0.3',                    # Ignore very close points
+          'Grid/RangeMax': '5.0',                    # Sensor max range
+          'Grid/MapFrameProjection': 'true',         # Project obstacles in map frame
+          'Grid/NormalK': '30',                      # More stable normals
     }
     
     remappings=[
