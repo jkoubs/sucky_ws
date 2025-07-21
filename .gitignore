@@ -4,6 +4,7 @@ install/
 log/
 
 miscellaneous/
+bags/
 # Python cache
 *.pyc
 __pycache__/
