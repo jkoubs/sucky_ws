@@ -1,0 +1,7 @@
+image: quad_shop_rtabmap_z_2p0.pgm
+resolution: 0.05
+origin: [-4.12529, -18.7536, 0.0]
+negate: 0
+occupied_thresh: 0.5
+free_thresh: 0.196
+
