@@ -19,7 +19,11 @@ install(
 
 # Install scripts
 install(PROGRAMS
-  scripts/relay_controller_node.py 
+    scripts/relay_controller_node.py 
+    scripts/mpu9250_pub.py
+    scripts/mpu9250_no_mag_pub.py
+    scripts/yaw_drift_pub_mpu9250.py
+    scripts/yaw_mag_pub_mpu9250.py
   DESTINATION lib/${PROJECT_NAME}
 )
 
