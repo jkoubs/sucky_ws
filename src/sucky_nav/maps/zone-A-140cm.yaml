@@ -1,6 +1,6 @@
-image: zone-A.pgm
+image: zone-A-140cm-good.pgm
 resolution: 0.05
-origin: [-12.8172, -29.094, 0.0]
+origin: [-12.7719, -29.0937, 0.0]
 negate: 0
 occupied_thresh: 0.5
 free_thresh: 0.196
