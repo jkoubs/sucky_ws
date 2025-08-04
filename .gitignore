@@ -5,6 +5,7 @@ log/
 
 miscellaneous/
 bags/
+src/sucky/
 # Python cache
 *.pyc
 __pycache__/
