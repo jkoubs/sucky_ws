@@ -2,7 +2,7 @@ bt_navigator:
   ros__parameters:
     use_sim_time: true  # Use simulation time (true) or real time (false). Default: false
     global_frame: map  # The global frame ID. Default: "map"
-    robot_base_frame: base_link  # The base frame ID of the robot. Default: "base_link"
+    robot_base_frame: base_footprint  # The base frame ID of the robot. Default: "base_footprint"
     odom_topic: /odom  # The topic name for odometry messages. Default: "/odom"
     bt_loop_duration: 10  # Duration of the Behavior Tree loop in milliseconds. Default: 10
     default_server_timeout: 20  # Default server timeout in seconds. Default: 20
@@ -239,7 +239,7 @@ local_costmap:
       update_frequency: 10.0  # Frequency to update the local costmap in Hz. Default: 5.0
       publish_frequency: 4.0  # Frequency to publish the local costmap in Hz. Default: 2.0
       global_frame: odom  # The frame ID of the global frame. Default: "odom"
-      robot_base_frame: base_link  # The frame ID of the robot base. Default: "base_link"
+      robot_base_frame: base_footprint  # The frame ID of the robot base. Default: "base_footprint"
       use_sim_time: true  # Use simulation time (true) or real time (false). Default: false
       rolling_window: true  # Whether to use a rolling window for the local costmap. Default: true
       width: 3  # Width of the local costmap in meters. Default: 10.0
@@ -282,7 +282,7 @@ global_costmap:
       update_frequency: 2.0  # Frequency to update the global costmap in Hz. Default: 1.0
       publish_frequency: 2.0  # Frequency to publish the global costmap in Hz. Default: 1.0
       global_frame: map  # The frame ID of the global frame. Default: "map"
-      robot_base_frame: base_link  # The frame ID of the robot base. Default: "base_link"
+      robot_base_frame: base_footprint  # The frame ID of the robot base. Default: "base_footprint"
       use_sim_time: true  # Use simulation time (true) or real time (false). Default: false
       footprint: "[[-.178, .533], [-.178, -.533], [.9, -.533], [.9, .533]]"  # The robot footprint in the global costmap. Default: "[]"
       resolution: 0.05  # Resolution of the global costmap in meters per cell. Default: 0.05
@@ -366,7 +366,7 @@ behavior_server:
     assisted_teleop:
       plugin: "nav2_behaviors/AssistedTeleop"  # Plugin for the assisted teleop behavior. Default: "nav2_behaviors/AssistedTeleop"
     global_frame: odom  # The frame ID of the global frame. Default: "odom"
-    robot_base_frame: base_link  # The frame ID of the robot base. Default: "base_link"
+    robot_base_frame: base_footprint  # The frame ID of the robot base. Default: "base_footprint"
     transform_tolerance: 10.0  # Transform tolerance in seconds. Default: 0.5
     use_sim_time: true  # Use simulation time (true) or real time (false). Default: false
     simulate_ahead_time: 2.0  # Time to simulate ahead in seconds. Default: 2.0
