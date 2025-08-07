@@ -10,7 +10,7 @@ import os
 def generate_launch_description():
     sucky_nav_dir = get_package_share_directory('sucky_nav')
 
-    map_file = os.path.join(sucky_nav_dir, 'maps', 'small_map_3_obstacles.yaml')  # Update to match your map file name
+    map_file = os.path.join(sucky_nav_dir, 'maps', 'zone-A-130-rotated.yaml')  # Update to match your map file name
     amcl_params = os.path.join(sucky_nav_dir, 'config', 'sim_amcl.yaml')  # Create or reference your AMCL param file here
 
     # Map Server Node
