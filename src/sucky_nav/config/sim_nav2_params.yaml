@@ -144,7 +144,7 @@ local_costmap:
       inflation_layer:
         plugin: "nav2_costmap_2d::InflationLayer"  # Plugin for the inflation layer. Default: "nav2_costmap_2d::InflationLayer"
         cost_scaling_factor: 3.0  # Cost scaling factor for inflation layer. Default: 10.0
-        inflation_radius: 0.55  # Inflation radius in meters. Default: 0.55
+        inflation_radius: 0.53  # Inflation radius in meters. Default: 0.55
       voxel_layer:
         plugin: "nav2_costmap_2d::VoxelLayer"  # Plugin for the voxel layer. Default: "nav2_costmap_2d::VoxelLayer"
         enabled: True  # Whether the voxel layer is enabled. Default: true
@@ -203,7 +203,7 @@ global_costmap:
       inflation_layer:
         plugin: "nav2_costmap_2d::InflationLayer"  # Plugin for the inflation layer. Default: "nav2_costmap_2d::InflationLayer"
         cost_scaling_factor: 3.0  # Cost scaling factor for inflation layer. Default: 10.0
-        inflation_radius: 0.55  # Inflation radius in meters. Default: 0.55
+        inflation_radius: 0.53  # Inflation radius in meters. Default: 0.55
       always_send_full_costmap: True  # Whether to always send the full costmap. Default: false
 
 map_server:
