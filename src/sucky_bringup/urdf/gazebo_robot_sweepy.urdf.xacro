@@ -1,21 +1,19 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="sucky">
 
-  <xacro:include filename="$(find sucky_bringup)/urdf/robot_core_sucky.xacro"/>
+  <xacro:include filename="$(find sucky_bringup)/urdf/robot_core.xacro"/>
   <xacro:include filename="$(find sucky_bringup)/urdf/gazebo_control.xacro"/>
-  <xacro:include filename="$(find sucky_bringup)/urdf/sensor_sick_sucky.xacro"/>
-  <!-- <xacro:include filename="$(find sucky_bringup)/urdf/sensor_imu.xacro"/> -->
+  <xacro:include filename="$(find sucky_bringup)/urdf/sensor_sick.xacro"/>
+  <xacro:include filename="$(find sucky_bringup)/urdf/sensor_imu.xacro"/>
   <xacro:include filename="$(find sucky_bringup)/urdf/sensor_d455.urdf.xacro"/>
   <xacro:include filename="$(find sucky_bringup)/urdf/sensor_d455.gazebo.xacro"/>
   <xacro:include filename="$(find sucky_bringup)/urdf/gazebo_sensors.xacro"/>
 
   <!-- Mount the D455 on base_link -->
   <xacro:sensor_d455 parent="base_link" name="d455" use_nominal_extrinsics="true">
-    <origin xyz="0.185 0 0.5611188" rpy="0 0 0"/>
+    <origin xyz="0.8 0 0.45" rpy="0 0 0"/>
   </xacro:sensor_d455>
-  <gazebo reference="d455_link">
-      <material>Gazebo/Red</material>
-  </gazebo>
+
   <!-- Add the Gazebo simulation plugin -->
   <xacro:gazebo_d455 
     camera_name="d455_" 
