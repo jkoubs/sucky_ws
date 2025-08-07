@@ -9,7 +9,7 @@ class CleanedAreaVisualizer(Node):
     def __init__(self):
         super().__init__('cleaned_area_visualizer')
 
-        self.declare_parameter('cleaning_radius', 0.45)
+        self.declare_parameter('cleaning_radius', 0.33)
         self.cleaning_radius = self.get_parameter('cleaning_radius').get_parameter_value().double_value
 
         self.map_metadata = None
