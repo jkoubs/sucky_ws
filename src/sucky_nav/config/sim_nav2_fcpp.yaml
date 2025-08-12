@@ -95,15 +95,15 @@ controller_server:
       vx_std: 0.4
       vy_std: 0.0
       wz_std: 0.7
-      vx_max: 0.5
-      vx_min: -0.35
+      vx_max: 0.2
+      vx_min: -0.2
       vy_max: 0.0
-      wz_max: 1.2
-      ax_max: 1.0
-      ax_min: -1.0
+      wz_max: 0.3
+      ax_max: 0.8
+      ax_min: -0.8
       ay_min: 0.0
       ay_max: 0.0
-      az_max: 3.5
+      az_max: 1.2
       prune_distance: 1.0
       transform_tolerance: 0.1
       temperature: 0.7
