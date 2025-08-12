@@ -397,10 +397,10 @@ velocity_smoother:
     smoothing_frequency: 40.0  # Frequency of the velocity smoother in Hz. Default: 20.0
     scale_velocities: False  # Whether to scale velocities. Default: false
     feedback: "OPEN_LOOP"  # Feedback type for the velocity smoother. Default: "OPEN_LOOP"
-    max_velocity: [0.2, 0.0, 0.4]  # Maximum velocities for X, Y, and angular velocities. Default: [0.26, 0.0, 1.0]
-    min_velocity: [-0.2, 0.0, -0.4]  # Minimum velocities for X, Y, and angular velocities. Default: [-0.26, 0.0, -1.0]
-    max_accel: [0.8, 0.0, 1.6]  # Maximum accelerations for X, Y, and angular accelerations. Default: [2.5, 0.0, 3.2]
-    max_decel: [-0.8, 0.0, -1.6]  # Maximum decelerations for X, Y, and angular decelerations. Default: [-2.5, 0.0, -3.2]
+    max_velocity: [0.2, 0.0, 0.3]  # Maximum velocities for X, Y, and angular velocities. Default: [0.26, 0.0, 1.0]
+    min_velocity: [-0.2, 0.0, -0.3]  # Minimum velocities for X, Y, and angular velocities. Default: [-0.26, 0.0, -1.0]
+    max_accel: [0.8, 0.0, 1.2]  # Maximum accelerations for X, Y, and angular accelerations. Default: [2.5, 0.0, 3.2]
+    max_decel: [-0.8, 0.0, -1.2]  # Maximum decelerations for X, Y, and angular decelerations. Default: [-2.5, 0.0, -3.2]
     odom_topic: "odom"  # Topic name for odometry messages. Default: "odom"
     odom_duration: 0.1  # Duration to keep odometry messages in seconds. Default: 0.1
     deadband_velocity: [0.0, 0.0, 0.0]  # Deadband for velocities in X, Y, and angular velocities. Default: [0.0, 0.0, 0.0]
