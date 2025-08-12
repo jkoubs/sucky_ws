@@ -32,7 +32,7 @@ rtabmap-databaseViewer ~/.ros/rtabmap.db
 
 ```bash
 ssh_sucky
-ros2 launch sucky  sucky_camera_bringup.launch.py
+ros2 launch sucky_bringup bringup.launch.py
 ros2 bag record \
   --compression-mode file \
   --compression-format zstd \
