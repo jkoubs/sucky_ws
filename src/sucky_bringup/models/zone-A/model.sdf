@@ -1,0 +1,36 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <model name="zone-A">
+    <static>true</static>
+    <link name="zone-A_link">
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://zone-A/meshes/zone-A_visual.obj</uri>
+            <!-- Or use zone-A.stl -->
+          </mesh>
+        </geometry>
+      </visual>
+
+      <!-- Collision -->
+      <collision name="collision">
+        <geometry>
+          <mesh>
+            <uri>model://zone-A/meshes/zone-A_collision.obj</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <bounce/>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+
+    </link>
+  </model>
+</sdf>
+
