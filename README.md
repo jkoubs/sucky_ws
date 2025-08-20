@@ -72,3 +72,11 @@ python3 ~/sucky_robot/src/sucky/tools/detect_serial_ports.py
 ```bash
 nano ~/sucky_robot/src/sucky/urdf/ros2_control.xacro 
 ```
+
+
+### Foxglove
+
+```bash
+ros2 launch foxglove_bridge foxglove_bridge_launch.xml port:=8765
+foxglove-studio
+```
