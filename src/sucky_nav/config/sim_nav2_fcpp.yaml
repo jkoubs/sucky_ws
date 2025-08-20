@@ -88,24 +88,22 @@ controller_server:
 
     FollowPath:
       plugin: "nav2_mppi_controller::MPPIController"
-      time_steps: 48
-      model_dt: 0.1
-      batch_size: 2000
-      iteration_count: 1
+      transform_tolerance: 0.1
+
       vx_std: 0.4
-      vy_std: 0.0
       wz_std: 0.7
+
       vx_max: 0.2
       vx_min: -0.2
-      vy_max: 0.0
       wz_max: 0.3
-      ax_max: 0.8
-      ax_min: -0.8
-      ay_min: 0.0
-      ay_max: 0.0
-      az_max: 1.2
+
+      #COMPUTATION PARAMS
+      time_steps: 48
+      batch_size: 2000
+      iteration_count: 1
+      model_dt: 0.1
+
       prune_distance: 1.0
-      transform_tolerance: 0.1
       temperature: 0.7
       gamma: 0.03
       motion_model: "DiffDrive"
@@ -115,29 +113,26 @@ controller_server:
       TrajectoryVisualizer:
         trajectory_step: 5
         time_step: 3
-      AckermannConstraints:
-        min_turning_r: 0.2
+
       critics: ["ConstraintCritic", "ObstaclesCritic", "CostCritic", "GoalCritic", "GoalAngleCritic", "PathAlignCritic", "PathFollowCritic", "PathAngleCritic", "VelocityDeadbandCritic"]
-      # critics: ["ConstraintCritic", "ObstaclesCritic", "CostCritic", "GoalCritic", "GoalAngleCritic", "PathAlignCritic", "PathFollowCritic", "PathAngleCritic", "PreferForwardCritic"]
+
       ConstraintCritic:
         enabled: true
         cost_power: 1
         cost_weight: 4.0
+
       GoalCritic:
         enabled: true
         cost_power: 1
         cost_weight: 0.3
         threshold_to_consider: 0.2
+
       GoalAngleCritic:
         enabled: false
         cost_power: 1
         cost_weight: 2.0
         threshold_to_consider: 0.5
-      # PreferForwardCritic:
-      #   enabled: true
-      #   cost_power: 1
-      #   cost_weight: 5.0
-      #   threshold_to_consider: 0.5
+
       ObstaclesCritic:
         enabled: true
         cost_power: 1
@@ -149,6 +144,7 @@ controller_server:
         near_goal_distance: 0.5
         inflation_radius: 0.53 # (only in Humble)
         cost_scaling_factor: 10.0 # (only in Humble)
+
       CostCritic:
         enabled: true
         cost_power: 1
@@ -157,7 +153,7 @@ controller_server:
         consider_footprint: true
         collision_cost: 1000000.0
         near_goal_distance: 1.0
-        trajectory_point_step: 2
+
       PathAlignCritic:
         enabled: true
         cost_power: 1
@@ -167,12 +163,14 @@ controller_server:
         threshold_to_consider: 2.0
         offset_from_furthest: 3
         use_path_orientations: true
+
       PathFollowCritic:
         enabled: true
         cost_power: 1
         cost_weight: 0.5
         offset_from_furthest: 5
         threshold_to_consider: 2.0
+
       PathAngleCritic:
         enabled: true
         cost_power: 1
@@ -181,57 +179,12 @@ controller_server:
         threshold_to_consider: 0.5
         max_angle_to_furthest: 1.0
         mode: 2
+
       VelocityDeadbandCritic:
         enabled: true
         cost_power: 1
         cost_weight: 10.0
-        deadband_velocities: [0.05, 0.05, 0.05]
-      # TwirlingCritic:
-      #   enabled: true
-      #   twirling_cost_power: 1
-      #   twirling_cost_weight: 10.0
-
-
-    # # DWB parameters
-    # FollowPath:
-    #   plugin: "dwb_core::DWBLocalPlanner"  # Plugin for the DWB local planner. Default: "dwb_core::DWBLocalPlanner"
-    #   debug_trajectory_details: True  # Whether to debug trajectory details. Default: false
-    #   min_vel_x: 0.0  # Minimum X velocity. Default: 0.0
-    #   min_vel_y: 0.0  # Minimum Y velocity. Default: 0.0
-    #   max_vel_x: 0.26  # Maximum X velocity. Default: 0.26
-    #   max_vel_y: 0.0  # Maximum Y velocity. Default: 0.0
-    #   max_vel_theta: 1.0  # Maximum angular velocity. Default: 1.0
-    #   min_speed_xy: 0.0  # Minimum XY speed. Default: 0.0
-    #   max_speed_xy: 0.26  # Maximum XY speed. Default: 0.26
-    #   min_speed_theta: 0.0  # Minimum angular speed. Default: 0.0
-    #   acc_lim_x: 2.5  # X acceleration limit. Default: 2.5
-    #   acc_lim_y: 0.0  # Y acceleration limit. Default: 0.0
-    #   acc_lim_theta: 3.2  # Angular acceleration limit. Default: 3.2
-    #   decel_lim_x: -2.5  # X deceleration limit. Default: -2.5
-    #   decel_lim_y: 0.0  # Y deceleration limit. Default: 0.0
-    #   decel_lim_theta: -3.2  # Angular deceleration limit. Default: -3.2
-    #   vx_samples: 20  # Number of velocity samples in X direction. Default: 20
-    #   vy_samples: 5  # Number of velocity samples in Y direction. Default: 5
-    #   vtheta_samples: 20  # Number of velocity samples in angular direction. Default: 20
-    #   sim_time: 1.7  # Simulation time in seconds. Default: 1.0
-    #   linear_granularity: 0.05  # Granularity for linear motion in meters. Default: 0.05
-    #   angular_granularity: 0.025  # Granularity for angular motion in radians. Default: 0.025
-    #   transform_tolerance: 10.0  # Transform tolerance in seconds. Default: 0.5
-    #   xy_goal_tolerance: 0.25  # XY goal tolerance in meters. Default: 0.25
-    #   trans_stopped_velocity: 0.25  # Threshold for considering the robot stopped in translational velocity. Default: 0.1
-    #   short_circuit_trajectory_evaluation: True  # Whether to short-circuit trajectory evaluation. Default: false
-    #   stateful: True  # Whether the planner should be stateful. Default: true
-    #   critics: ["RotateToGoal", "Oscillation", "BaseObstacle", "GoalAlign", "PathAlign", "PathDist", "GoalDist"]  # List of trajectory critics. Default: ["RotateToGoal", "Oscillation", "BaseObstacle", "GoalAlign", "PathAlign", "PathDist", "GoalDist"]
-    #   BaseObstacle.scale: 0.02  # Scaling factor for the BaseObstacle critic. Default: 0.0
-    #   PathAlign.scale: 32.0  # Scaling factor for the PathAlign critic. Default: 32.0
-    #   PathAlign.forward_point_distance: 0.1  # Forward point distance for PathAlign critic in meters. Default: 0.1
-    #   GoalAlign.scale: 24.0  # Scaling factor for the GoalAlign critic. Default: 24.0
-    #   GoalAlign.forward_point_distance: 0.1  # Forward point distance for GoalAlign critic in meters. Default: 0.1
-    #   PathDist.scale: 32.0  # Scaling factor for the PathDist critic. Default: 32.0
-    #   GoalDist.scale: 24.0  # Scaling factor for the GoalDist critic. Default: 24.0
-    #   RotateToGoal.scale: 32.0  # Scaling factor for the RotateToGoal critic. Default: 32.0
-    #   RotateToGoal.slowing_factor: 5.0  # Slowing factor for RotateToGoal critic. Default: 5.0
-    #   RotateToGoal.lookahead_time: -1.0  # Lookahead time for RotateToGoal critic in seconds. Default: -1.0
+        deadband_velocities: [0.08, 0.0, 0.1]
 
 local_costmap:
   local_costmap:
@@ -251,7 +204,7 @@ local_costmap:
       inflation_layer:
         plugin: "nav2_costmap_2d::InflationLayer"  # Plugin for the inflation layer. Default: "nav2_costmap_2d::InflationLayer"
         cost_scaling_factor: 3.0  # Cost scaling factor for inflation layer. Default: 10.0
-        inflation_radius: 0.53  # Inflation radius in meters. Default: 0.55
+        inflation_radius: 0.35  # Inflation radius in meters. Default: 0.55
       voxel_layer:
         plugin: "nav2_costmap_2d::VoxelLayer"  # Plugin for the voxel layer. Default: "nav2_costmap_2d::VoxelLayer"
         enabled: True  # Whether the voxel layer is enabled. Default: true
@@ -310,7 +263,7 @@ global_costmap:
       inflation_layer:
         plugin: "nav2_costmap_2d::InflationLayer"  # Plugin for the inflation layer. Default: "nav2_costmap_2d::InflationLayer"
         cost_scaling_factor: 3.0  # Cost scaling factor for inflation layer. Default: 10.0
-        inflation_radius: 0.53  # Inflation radius in meters. Default: 0.55
+        inflation_radius: 0.35  # Inflation radius in meters. Default: 0.55
       always_send_full_costmap: True  # Whether to always send the full costmap. Default: false
 
 map_server:
