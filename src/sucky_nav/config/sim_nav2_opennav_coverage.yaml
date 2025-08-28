@@ -2,8 +2,8 @@ coverage_server:
   ros__parameters:
     use_sim_time: True
     default_headland_width: 0.25
-    robot_width: 0.7
-    operation_width: 0.7
+    robot_width: 0.67
+    operation_width: 0.67
     min_turning_radius: 0.35
     linear_curv_change: 200.0
     coordinates_in_cartesian_frame: true
@@ -14,8 +14,8 @@ coverage_server:
 row_coverage_server:
   ros__parameters:
     use_sim_time: True
-    robot_width: 0.7
-    operation_width: 0.7
+    robot_width: 0.67
+    operation_width: 0.67
     min_turning_radius: 0.35
     linear_curv_change: 200.0
     coordinates_in_cartesian_frame: true
@@ -26,7 +26,7 @@ bt_navigator:
   ros__parameters:
     use_sim_time: true  # Use simulation time (true) or real time (false). Default: false
     global_frame: map  # The global frame ID. Default: "map"
-    robot_base_frame: base_link  # The base frame ID of the robot. Default: "base_link"
+    robot_base_frame: base_footprint  # The base frame ID of the robot. Default: "base_footprint"
     odom_topic: /odom  # The topic name for odometry messages. Default: "/odom"
     bt_loop_duration: 10  # Duration of the Behavior Tree loop in milliseconds. Default: 10
     default_server_timeout: 20  # Default server timeout in seconds. Default: 20
@@ -99,7 +99,7 @@ controller_server:
     use_sim_time: True
     controller_frequency: 20.0
     min_x_velocity_threshold: 0.001
-    min_y_velocity_threshold: 0.5
+    min_y_velocity_threshold: 0.0
     min_theta_velocity_threshold: 0.001
     failure_tolerance: 0.3
     progress_checker_plugin: "progress_checker"
@@ -108,40 +108,42 @@ controller_server:
     # Progress checker parameters
     progress_checker:
       plugin: "nav2_controller::SimpleProgressChecker"
-      required_movement_radius: 0.5
+      required_movement_radius: 0.2
       movement_time_allowance: 10.0
     # Goal checker parameters
     general_goal_checker:
       stateful: True
       plugin: "nav2_controller::SimpleGoalChecker"
-      xy_goal_tolerance: 0.25
-      yaw_goal_tolerance: 0.25
+      xy_goal_tolerance: 0.15
+      yaw_goal_tolerance: 0.15
     # RPP parameters
     FollowPath:
       plugin: "nav2_regulated_pure_pursuit_controller::RegulatedPurePursuitController"
-      desired_linear_vel: 0.5
-      lookahead_dist: 0.6
-      min_lookahead_dist: 0.3
-      max_lookahead_dist: 0.9
-      lookahead_time: 1.5
-      rotate_to_heading_angular_vel: 1.8
-      use_velocity_scaled_lookahead_dist: true
+      desired_linear_vel: 0.18
+      lookahead_dist: 0.22
+      min_lookahead_dist: 0.12
+      max_lookahead_dist: 0.35
+      lookahead_time: 0.0
+
+      use_rotate_to_heading: true  # allows to follow coverage path better in sharper turns
+      rotate_to_heading_angular_vel: 0.28
+      rotate_to_heading_min_angle: 0.35
+
+      use_velocity_scaled_lookahead_dist: false
       min_approach_linear_velocity: 0.05
-      approach_velocity_scaling_dist: 0.6
+      approach_velocity_scaling_dist: 0.35
       use_collision_detection: true
       max_allowed_time_to_collision_up_to_carrot: 1.0
       use_regulated_linear_velocity_scaling: true
-      use_fixed_curvature_lookahead: false
-      curvature_lookahead_dist: 0.25
+      use_fixed_curvature_lookahead: true
+      curvature_lookahead_dist: 0.12
       use_cost_regulated_linear_velocity_scaling: false
       regulated_linear_scaling_min_radius: 0.9
-      regulated_linear_scaling_min_speed: 0.25
-      use_rotate_to_heading: false  # allows to follow coverage path better in sharper turns
+      regulated_linear_scaling_min_speed: 0.12
       allow_reversing: false
-      rotate_to_heading_min_angle: 0.785
-      max_angular_accel: 3.2
-      max_robot_pose_search_dist: 10.0
-      use_interpolation: true
+      max_angular_accel: 1.2
+      max_robot_pose_search_dist: 2.0
+      use_interpolation: false
       
 # controller_server:
 #   ros__parameters:
@@ -274,66 +276,25 @@ controller_server:
 #       #   twirling_cost_weight: 10.0
 
 
-    # # DWB parameters
-    # FollowPath:
-    #   plugin: "dwb_core::DWBLocalPlanner"  # Plugin for the DWB local planner. Default: "dwb_core::DWBLocalPlanner"
-    #   debug_trajectory_details: True  # Whether to debug trajectory details. Default: false
-    #   min_vel_x: 0.0  # Minimum X velocity. Default: 0.0
-    #   min_vel_y: 0.0  # Minimum Y velocity. Default: 0.0
-    #   max_vel_x: 0.26  # Maximum X velocity. Default: 0.26
-    #   max_vel_y: 0.0  # Maximum Y velocity. Default: 0.0
-    #   max_vel_theta: 1.0  # Maximum angular velocity. Default: 1.0
-    #   min_speed_xy: 0.0  # Minimum XY speed. Default: 0.0
-    #   max_speed_xy: 0.26  # Maximum XY speed. Default: 0.26
-    #   min_speed_theta: 0.0  # Minimum angular speed. Default: 0.0
-    #   acc_lim_x: 2.5  # X acceleration limit. Default: 2.5
-    #   acc_lim_y: 0.0  # Y acceleration limit. Default: 0.0
-    #   acc_lim_theta: 3.2  # Angular acceleration limit. Default: 3.2
-    #   decel_lim_x: -2.5  # X deceleration limit. Default: -2.5
-    #   decel_lim_y: 0.0  # Y deceleration limit. Default: 0.0
-    #   decel_lim_theta: -3.2  # Angular deceleration limit. Default: -3.2
-    #   vx_samples: 20  # Number of velocity samples in X direction. Default: 20
-    #   vy_samples: 5  # Number of velocity samples in Y direction. Default: 5
-    #   vtheta_samples: 20  # Number of velocity samples in angular direction. Default: 20
-    #   sim_time: 1.7  # Simulation time in seconds. Default: 1.0
-    #   linear_granularity: 0.05  # Granularity for linear motion in meters. Default: 0.05
-    #   angular_granularity: 0.025  # Granularity for angular motion in radians. Default: 0.025
-    #   transform_tolerance: 10.0  # Transform tolerance in seconds. Default: 0.5
-    #   xy_goal_tolerance: 0.25  # XY goal tolerance in meters. Default: 0.25
-    #   trans_stopped_velocity: 0.25  # Threshold for considering the robot stopped in translational velocity. Default: 0.1
-    #   short_circuit_trajectory_evaluation: True  # Whether to short-circuit trajectory evaluation. Default: false
-    #   stateful: True  # Whether the planner should be stateful. Default: true
-    #   critics: ["RotateToGoal", "Oscillation", "BaseObstacle", "GoalAlign", "PathAlign", "PathDist", "GoalDist"]  # List of trajectory critics. Default: ["RotateToGoal", "Oscillation", "BaseObstacle", "GoalAlign", "PathAlign", "PathDist", "GoalDist"]
-    #   BaseObstacle.scale: 0.02  # Scaling factor for the BaseObstacle critic. Default: 0.0
-    #   PathAlign.scale: 32.0  # Scaling factor for the PathAlign critic. Default: 32.0
-    #   PathAlign.forward_point_distance: 0.1  # Forward point distance for PathAlign critic in meters. Default: 0.1
-    #   GoalAlign.scale: 24.0  # Scaling factor for the GoalAlign critic. Default: 24.0
-    #   GoalAlign.forward_point_distance: 0.1  # Forward point distance for GoalAlign critic in meters. Default: 0.1
-    #   PathDist.scale: 32.0  # Scaling factor for the PathDist critic. Default: 32.0
-    #   GoalDist.scale: 24.0  # Scaling factor for the GoalDist critic. Default: 24.0
-    #   RotateToGoal.scale: 32.0  # Scaling factor for the RotateToGoal critic. Default: 32.0
-    #   RotateToGoal.slowing_factor: 5.0  # Slowing factor for RotateToGoal critic. Default: 5.0
-    #   RotateToGoal.lookahead_time: -1.0  # Lookahead time for RotateToGoal critic in seconds. Default: -1.0
-
 local_costmap:
   local_costmap:
     ros__parameters:
       update_frequency: 10.0  # Frequency to update the local costmap in Hz. Default: 5.0
       publish_frequency: 4.0  # Frequency to publish the local costmap in Hz. Default: 2.0
       global_frame: odom  # The frame ID of the global frame. Default: "odom"
-      robot_base_frame: base_link  # The frame ID of the robot base. Default: "base_link"
+      robot_base_frame: base_footprint  # The frame ID of the robot base. Default: "base_footprint"
       use_sim_time: true  # Use simulation time (true) or real time (false). Default: false
       rolling_window: true  # Whether to use a rolling window for the local costmap. Default: true
       width: 3  # Width of the local costmap in meters. Default: 10.0
       height: 3  # Height of the local costmap in meters. Default: 10.0
       resolution: 0.05  # Resolution of the local costmap in meters per cell. Default: 0.05
-      # footprint: "[[-.178, .533], [-.178, -.533], [.9, -.533], [.9, .533]]"  # The robot footprint in the local costmap. Default: "[]"
+      # footprint: "[[-.178, .533], [-.178, -.533], [.9, -.533], [.9, .533]]"  # SWEEPY footprint in the local costmap. Default: "[]"
       footprint: "[[-0.39, 0.34], [-0.39, -0.34], [0.3, -0.34], [0.3, 0.34]]" # SUCKY footprint
       plugins: ["voxel_layer", "inflation_layer"]  # List of plugins for the local costmap. Default: ["static_layer", "obstacle_layer", "inflation_layer"]
       inflation_layer:
         plugin: "nav2_costmap_2d::InflationLayer"  # Plugin for the inflation layer. Default: "nav2_costmap_2d::InflationLayer"
         cost_scaling_factor: 3.0  # Cost scaling factor for inflation layer. Default: 10.0
-        inflation_radius: 0.53  # Inflation radius in meters. Default: 0.55
+        inflation_radius: 0.35  # Inflation radius in meters. Default: 0.55
       voxel_layer:
         plugin: "nav2_costmap_2d::VoxelLayer"  # Plugin for the voxel layer. Default: "nav2_costmap_2d::VoxelLayer"
         enabled: True  # Whether the voxel layer is enabled. Default: true
@@ -365,9 +326,9 @@ global_costmap:
       update_frequency: 2.0  # Frequency to update the global costmap in Hz. Default: 1.0
       publish_frequency: 2.0  # Frequency to publish the global costmap in Hz. Default: 1.0
       global_frame: map  # The frame ID of the global frame. Default: "map"
-      robot_base_frame: base_link  # The frame ID of the robot base. Default: "base_link"
+      robot_base_frame: base_footprint  # The frame ID of the robot base. Default: "base_footprint"
       use_sim_time: true  # Use simulation time (true) or real time (false). Default: false
-      # footprint: "[[-.178, .533], [-.178, -.533], [.9, -.533], [.9, .533]]"  # SWEEPY footprint in the local costmap. Default: "[]"
+      # footprint: "[[-.178, .533], [-.178, -.533], [.9, -.533], [.9, .533]]"  # SWEEPY footprint
       footprint: "[[-0.39, 0.34], [-0.39, -0.34], [0.3, -0.34], [0.3, 0.34]]" # SUCKY footprint
       resolution: 0.05  # Resolution of the global costmap in meters per cell. Default: 0.05
       track_unknown_space: true  # Whether to track unknown space in the global costmap. Default: false
@@ -392,7 +353,7 @@ global_costmap:
       inflation_layer:
         plugin: "nav2_costmap_2d::InflationLayer"  # Plugin for the inflation layer. Default: "nav2_costmap_2d::InflationLayer"
         cost_scaling_factor: 3.0  # Cost scaling factor for inflation layer. Default: 10.0
-        inflation_radius: 0.53  # Inflation radius in meters. Default: 0.55
+        inflation_radius: 0.35  # Inflation radius in meters. Default: 0.55
       always_send_full_costmap: True  # Whether to always send the full costmap. Default: false
 
 map_server:
@@ -420,7 +381,7 @@ smoother_server:
       do_refinement: True  # Whether to do refinement. Default: True
       refinement_num: 5
       keep_endpoints: true
-      allow_path_shorten: true
+      allow_path_shorten: false
 
 behavior_server:
   ros__parameters:
@@ -439,7 +400,7 @@ behavior_server:
     assisted_teleop:
       plugin: "nav2_behaviors/AssistedTeleop"  # Plugin for the assisted teleop behavior. Default: "nav2_behaviors/AssistedTeleop"
     global_frame: odom  # The frame ID of the global frame. Default: "odom"
-    robot_base_frame: base_link  # The frame ID of the robot base. Default: "base_link"
+    robot_base_frame: base_footprint  # The frame ID of the robot base. Default: "base_footprint"
     transform_tolerance: 10.0  # Transform tolerance in seconds. Default: 0.5
     use_sim_time: true  # Use simulation time (true) or real time (false). Default: false
     simulate_ahead_time: 2.0  # Time to simulate ahead in seconds. Default: 2.0
@@ -468,10 +429,10 @@ velocity_smoother:
     smoothing_frequency: 40.0  # Frequency of the velocity smoother in Hz. Default: 20.0
     scale_velocities: False  # Whether to scale velocities. Default: false
     feedback: "OPEN_LOOP"  # Feedback type for the velocity smoother. Default: "OPEN_LOOP"
-    max_velocity: [0.26, 0.0, 1.0]  # Maximum velocities for X, Y, and angular velocities. Default: [0.26, 0.0, 1.0]
-    min_velocity: [-0.26, 0.0, -1.0]  # Minimum velocities for X, Y, and angular velocities. Default: [-0.26, 0.0, -1.0]
-    max_accel: [2.5, 0.0, 3.2]  # Maximum accelerations for X, Y, and angular accelerations. Default: [2.5, 0.0, 3.2]
-    max_decel: [-2.5, 0.0, -3.2]  # Maximum decelerations for X, Y, and angular decelerations. Default: [-2.5, 0.0, -3.2]
+    max_velocity: [0.2, 0.0, 0.3]  # Maximum velocities for X, Y, and angular velocities. Default: [0.26, 0.0, 1.0]
+    min_velocity: [-0.2, 0.0, -0.3]  # Minimum velocities for X, Y, and angular velocities. Default: [-0.26, 0.0, -1.0]
+    max_accel: [0.8, 0.0, 1.2]  # Maximum accelerations for X, Y, and angular accelerations. Default: [2.5, 0.0, 3.2]
+    max_decel: [-0.8, 0.0, -1.2]  # Maximum decelerations for X, Y, and angular decelerations. Default: [-2.5, 0.0, -3.2]
     odom_topic: "odom"  # Topic name for odometry messages. Default: "odom"
     odom_duration: 0.1  # Duration to keep odometry messages in seconds. Default: 0.1
     deadband_velocity: [0.0, 0.0, 0.0]  # Deadband for velocities in X, Y, and angular velocities. Default: [0.0, 0.0, 0.0]
