@@ -25,6 +25,7 @@ install(
     scripts/demo_coverage_optimized.py 
     scripts/path_visualizer.py 
     scripts/spiral_path_loader.py 
+    scripts/waypoint_info.py 
   DESTINATION lib/${PROJECT_NAME}
 )
 
