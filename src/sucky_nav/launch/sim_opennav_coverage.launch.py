@@ -76,18 +76,18 @@ def generate_launch_description():
         ],
     )
 
-    coverage_server = Node(
-        package='opennav_coverage',
-        executable='opennav_coverage',
-        name='coverage_server',
-        output='screen',
-        parameters=[nav2_params, {'use_sim_time': True}],
-        remappings=[
-            ('/tf', 'tf'),
-            ('/tf_static', 'tf_static')
-        ],
-        arguments=['--ros-args', '--log-level', 'debug']
-    )
+    # coverage_server = Node(
+    #     package='opennav_coverage',
+    #     executable='opennav_coverage',
+    #     name='coverage_server',
+    #     output='screen',
+    #     parameters=[nav2_params, {'use_sim_time': True}],
+    #     remappings=[
+    #         ('/tf', 'tf'),
+    #         ('/tf_static', 'tf_static')
+    #     ],
+    #     arguments=['--ros-args', '--log-level', 'debug']
+    # )
 
     # Lifecycle manager
     lifecycle_manager = Node(
