@@ -1,0 +1,47 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <model name="cylinder_model">
+    <!-- Make the model static so it won't fall unless you want it to move -->
+    <static>false</static>
+
+    <link name="cylinder_link">
+      <!-- Inertial properties -->
+      <inertial>
+        <mass>5.0</mass> <!-- Adjust mass as needed -->
+        <inertia>
+          <!-- For a solid cylinder:
+               Ixx = Iyy = (1/12)*m*(3r^2 + h^2)
+               Izz = (1/2)*m*r^2
+               r = 0.25, h = 1.5, m = 5 -->
+          <ixx>1.02</ixx>
+          <iyy>1.02</iyy>
+          <izz>0.15625</izz>
+        </inertia>
+      </inertial>
+
+      <!-- Visual: what you see in Gazebo -->
+      <visual name="cylinder_visual">
+        <geometry>
+          <cylinder>
+            <radius>0.25</radius>
+            <length>1.5</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.7 0.2 0.2 1</ambient>  <!-- Reddish color -->
+          <diffuse>0.7 0.2 0.2 1</diffuse>
+        </material>
+      </visual>
+
+      <!-- Collision: what Gazebo uses for physics -->
+      <collision name="cylinder_collision">
+        <geometry>
+          <cylinder>
+            <radius>0.25</radius>
+            <length>1.5</length>
+          </cylinder>
+        </geometry>
+      </collision>
+    </link>
+  </model>
+</sdf>
