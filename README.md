@@ -1,82 +1,176 @@
-# sucky_ws
+# *Sucky — Autonomous Cleaning Robot Simulation Environment*
+
+This repo contains all the **simulation work** for **Sucky**, an autonomous cleaning robot developed during my **summer internship at Hampton Lumber**.  
 
 
-# Instructions
-
-### full_coverage_path_planning
-
-```bash
-ros2 launch sucky_bringup sim_fcpp_bringup.launch.py
-ros2 launch sucky_nav sim_fcpp_visualizers.launch.py
-```
-
-### opennav_coverage
-
-```bash
-ros2 launch sucky_nav sim_coverage_server.launch.py 
-ros2 launch sucky_bringup sim_opennav_bringup.launch.py 
-ros2 run sucky_nav demo_coverage.py
-```
-
-### RTAB-Map SIM
-
-```bash
-ros2 launch sucky_bringup sim_bringup.launch.py
-ros2 launch sucky_rtabmap sim_rtabmap.launch.py
-ros2 run teleop_twist_keyboard teleop_twist_keyboard --ros-args -r /cmd_vel:=/diffbot_base_controller/cmd_vel_unstamped
-ros2 run nav2_map_server map_saver_cli -f my_2d_map
-rtabmap-databaseViewer ~/.ros/rtabmap.db
-```
-
-### Collect RTAB-Map INput Topics [REAL]
-
-```bash
-ssh_sucky
-ros2 launch sucky_bringup bringup.launch.py
-ros2 bag record \
-  --compression-mode file \
-  --compression-format zstd \
-  -o ~/bags/rosbag2_$(date +%Y_%m_%d-%H_%M_%S) \
-  /diffbot_base_controller/odom \
-  /camera/d455/color/camera_info \
-  /camera/d455/color/image_raw/compressed \
-  /camera/d455/depth/image_rect_raw/compressedDepth \
-  /scan \
-  /tf \
-  /tf_static
 
 
-ros2 topic hz /camera/d455/color/camera_info
-ros2 topic hz /camera/d455/color/image_raw
-ros2 topic hz /camera/d455/depth/image_rect_raw/compressedDepth
-```
+# Table of Contents
+- [About](#about)  
+  - [Goals](#goals)  
+- [Technical Approach](#technical-approach)  
+  - [Simulated Hardware](#simulated-hardware)  
+  - [Software Stack](#software-stack)  
+  - [Key Contributions](#key-contributions)  
+- [Results](#results)  
+  - [3D SLAM with RTAB-Map](#3d-slam-with-rtab-map)  
+  - [Coverage Planning](#coverage-planning)  
+    - [Full Coverage Path Planning](#full-coverage-path-planning)  
+    - [Opennav Coverage](#opennav-coverage)  
+  - [Dynamic Obstacle Avoidance](#dynamic-obstacle-avoidance)
+- [Ideas for Improvement](#ideas-for-improvement)  
+- [Acknowledgments](#acknowledgments)  
 
 
-### IMU
+# About
 
-```bash
-ros2 run sucky_hardware_drivers mpu9250_pub.py
-ros2 run imu_filter_madgwick imu_filter_madgwick_node   --ros-args   -p use_mag:=true   -p world_frame:="ned"
-ros2 run sucky_perception yaw_pub_mpu9250.py
-```
+<div align="center">
+  <img src="doc/sim/model/gazebo.png" alt="base" width="600"/>
+</div>
 
 
-### Detect Ports
+The Sucky simulation environment provides a virtual platform to replicate the behavior of the real cleaning robot and create a realistic, reliable environment for testing and debugging before deploying to the physical hardware.
 
-```bash
-python3 ~/sucky_robot/src/sucky/tools/detect_serial_ports.py
-```
-
-### Edit ros2 control
-
-```bash
-nano ~/sucky_robot/src/sucky/urdf/ros2_control.xacro 
-```
+By simulating the robot, its sensors, and a realistic environment, we were able to iterate quickly and safely while building a robust foundation for deployment.
 
 
-### Foxglove
+## Goals
 
-```bash
-ros2 launch foxglove_bridge foxglove_bridge_launch.xml port:=8765
-foxglove-studio
-```
+- Validate navigation, mapping, and obstacle avoidance behaviors before real-world testing.
+
+- Experiment with different coverage planning strategies to identify the most efficient approach.
+
+- Enable safe testing of edge cases, such as dynamic obstacles, without physical risk.
+
+- Provide a development platform for future improvements and new features.
+
+
+
+
+# Technical Approach 
+
+
+## Simulated Hardware
+
+ - **Drive Base:** Two powered drive wheels combined with two free-spinning mecanum caster wheels for stability.
+The robot uses a differential drive configuration to control movement, making it simple yet effective for navigating industrial environments like a sawmill.
+
+ - **LiDAR:** Sick TIM781 for accurate and reliable obstacle detection.
+
+ - **Depth Camera:** Intel RealSense D455 equivalent for 3D perception and SLAM.
+
+
+
+## Software Stack
+ - **Framework:** ROS 2 Humble.
+ - **Simulator:** Gazebo.
+ - **Nav2 Stack:** Provides navigation, planning, and autonomous movement.
+
+
+## Key Contributions
+
+
+- **3D Mapping:** RTAB-Map implementation combining LiDAR and depth camera data for 3D map creation.
+
+ - **Behavior Trees (BTs):** A custom behavior tree was developed to integrate **SpiralSTC** planning, based on the [Full Coverage Path Planner](https://github.com/nobleo/full_coverage_path_planner) repo from [nobleo](https://github.com/nobleo/full_coverage_path_planner).
+
+- **Coverage Planning:** Implemented and tested systematic cleaning strategies using path coverage algorithms.
+**Two solutions were implemented:**
+
+  - [Full Coverage Path Planning (FCPP)](https://github.com/nobleo/full_coverage_path_planner): Primary solution, deployed on the real robot.
+
+  - [Opennav Coverage](https://github.com/open-navigation/opennav_coverage): Secondary solution, used for simulation experiments only.
+
+- **Navigation:** Integrated **ROS 2 Nav2** for autonomous navigation and extensively tuned its parameters to achieve smooth and reliable movement in the simulation.
+A major focus was on the **controller_server**, where I configured and optimized the [Model Predictive Path Integral (MPPI)](https://docs.nav2.org/configuration/packages/configuring-mppic.html) controller for robust path following and dynamic obstacle handling.
+
+
+
+# Results
+
+This section highlights the key outcomes of the simulation work, including 3D mapping, systematic coverage strategies, and dynamic obstacle handling.
+
+For **step-by-step instructions on launching and running the simulations**, please refer to the [Simulation Launch Guide](Instructions.md).
+
+
+## 3D SLAM with RTAB-Map
+
+<div align="center">
+  <img src="doc/sim/mapping/rtabmap-fast-x20.gif" alt="base" width="400"/>
+</div>
+
+From this 3D map, we can extract the point cloud data:
+
+<div align="center">
+  <img src="doc/sim/mapping/pc-viewer-fast-x2.gif" alt="base" width="400"/>
+</div>
+
+This 3D map allows us to extract a 2D slice that will serve as the base for navigation:
+
+<div align="center">
+  <img src="doc/sim/mapping/rtabmap.png" alt="base" width="400"/>
+</div>
+
+
+## Coverage Planning
+
+
+
+### Full Coverage Path Planning
+
+<div align="center">
+  <img src="doc/sim/fcpp/sim_fcpp_fast_x40.gif" alt="base" width="400"/>
+</div>
+
+### Opennav Coverage
+
+<div align="center">
+  <img src="doc/sim/opennav/opennav_coverage_fast_x20.gif" alt="base" width="400"/>
+</div>
+
+## Dynamic Obstacle Avoidance
+
+<div align="center">
+  <img src="doc/sim/fcpp/obstacle_on_edge_fast_x5.gif" alt="base" width="400"/>
+</div>
+
+
+# Ideas for Improvement
+
+For a more detailed explanation of these improvements, please check [Improvements Report](Improvements.md).
+
+
+Looking ahead, there are **three primary areas for improvement** that will significantly enhance the system’s performance, robustness, and usability:
+
+1. Enhanced dynamic obstacle avoidance strategy.
+2. Integrating Opennav Coverage into the real robot for finer control of coverage areas.
+3. Adding higher-level error handling and notification logic
+
+Some other future enhancements worth exploring with lower priority include:
+
+4. Hose detection pipeline
+5. Automated dumping process
+6. Automated charging
+7. Cleaning progress & robot status dashboard 
+
+# Acknowledgments
+
+I would like to thank **Hampton Lumber** for the opportunity to work on this project and gain hands-on experience in robotics during my internship.
+
+Special thanks to **George Fox University** for developing the physical robot chassis that served as the foundation for this work.
+
+I also want to recognize my fellow interns for their collaboration and contributions:
+
+**Alexander Roller** — Robotics Engineer — [@AlexanderRoller](https://github.com/AlexanderRoller)
+
+**Benjamin Cantero** — Mechanical Lead
+
+**Jason Koubi (myself)** — Robotics Software Developer — [@jkoubs](https://github.com/jkoubs)
+
+Finally, thanks to the open-source community and the following projects, which were essential to this work:
+
+[full_coverage_path_planner](https://github.com/nobleo/full_coverage_path_planner)
+ — Main coverage planning solution and SpiralSTC integration.
+
+[opennav_coverage](https://github.com/open-navigation/opennav_coverage)
+ — Alternative coverage planning strategy for simulation.
