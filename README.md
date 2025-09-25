@@ -141,16 +141,16 @@ For a more detailed explanation of these improvements, please check [Improvement
 
 Looking ahead, there are **three primary areas for improvement** that will significantly enhance the system’s performance, robustness, and usability:
 
-1. Enhanced dynamic obstacle avoidance strategy.
-2. Integrating Opennav Coverage into the real robot for finer control of coverage areas.
-3. Adding higher-level error handling and notification logic
+**1. Enhanced dynamic obstacle avoidance strategy**
+**2. Integrating Opennav Coverage into the real robot for finer control of coverage areas**
+**3. Adding higher-level error handling and notification logic**
 
 Some other future enhancements worth exploring with lower priority include:
 
-4. Hose detection pipeline
-5. Automated dumping process
-6. Automated charging
-7. Cleaning progress & robot status dashboard 
+**4. Hose detection pipeline**
+**5. Automated dumping process**
+**6. Automated charging**
+**7. Cleaning progress & robot status dashboard**
 
 # Acknowledgments
 
