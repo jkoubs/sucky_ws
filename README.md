@@ -1,5 +1,9 @@
 # *Sucky — Autonomous Cleaning Robot Simulation Environment*
 
+<div align="center">
+  <img src="doc/sim/model/gazebo.png" alt="base" width="600"/>
+</div>
+
 This repo contains all the **simulation work** for **Sucky**, an autonomous cleaning robot developed during my **summer internship at Hampton Lumber**.  
 
 
@@ -23,11 +27,6 @@ This repo contains all the **simulation work** for **Sucky**, an autonomous clea
 
 
 # About
-
-<div align="center">
-  <img src="doc/sim/model/gazebo.png" alt="base" width="600"/>
-</div>
-
 
 The Sucky simulation environment provides a virtual platform to replicate the behavior of the real cleaning robot and create a realistic, reliable environment for testing and debugging before deploying to the physical hardware.
 
@@ -96,19 +95,19 @@ For **step-by-step instructions on launching and running the simulations**, plea
 ## 3D SLAM with RTAB-Map
 
 <div align="center">
-  <img src="doc/sim/mapping/rtabmap-fast-x20.gif" alt="base" width="400"/>
+  <img src="doc/sim/mapping/rtabmap-fast-x20.gif" alt="base" width="600"/>
 </div>
 
 From this 3D map, we can extract the point cloud data:
 
 <div align="center">
-  <img src="doc/sim/mapping/pc-viewer-fast-x2.gif" alt="base" width="400"/>
+  <img src="doc/sim/mapping/pc-viewer-fast-x2.gif" alt="base" width="600"/>
 </div>
 
 This 3D map allows us to extract a 2D slice that will serve as the base for navigation:
 
 <div align="center">
-  <img src="doc/sim/mapping/rtabmap.png" alt="base" width="400"/>
+  <img src="doc/sim/mapping/rtabmap.png" alt="base" width="600"/>
 </div>
 
 
@@ -119,19 +118,19 @@ This 3D map allows us to extract a 2D slice that will serve as the base for navi
 ### Full Coverage Path Planning
 
 <div align="center">
-  <img src="doc/sim/fcpp/sim_fcpp_fast_x40.gif" alt="base" width="400"/>
+  <img src="doc/sim/fcpp/sim_fcpp_fast_x40.gif" alt="base" width="600"/>
 </div>
 
 ### Opennav Coverage
 
 <div align="center">
-  <img src="doc/sim/opennav/opennav_coverage_fast_x20.gif" alt="base" width="400"/>
+  <img src="doc/sim/opennav/opennav_coverage_fast_x20.gif" alt="base" width="600"/>
 </div>
 
 ## Dynamic Obstacle Avoidance
 
 <div align="center">
-  <img src="doc/sim/fcpp/obstacle_on_edge_fast_x5.gif" alt="base" width="400"/>
+  <img src="doc/sim/fcpp/obstacle_on_edge_fast_x5.gif" alt="base" width="600"/>
 </div>
 
 
