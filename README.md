@@ -6,8 +6,8 @@
 
 This repo contains all the **simulation work** for **Sucky**, an autonomous cleaning robot developed during my **summer internship at Hampton Lumber**.  
 
-
-
+Looking for the real robot implementation of this project?
+You can find it here: [*Sucky — Autonomous Cleaning Robot*](https://github.com/jkoubs/sucky_real_ws).
 
 # Table of Contents
 - [About](#about)  
@@ -45,14 +45,13 @@ By simulating the robot, its sensors, and a realistic environment, we were able 
 
 
 
-
 # Technical Approach 
 
 
 ## Simulated Hardware
 
  - **Drive Base:** Two powered drive wheels combined with two free-spinning mecanum caster wheels for stability.
-The robot uses a differential drive configuration to control movement, making it simple yet effective for navigating industrial environments like a sawmill.
+The robot uses a **differential drive configuration** to control movement, making it simple yet effective for navigating industrial environments like a sawmill.
 
  - **LiDAR:** Sick TIM781 for accurate and reliable obstacle detection.
 
@@ -61,9 +60,10 @@ The robot uses a differential drive configuration to control movement, making it
 
 
 ## Software Stack
- - **Framework:** ROS 2 Humble.
+ - **Framework:** ROS 2 Humble, RViz.
  - **Simulator:** Gazebo.
  - **Nav2 Stack:** Provides navigation, planning, and autonomous movement.
+ - **RTAB-Map:** For 3D mapping.
 
 
 ## Key Contributions
@@ -76,7 +76,7 @@ The robot uses a differential drive configuration to control movement, making it
 - **Coverage Planning:** Implemented and tested systematic cleaning strategies using path coverage algorithms.
 **Two solutions were implemented:**
 
-  - [Full Coverage Path Planning (FCPP)](https://github.com/nobleo/full_coverage_path_planner): Primary solution, deployed on the real robot.
+  - [Full Coverage Path Planning (FCPP)](https://github.com/nobleo/full_coverage_path_planner): Primary solution, deployed on the real robot. Added a an **interpolation_resolution** parameter for better fine-tuning.
 
   - [Opennav Coverage](https://github.com/open-navigation/opennav_coverage): Secondary solution, used for simulation experiments only.
 
