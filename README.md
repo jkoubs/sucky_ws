@@ -1,7 +1,7 @@
 # *Sucky — Autonomous Cleaning Robot Simulation Environment*
 
 <div align="center">
-  <img src="doc/sim/model/gazebo.png" alt="base" width="600"/>
+  <img src="doc/model/gazebo.png" alt="base" width="600"/>
 </div>
 
 This repo contains all the **simulation work** for **Sucky**, an autonomous cleaning robot developed during my **summer internship at Hampton Lumber**.  
@@ -95,19 +95,19 @@ For **step-by-step instructions on launching and running the simulations**, plea
 ## 3D SLAM with RTAB-Map
 
 <div align="center">
-  <img src="doc/sim/mapping/rtabmap-fast-x20.gif" alt="base" width="600"/>
+  <img src="doc/mapping/rtabmap-fast-x20.gif" alt="base" width="600"/>
 </div>
 
 From this 3D map, we can extract the point cloud data:
 
 <div align="center">
-  <img src="doc/sim/mapping/pc-viewer-fast-x2.gif" alt="base" width="600"/>
+  <img src="doc/mapping/pc-viewer-fast-x2.gif" alt="base" width="600"/>
 </div>
 
 This 3D map allows us to extract a 2D slice that will serve as the base for navigation:
 
 <div align="center">
-  <img src="doc/sim/mapping/rtabmap.png" alt="base" width="600"/>
+  <img src="doc/mapping/rtabmap.png" alt="base" width="600"/>
 </div>
 
 
@@ -118,19 +118,19 @@ This 3D map allows us to extract a 2D slice that will serve as the base for navi
 ### Full Coverage Path Planning
 
 <div align="center">
-  <img src="doc/sim/fcpp/sim_fcpp_fast_x40.gif" alt="base" width="600"/>
+  <img src="doc/fcpp/sim_fcpp_fast_x40.gif" alt="base" width="600"/>
 </div>
 
 ### Opennav Coverage
 
 <div align="center">
-  <img src="doc/sim/opennav/opennav_coverage_fast_x20.gif" alt="base" width="600"/>
+  <img src="doc/opennav/opennav_coverage_fast_x20.gif" alt="base" width="600"/>
 </div>
 
 ## Dynamic Obstacle Avoidance
 
 <div align="center">
-  <img src="doc/sim/fcpp/obstacle_on_edge_fast_x5.gif" alt="base" width="600"/>
+  <img src="doc/fcpp/obstacle_on_edge_fast_x5.gif" alt="base" width="600"/>
 </div>
 
 
@@ -141,16 +141,21 @@ For a more detailed explanation of these improvements, please check [Improvement
 
 Looking ahead, there are **three primary areas for improvement** that will significantly enhance the system’s performance, robustness, and usability:
 
-**1. Enhanced dynamic obstacle avoidance strategy**
-**2. Integrating Opennav Coverage into the real robot for finer control of coverage areas**
-**3. Adding higher-level error handling and notification logic**
+  **1. Enhanced dynamic obstacle avoidance strategy**
+
+  **2. Integrating Opennav Coverage into the real robot for finer control of coverage areas**
+
+- **3. Adding higher-level error handling and notification logic**
 
 Some other future enhancements worth exploring with lower priority include:
 
-**4. Hose detection pipeline**
-**5. Automated dumping process**
-**6. Automated charging**
-**7. Cleaning progress & robot status dashboard**
+- **4. Hose detection pipeline**
+
+- **5. Automated dumping process**
+
+- **6. Automated charging**
+
+- **7. Cleaning progress & robot status dashboard**
 
 # Acknowledgments
 
