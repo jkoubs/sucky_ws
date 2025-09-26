@@ -152,4 +152,4 @@ A dedicated GUI can be developed to provide operators with clear, real-time insi
 Displays the percentage of the designated coverage area completed along with an estimated time remaining to finish the current mission.
 
 - **Live Robot Status:**
-Shows the current operating state, such as ACTIVE, STOPPED, OBSTACLE DETECTED, HOSE DETECTED, LOW BATTERY VOLTAGE, and other critical alerts.
+Shows the current operating state, such as `ACTIVE`, `STOPPED`, `OBSTACLE DETECTED`, `HOSE DETECTED`, `LOW BATTERY VOLTAGE`, and other critical alerts.
