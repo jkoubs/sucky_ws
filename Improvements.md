@@ -131,20 +131,20 @@ An interesting improvement would be to *develop a custom hose detection pipeline
 
 - Operator can then manually remove the hose.
 
-## Automated dumping process
+## 5. Automated dumping process
 
 Enable the robot to autonomously navigate to a dumping area when its dust container is full.
 
 Safely perform the dumping action without human intervention and resume its mission.
 
 
-## Automated charging
+## 6. Automated charging
 
 
 Allow the robot to dock autonomously when the battery is low.
 Explore [opennav_docking](https://github.com/open-navigation/opennav_docking) for implementation.
 
-## Cleaning progress & robot status dashboard
+## 7. Cleaning progress & robot status dashboard
 
 A dedicated GUI can be developed to provide operators with clear, real-time insights into the robot’s performance and state:
 

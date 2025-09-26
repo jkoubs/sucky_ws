@@ -141,7 +141,7 @@ For a more detailed explanation of these improvements, please check [Improvement
 
 Looking ahead, there are **three primary areas for improvement** that will significantly enhance the system’s performance, robustness, and usability:
 
-- **1Enhanced dynamic obstacle avoidance strategy**
+- **Enhanced dynamic obstacle avoidance strategy**
 
 - **Integrating Opennav Coverage into the real robot for finer control of coverage areas**
 
