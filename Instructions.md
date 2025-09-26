@@ -1,6 +1,86 @@
-# Instructions
+# Install
 
-### full_coverage_path_planning
+- Clone the Repository:
+
+```bash
+# Clone the Sucky simulation repo
+git clone git@github.com:jkoubs/sucky_ws.git
+```
+
+- Install Dependencies
+
+```bash
+cd ~/sucky_ws
+rosdep install --from-paths src --ignore-src -r -y
+```
+
+- Build the Workspace
+
+```bash
+cd ~/sucky_ws
+colcon build --symlink-install
+source install/setup.bash
+```
+
+- **Tip:** Add this line to your `.bashrc` to source automatically:
+
+```bash
+echo "source ~/sucky_ws/install/setup.bash" >> ~/.bashrc
+```
+
+# Launch Simulation
+
+## 3D SLAM with RTAB-Map
+
+- Bringup the robot simulation:
+```bash
+cd ~/sucky_ws/
+colcon build
+source install/setup.bash
+ros2 launch sucky_bringup sim_fcpp_bringup.launch.py
+```
+
+-  Launch RTAB-Map:
+
+```bash
+cd ~/sucky_ws/
+colcon build --packages-select sucky_rtabmap
+source install/setup.bash
+ros2 launch sucky_rtabmap sim_rtabmap.launch.launch.py
+```
+ - Teleop the robot around to create the map:
+```bash
+ros2 run teleop_twist_keyboard teleop_twist_keyboard --ros-args -r /cmd_vel:=/diffbot_base_controller/cmd_vel_uncstamped
+```
+
+<div align="center">
+  <img src="doc/mapping/rtabmap-fast-x20.gif" alt="base" width="600"/>
+</div>
+
+
+- Post map processing with `rtabmap-databaseViewer`:
+```bash
+rtabmap-databaseViewer ~/.ros/rtabmap.db
+```
+
+<div align="center">
+  <img src="doc/mapping/database-viewer-fast-x2.gif" alt="base" width="600"/>
+</div>
+
+From the database you can do some post processing and debugging. You could also **export the 3d point cloud data and the 2d map**.
+
+<div align="center">
+  <img src="doc/mapping/pc-viewer-fast-x2.gif" alt="base" width="600"/>
+</div>
+
+
+<div align="center">
+  <img src="doc/mapping/rtabmap.png" alt="base" width="600"/>
+</div>
+
+## Full Coverage Path Planning (FCPP)
+
+- Bringup the Full Coverage Path Planning:
 
 ```bash
 cd ~/sucky_ws/
@@ -9,6 +89,8 @@ source install/setup.bash
 ros2 launch sucky_bringup sim_fcpp_bringup.launch.py
 ```
 
+- Launch the cleaning visualizer for monitoring cleaning process:
+
 ```bash
 cd ~/sucky_ws/
 colcon build --packages-select sucky_nav
@@ -16,18 +98,22 @@ source install/setup.bash
 ros2 launch sucky_nav sim_fcpp_visualizers.launch.py
 ```
 
-```bash
-gz model --spawn-file=/home/robot/sucky_ws/src/sucky_bringup/models/cylinder_obstacle/model.sdf --model-name="Cylinder Obstacle" -x -1.16 -y -0.49 -z 0.76
-```
+<div align="center">
+  <img src="doc/fcpp/sim_fcpp_fast_x40.gif" alt="base" width="600"/>
+</div>
 
-### opennav_coverage
+## Opennav Coverage
+
+- Launch teh Coverage Server:
 
 ```bash
 cd ~/sucky_ws/
-colcon build --packages-select sucky_nav
+colcon build 
 source install/setup.bash
 ros2 launch sucky_nav sim_coverage_server.launch.py 
 ```
+
+- Bringup Opennav Coverage:
 
 ```bash
 cd ~/sucky_ws/
@@ -43,39 +129,6 @@ source install/setup.bash
 ros2 run sucky_nav demo_coverage_optimized.py
 ```
 
-
-### RTAB-Map SIM
-
-```bash
-ros2 launch sucky_bringup sim_bringup.launch.py
-ros2 launch sucky_rtabmap sim_rtabmap.launch.py
-ros2 run teleop_twist_keyboard teleop_twist_keyboard --ros-args -r /cmd_vel:=/diffbot_base_controller/cmd_vel_uncstamped
-rtabmap-databaseViewer ~/.ros/rtabmap.db
-```
-
-### Collect RTAB-Map Input Topics [REAL]
-
-```bash
-ssh_sucky
-ros2 launch sucky_bringup bringup.launch.py
-ros2 bag record \
-  --compression-mode file \
-  --compression-format zstd \
-  -o ~/bags/rosbag2_$(date +%Y_%m_%d-%H_%M_%S) \
-  /diffbot_base_controller/odom \
-  /camera/d455/color/camera_info \
-  /camera/d455/color/image_raw/compressed \
-  /camera/d455/depth/image_rect_raw/compressedDepth \
-  /scan \
-  /tf \
-  /tf_static
-```
-
-
-### Foxglove
-
-```bash
-ros2 launch foxglove_bridge foxglove_bridge_launch.xml port:=8765
-foxglove-studio
-```
-
+<div align="center">
+  <img src="doc/opennav/opennav_coverage_fast_x20.gif" alt="base" width="600"/>
+</div>
