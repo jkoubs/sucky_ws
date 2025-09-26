@@ -104,7 +104,7 @@ ros2 launch sucky_nav sim_fcpp_visualizers.launch.py
 
 ## Opennav Coverage
 
-- Launch teh Coverage Server:
+- Launch the Coverage Server:
 
 ```bash
 cd ~/sucky_ws/
